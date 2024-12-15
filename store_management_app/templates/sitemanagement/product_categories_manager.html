@@ -1,0 +1,180 @@
+{% extends "layout/layout.html" %}
+{% block body %}
+
+<h1 class="text-center text-3xl font-extrabold mb-6">Products Category Manager</h1>
+<div class="add-buttons">
+    <button class="button" style="display: flex; justify-content: flex-start;">
+        <a href="/productsmanagement" aria-label="Go back">
+            <i class="bx bx-chevron-left" aria-hidden="true"></i>
+            Go back
+        </a>
+    </button>
+    <button id="openCategoryModalBtn" class="button">Add Category</button>
+</div>
+<!-- Primary Category Modal -->
+<div id="categoryModal" class="modal">
+    <div class="modal-content">
+        <span class="cancel_btn" id="closeCategoryModal">&times;</span>
+        <form id="categoryForm" method="POST" action="/newprimarycategoryaddition">
+            <div class="form-group">
+                <label for="primaryCategory">Category Name:</label>
+                <input type="text" id="primaryCategory" name="primaryCategory" required>
+            </div>
+            <button type="submit" class="button">Save</button>
+            <button type="button" id="cancelCategoryBtn" class="cancel_btn">Cancel</button>
+        </form>
+        <div id="categoryStatusMessage" style="margin-top: 10px;"></div>
+    </div>
+</div>
+
+<!-- Edit productCat Modal -->
+<div id="productCateditModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeEditModal">&times;</span>
+        <form id="editForm">
+            <div class="form-group">
+                <label for="editproductCat">Category</label>
+                <input type="text" id="editproductCat" name="editproductCat" required>
+            </div>
+            <input type="hidden" id="editproductCatId" name="editproductCatId">
+        </form>
+        <div class="modal-footer">
+            <button type="button" class="cancel_btn" id="cancelEditBtn">Cancel</button>
+            <button type="button" id="editProduct" class="button">Save changes</button>
+        </div>
+    </div>
+</div>
+
+<table id="productTable">
+    {% if productCat_list %}
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for productCat in productCat_list %}
+        <tr id="{{ productCat['id'] }}">
+            <td width="10%" class="align-items center justify-content text-xl font-bold text-lg">{{ productCat['product_category'] }}</td>
+            <td class="action align-items center justify-content" width="8%" style="text-align: right;">
+                <button class="edit_btn" data-toggle="modal" data-target="#productCateditModal" onclick="editProductCat('{{ productCat['id'] }}', '{{ productCat['product_category'] }}')">Edit</button>
+                <button class="delete_btn" onclick="deleteProductCat('{{ productCat['id'] }}')">Delete</button>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    {% endif %}
+</table>
+
+<script>
+    function editProductCat(id, category) {
+        document.getElementById('editproductCat').value = category;
+        document.getElementById('editproductCatId').value = id;
+        document.getElementById('productCateditModal').style.display = 'block';
+    }
+
+    document.getElementById('editProduct').addEventListener('click', function() {
+        const form = document.getElementById('editForm');
+        const statusMessage = document.getElementById('categoryStatusMessage');
+        statusMessage.innerHTML = "Loading...";
+
+        const formData = new FormData(form);
+        fetch('/editproductcat', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                statusMessage.innerHTML = "Changes saved successfully!";
+                setTimeout(() => {
+                    location.reload();
+                }, 1000);
+            } else {
+                statusMessage.innerHTML = "Error: " + (data.error || "Unknown error occurred");
+            }
+        })
+        .catch(error => {
+            statusMessage.innerHTML = "There was an error saving the changes. Please try again.";
+        });
+    });
+
+    document.getElementById('closeEditModal').addEventListener('click', function() {
+        document.getElementById('productCateditModal').style.display = 'none';
+    });
+
+    document.getElementById('cancelEditBtn').addEventListener('click', function() {
+        document.getElementById('productCateditModal').style.display = 'none';
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const categoryForm = document.getElementById('categoryForm');
+
+        categoryForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            fetch('/newprimarycategoryaddition', {
+                method: 'POST',
+                body: new FormData(categoryForm)
+            })
+                .then(response => {
+                    if (response.ok) {
+                        location.reload();
+                    } else {
+                        throw new Error('Failed to submit form');
+                    }
+                })
+                .catch(error => {
+                    document.getElementById('categoryStatusMessage').innerText = 'Failed to save. Please try again.';
+                });
+        });
+
+        document.getElementById('openCategoryModalBtn').onclick = function () {
+            document.getElementById('categoryModal').style.display = "block";
+            document.getElementById('categoryStatusMessage').innerHTML = "";
+        }
+
+        document.getElementById('closeCategoryModal').onclick = function () {
+            closeModal();
+        }
+
+        document.getElementById('cancelCategoryBtn').onclick = function () {
+            closeModal();
+        }
+
+        function closeModal() {
+            document.getElementById('categoryModal').style.display = "none";
+            document.getElementById('productCateditModal').style.display = "none";
+        }
+    });
+
+    function deleteProductCat(productCatId) {
+        if (confirm('Are you sure you want to delete?')) {
+            fetch('/deleteproductcat', {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    row_ID: productCatId
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById(productCatId).remove();
+                    window.location.reload();
+                } else {
+                    alert('There was an error deleting the product. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error deleting the product. Please try again.');
+            });
+        }
+    }
+</script>
+
+{% endblock %}

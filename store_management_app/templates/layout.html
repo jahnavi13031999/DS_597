@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}">
+
+    <!-- Custom StyleSheet -->
+    <link type="text/css" href="{{ url_for('static', filename='assets/css/products_style.css') }}" rel="stylesheet">
+
+    <title>Binny Fashions</title>
+
+
+<style>
+    /* Custom tooltip styling */
+    .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* Button styles */
+        .btn-order {
+            background-color: #ff4b4b;
+            /* Bright red */
+            color: white;
+        }
+
+        .btn-order:hover {
+            background-color: #d32f2f;
+            /* Darker red */
+        }
+
+        .btn-monitor {
+            background-color: #addde5;
+            /* Yellow-orange */
+            color: white;
+        }
+
+        .btn-monitor:hover {
+            background-color: #ff9900;
+            /* Darker yellow-orange */
+        }
+
+        .btn-reorder {
+            background-color: #ee6c21;
+            /* Yellow */
+            color: white;
+        }
+
+        .btn-reorder:hover {
+            background-color: #ffb300;
+            /* Darker yellow */
+        }
+
+        /* tabs */
+        .btn-suppliers {
+            background-color: #ff4b4b;
+            /* Bright red */
+            color: rgb(11, 3, 80);
+            transition: background-color 0.3s;
+        }
+
+        .btn-ml-demand {
+            background-color: #a4ac84;
+            /* Yellow-orange */
+            color: rgb(11, 3, 80);
+            transition: background-color 0.3s;
+        }
+
+        .btn-sales {
+            background-color: #ee6c21;
+            /* Yellow */
+            color: rgb(11, 3, 80);
+            transition: background-color 0.3s;
+        }
+
+        /* Success Modal Styles */
+        #successModalContent {
+            transform: scale(0.9);
+            opacity: 0;
+        }
+
+        #successModalContent.scale-100 {
+            transform: scale(1);
+            opacity: 1;
+        }
+</style>
+</head>
+
+<body>
+    <header class="bg-primary text-primary-foreground flex justify-between items-center shadow-md">
+        <a class="flex items-center" href="/">
+            <img src="{{ url_for('static', filename='assets/icons/BinnyFashion_logo.jpeg') }}" width=200px
+                height=100px />
+        </a>
+        <nav class="ml-4 space-x-4 text-base md:text-lg"> <!-- Increased text size for medium screens and larger -->
+            <div class="flex items-center space-x-4">
+
+                <a href="{{whatsapp}}" target="_blank">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAUVBMVEVHcEzz9PP3+Pfq7er19vb//v/8/PyltKrx+PKz5b1z04cwxlYMwUMAvCkAvjMAvzoDwUBGTUiH2JiY3aXX8Nxcznbo6ulJymfQ1NHJzcq9wr8gaKU6AAAAG3RSTlMAOlmJ2f//Lvj+/v///////xX+/v7+rP56aF7BK/qjAAABgklEQVR4AX2Sh5qEMAiEbYyJqXa993/QAza5z2v7b8UMMKDNN9qu77u2+Yd+oMLQ/3UMeoCfktHIVTs5791kRWvGb73BV6YQU2ZSDJPo28c5hzYk/0UKlghfipnzl+C/ERZWVMHA59H7nL8pVp6mUTqp7310Ln1TbESdCtgQJ0fO2J+KnNl4cbhGnx0b3aJ/EO1rkoPIZZ9WAuCeNhLnHGrRBJUDtH53YdQmyEaWL1Lh+yCSxEsoeQn4btJr27kZQYtclym279uSqqMI1lTntqpI6VlhVg9M9gArsg92Cal6mHlPdfx8Emg75S6YV9dNN3WAaskTsi0Zh6bEMUH2cLHLqvDsA4LsTjzeerNhqvscJpYwa5Q9gS0w/XODKbjF2jPK3PXJrIMWcooxiyGSAkKvHX+QHICPRhnYQ0mr5LADpYFuShunWIeJ2VI5Z25gM8TA7jFEfu9Whr2awoEKi8ymYmAYm4oBh8fHfA8vESRme5URxz0XN9cxMMelcYWDt3wCfLshX3540l4AAAAASUVORK5CYII="
+                        alt="WhatsApp" style="width: 100%; height: 50%;" />
+                </a>
+                <a class="fas fa-phone-alt" href="tel:{{mobile}}" style="flex-wrap: wrap;">{{mobile}} </a>
+                {% if user %}
+                <a href="/logout"
+                    class="bg-secondary text-secondary-foreground p-2 rounded-lg hover:bg-secondary/80">Logout</a>
+                <a href="/sitemanager"
+                    class="bg-secondary text-secondary-foreground p-2 rounded-lg hover:bg-secondary/80">
+                    <img src="{{ url_for('static', filename='assets/icons/sitemanagement.png') }}" alt="Site Management"
+                        style="width: 30px; height: 30px;" />
+                </a>
+                {% endif %}
+            </div>
+        </nav>
+    </header>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@dash/dash@latest/dist/dash.js"></script>
+    <div class=" flex justify-center items-center text-center mt-4 space-x-4 text-3xl color-white gap-4 mb-4">
+       <a class="btn-suppliers px-4 py-2 rounded" href="/suppliers_orders">Supplier Orders </a>
+        <a class="btn-ml-demand px-4 py-2 rounded" href="/sales_data">Demand and Inventory Monitor</a>
+        <a class="btn-sales px-4 py-2 rounded" href="/sale">Product Sales</a>
+    </div>
+    <!-- Actual Body -->
+    <div class="bg-background text-foreground font-sans">
+        <div class="min-h-screen">{% block body %} {%endblock%}</div>
+    </div>
+</body>
+  <!-- Footer -->
+  <footer class="bg-primary text-primary-foreground p-4 mt-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div>
+        <h4 class="font-bold mb-2">INFORMATION</h4>
+        <ul>
+          <li><a href="/aboutus" class="hover:text-secondary">About Us</a></li>
+          <li><a href="/contactus" class="hover:text-secondary">Contact Us</a></li>
+          <!-- Uncomment these lines if needed -->
+          <li><a href="#" class="hover:text-secondary">Terms & Conditions</a></li>
+          <li><a href="/site_map" class="hover:text-secondary">Site Map</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-2">
+        <div class="font-bold mb-2">KEEP IN TOUCH</div>
+        <div class="flex space-x-4 items-center" id="linkContainer">
+          <ul class="flex space-x-4">
+            <li>
+              <a href={{facebook}} class="hover:text-secondary"
+                target="_blank">
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAD30lEQVR4AayShW4cMRCGLQgzHArKDK9xor5KnyDMSZmZmZmZRWWuKMy8e3y7U8/KvXG6PlR+6dM3Wtv/tElYulnzHXI918HnvQZ7PNfgGfdvz1XQEJzFtz14B++y+crCO+D2XoG97ssw475swhwuGWSOK26T3zX24luWbZbehTxe1uS+YOiuCzGwOB+3mA2yAvcFU8cO7Mrsf30R3Lz4nfMcL+eglZyNkm3QGXZhJ0snzrOw3nE61uc4zQs4wmKOxC3PaIszZA4/I2On6zSsY8ni4P9Kx6loX/WJMCCOk5G47dCZ+r79HLtxR8LfueN45F318TDEORYiW4TJHBcvbf8QhT/TJoRiJkQME2bCJvRpJnwaM8TbuX24Q/k3wS82VR0JwRwOB8nSjF5xJgRvhgxIEtEj3kngLibHcQzc1YdDetWhICSj8iD5UW8MUsX+PoBGdNzJ/qXqQHBv5f4AVHCEBX4yp1LMG26EIJ2I+2hpFn18J8OsuQi5lXv9MxV7/ZAul35HIY0k7cCduJtV7tN95bt0sNgdt5g1sjR/GrX/+E9+j8DyI35xV7eh6q/cpftY2Q5tDwfSoVxYj5jwf5Yf4qV0j+bknXtY2bbZZxxIh9KtlkERfjaD52QFcgdSvl17xkq3zP4u3TwDSAlZAZ2pgmeZgrtZ6aZpraRrGpR0kuVZFTpXv1eBu1lpx5RW3DEFFu1kmWzSM21AiehC04wWc/uUxorbpn4XtU6CiuLWKcvZ5HVPxN7ZQkZwNytqnnxW1DwBSGETWSabnPsSkjuV4G5W2DC+hwPJyCZdL/22ngLJYt7DihonfAW1Y2BRR5bJJhtvaeL9OFoJ7mZrGiC3sHb8b6vlcdswFATRL2ZCDagAX12H+3DOOWe7A8d2fFQZlsRMXpzu6z8kVnGdPcDgDbRJ5InP/nFB3lFOTMlck1TVuW8gD8wzcRO3FeQfFvfeQUbeQU5M2K0yOGBJXlVjcmaO1HFTsernecPZTd/c3ZQ0CeTM7M+S3L0MNWbpT/a94abql7ebXDrburidECiZa5LsspZUZO+kzNI2Z31r9JPsmlx7M2namzHZG7J1vaQkp6qBff09csYN3FKS6jt5w1mPA2stos8sCb/b6zFzIPMcduOG+kzORjpurUaBtRKRuRwSsz8LqnpWQuaoV8MAu9V3VF/MG9Zi2DQXAxrwUlhSENeZA7aWwyY/+bc1tkKu/hOXxkLwZswHVLlTUlINNW0mjFnswC71W+FtGLOd+9ps+7k2qw/MtEmSrlNZB+c6z5jBrPo3nZNjzXQm1FTrjgSp6dYDakr3oFd9U+9y1lO9tTZT6gAAAABJRU5ErkJggg=="
+                  alt="Facebook" style="width: 20px; height: 20px;">
+              </a>
+            </li>
+            <li>
+              <a href={{twitter}} class="hover:text-secondary" target="_blank">
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAAAAABXZoBIAAAA/0lEQVR4AbXPIazCMACE4d+L2qoZFEGSIGcRc/gJJB5XMzGJmK9EN0HMi+qaibkKVF1txdQe4g0YzPK5yyWXHL9TaPNQ89LojH87N1rbJcXkMF4Fk31UMrf34hm14KUeoQxGArALHTMuQD2cAWQfJXOpgTbksGr9ng8qluShJTPhyCdx63POg7rEim95ZyR68I1ggQpnCEGwyPicw6hZtPEGmnhkycqOio1zm6XuFtyw5XDXfGvuau0dXHzJp8pfBPuhIXO9ZK5ILUCdSvLYMpc6ASBtl3EaC97I4KaFaOCaBE9Zn5jUsVqR2vcTJZO1DdbGoZryVp94Ka/mQfE7f2T3df0WBhLDAAAAAElFTkSuQmCC"
+                  alt="Twitter" style="width: 20px; height: 20px;">
+              </a>
+            </li>
+            <li>
+              <a href={{youtube}} class="hover:text-secondary">
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAwklEQVR4AWNwL/ChKx6GFo5a+J+BQRmIfYE4HYgrgLgLiOdA8VqsGCHfBdWTDjVDGaeFQElmIL4CxP+pjK/gsnA7SAGN8FpsFv6nJUaxECggSmsLQXYgW2hOlKbs7P//7ezItVAf2UJfojTNnv0fDNauJcdCX2QLo0iwEAHa2si2MJ1ECxHg1StIUBPWH0V3C+kepOQnmi1byE809M8W9M/49C/a6F940796wqyAo/BUvtuRMZ5KOApk1mibhmI8aiEAWJrZd6IgmiUAAAAASUVORK5CYII="
+                  alt="YouTube" style="width: 20px; height: 22px;">
+              </a>
+            </li>
+            <li>
+              <a href={{instagram}} class="hover:text-secondary" target="_blank">
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAABRFBMVEVHcEz4D5n9oAf9lAftEKn7lBXhA8VwFf3TPJF3Fv39tgX9egV9GvnpA7b9OFx2GPn7SUH9KXX9UjH////+AWH+Arv+wQPkANL+ygD9BKv+AZP+A27+Mkj/9fP+AYj+XS3+aRj+AXr+cJn+7/ubEvz+YQHUANn+J3Z6FPyIFPv+jQL+Tg/CAd6rAuX/vMT/17P0Asn/ruj+sQD+G3/+Pj3+SjX+dhz/vOD0bt3+ugD+Kmb+dwThGun+PST/y8r+xG3+GpL/rMr9D57+hAKUBuv+LlX+ghX+GGT+Bkb+IVb/s9b+X8P+nwHtAL3+pwH+lgOxEPvGGPXfYeb/xLbzFtHzAKr+N1r/6OH+Kzb7GLf+clD+fIL2uPH+WqP93/f+0O/+Vmb+im/oSOH+LLf+nTT+ylv+qV39Qcj+znvSgfr+mYnWgvrfdhN0AAAAE3RSTlMAx8/PX13K/gnMxsZdzdJhXcrGWouHNAAAAjlJREFUKJFN0utXokAYwOFptzL31u6+mMtVEImC1UxADRYjvGtq5a2Laff28v9/33ewzun3YTiHB2YGzhBCyGY8Fovt7OzWarVsNvsT295eXyW0jXgku6+yTUsmk+sbiPEdSpkaleXtqF7vMyGfIspkT8+wMu1ulM/ne73eeJXEKWX+qPAmtZxPJMbjFYKSOZkBzGf7L83mAPsJlh2H5AT7B+pdMo9Pv/SsQpkNOY6cYircJUfUWErdxfM9qBzHSeQXBvPkKHHBsvfd7j3LLmARziGUJIXiGcx6SGGJbqbEdhddrgTXkqKQ0ShfxjthGKigdjo44GJcB64VnicXF2wXOpKllKAkSRy+U8LVjiDN8wwJgiANR7yug6hYViBJKgSSgsgg6nozDbl2GwdG1y1LiWakyDCkXheuIHdOh7br6jqPyDMvKAjnVzD07RsQhcnEdZsi6Mwr2r5P0fErUBGEehsvTLMVIU9837yFoZlKpUQQczkc6u12K7dE0zQvYU+TZTlVoT+hMhEEAfGG4RVialoRpppXLBbly9vbS8exbaE1BZeihonwUK02Gg10nN5xznF3rSYvEc3zvEMQH4yBYVSrnifLuI4I6VbT4ojsVQ1jD2C6t2w4rEwBP7zetALysWoMjo9/i2+PifjXt+uutULW0PqFQmHr8fEw6umpqJmOLbg6Ht33aAcHW1EHhUJ/YDRwW44w+UYP9bsCpR80yv1BAzft2F82ojO/9mFJS+0f01e/f0X4DzXfhmzQgNUBAAAAAElFTkSuQmCC"
+                  alt="Instagram" style="width: 20px; height: 22px;">
+              </a>
+            </li>
+            <li>
+              <a href={{linkedin}} class="hover:text-secondary"
+                target="_blank">
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACqUlEQVRYhe2XTWgTQRiGn0l203QTJTkUK+JP1JO0pAgqKngUDwoKHkRBREFQkPaolx4UPPVUUAqCUC/14FEPgiC22D+Q2lq1ImoKtlRCrW3NNk2yMx6S2m52bKqmP4d+t515Z+eZne+d+VZYl9sngAirFL7VmnjNABi6xrQCOStBKTB8WKZYOQBbKhCC1nMxqqMVPHmVpLkjiRXWspYXIKMACemWw1SY+d05um8T8R3DXGpLYAXLv2OuN+YykuYTW35PPhcXj22HjESVffriJFQQDZt6pbE8eeAGMAWtHd88onfDUyAVy4HgArD8gmcJm/qWQcanMyigd+g78dv9iNDyJKHQnYR2VsKMBKkg4ENU+qlcwvIVMJNT+XEC8Ass3+ID9Taczs03pB2UVFCwoT0rwXbcgzYaIAE7x5m9UWq3hkhnJE/fT9KbSMEG448gLgBbKuKRAK/vHXGJ+j9PUtfYB4bg7ultXDkec/Xvv95DTXWQO1drqAz4f7ffBL6MpTjZNMDARBZLk8geYzvKazbHkfMPGi+ePVDF/Ya4a/K5iFWH6G86yK6wkf+6pQBKhe4saDi1s+S4R9f2eLfuXwAWix8/syTGbG1f3e4IwbBBumgFZQNofDBE9Hw7sfpuDt3o0Wou1EaQjpugLACdb8e59XgUqyqAFTHpGrZ53pf06DZHAnmLlhvgxZtxCC1IQNPHx9GUV6hxYlkA0tmijRXgaDJeF2UB+J87YtVLsnWAdQAPgF94czpgznvc9Hv7DU2bqbn5dDrXdVwhBCOpHA0tg2QLR6bwCZJTWQj6QMDD7iQfRmxyBZ8bfsHLT9PumtEUtHUlGfrq1nUW69BURI6C2Zz3xrAK9LZUedHC0FQ+S9V5KiK/YNE/IcsnoESZ9Te6tZeEKx2/AKcy5K23FN8fAAAAAElFTkSuQmCC"
+                  alt="linkedin" style="width: 20px; height: 22px;">
+              </a>
+            </li>
+            <li>
+              <!-- <a href="mailto:binnyfashions@gmail.com" class="hover:text-secondary flex items-center space-x-2">
+                <img class="gb_Ec"
+                  src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_r5.png"
+                  srcset="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_r5.png 1x, https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_2x_r5.png 2x "
+                  alt=""  style="width:109px;height:40px">
+              </a> -->
+            </li>
+
+            </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  </div>
+  </div>
+  </div>
+  </footer>
+</html>

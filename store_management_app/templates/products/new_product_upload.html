@@ -1,0 +1,513 @@
+{% extends "layout/layout.html" %} {% block body %}
+<title>Product Table</title>
+
+<!-- Primary Category -->
+<div class="scroll-wrapper flex items-center w-full">
+    <div class="scroll-container">
+        <button
+            class="category-button bg-card p-6 rounded-lg shadow-lg min-w-[200px] flex flex-col items-center justify-center"
+            style="scroll-snap-align: start;" onclick="filterTable('All')">All</button>
+        {% for category in PrimaryCategory %}
+        <button
+            class="category-button bg-card p-6 rounded-lg shadow-lg min-w-[200px] flex flex-col items-center justify-center"
+            style="scroll-snap-align: start;" onclick="filterTable('{{ category }}')">{{ category }}</button>
+        {% endfor %}
+    </div>
+</div>
+<script>
+    const buttons = document.querySelectorAll('.category-button');
+
+    // Style the active button
+    document.addEventListener('click', function (event) {
+        if (event.target.classList.contains('category-button')) {
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    });
+
+    // Style the active button
+    const activeBtn = document.querySelector('.category-button.active');
+    if (activeBtn) {
+        activeBtn.classList.add('active');
+    }
+    if (buttons) {
+        // Remove active class from all buttons
+        buttons.forEach(btn => btn.classList.remove('active'));
+
+        // Add active class to the clicked button
+        function filterTable(category) {
+            if (category) {
+                const activeBtn = document.querySelector(`.category-button[onclick="filterTable('${category}')"]`);
+                if (activeBtn) {
+                    activeBtn.classList.add('active');
+                }
+            }
+        }
+    }
+</script>
+
+<h2 class="text-center text-3xl font-extrabold">Products Management Table</h2>
+
+<div class="add-buttons">
+    <button id="openModalBtn" class="button" style="display: flex; justify-content: flex-start;">Add Product</button>
+    <button onclick="window.location.href='/Productcategorymanager'" class="button">Manage Category</button>
+
+</div>
+
+<!-- Add Product Modal -->
+<div id="productModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeProductModal">&times;</span>
+        <form id="productForm" method="POST" action="/uploadproduct" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="PrimaryCategory">Primary Category:</label>
+                <select id="PrimaryCategory" name="PrimaryCategory" required>
+                    <option>Select</option>
+                    {% for primarycategory in AllPrimaryCategory %}
+                    <option value="{{primarycategory}}">{{primarycategory}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="name">Product Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="category">Tagline:</label>
+                <input type="text" id="category" name="category">
+            </div>
+            <div class="form-group">
+                <label for="price">Product Price:</label>
+                <input type="number" id="price" name="price" step="0.01" min="0">
+            </div>
+            <div class="form-group">
+                <label for="discount">Product Discount:</label>
+                <input type="number" id="discount" name="discount" step="0.01" min="0">
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea type="text" class="desc" id="description" name="description"
+                    oninput="checkWordLimit(this, 50)"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="image">Upload Image:</label>
+                <input type="file" id="image" name="image" accept="image/*" required>
+            </div>
+            <button type="submit" class="button">Save</button>
+            <button type="button" id="cancelProductBtn" class="cancel_btn">Cancel</button>
+        </form>
+        <div id="productStatusMessage" style="margin-top: 10px;"></div>
+    </div>
+</div>
+
+<!-- Primary Category Modal -->
+<div id="categoryModal" class="modal">
+    <div class="modal-content">
+        <span class="cancel_btn" id="closeCategoryModal">&times;</span>
+        <form id="categoryForm" method="POST" action="/newprimarycategoryaddition">
+            <div class="form-group">
+                <label for="primaryCategory">Primary Category Name:</label>
+                <input type="text" id="primaryCategory" name="primaryCategory" required>
+            </div>
+            <button type="submit" class="button">Save</button>
+            <button type="button" id="cancelCategoryBtn" class="cancel_btn">Cancel</button>
+        </form>
+        <div id="categoryStatusMessage" style="margin-top: 10px;"></div>
+    </div>
+</div>
+
+<!-- Edit Modal -->
+<div id="editModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeEditModal">&times;</span>
+        <form id="editForm">
+            <div class="form-group">
+                <label for="editPrimaryCategory">Primary Category</label>
+                <input type="text" id="editPrimaryCategory" name="editPrimaryCategory"
+                    placeholder="Type or select a category">
+            </div>
+            <div class="form-group">
+                <label for="editName">Name</label>
+                <input type="text" id="editName" name="editName">
+            </div>
+            <div class="form-group">
+                <label for="editCategory">Tagline</label>
+                <input type="text" id="editCategory" name="editCategory">
+            </div>
+            <div class="form-group">
+                <label for="editPrice">Price</label>
+                <input type="number" id="editPrice" name="editPrice" step="0.01" min="0">
+            </div>
+            <div class="form-group">
+                <label for="editDiscount">Discount</label>
+                <input type="number" id="editDiscount" name="editDiscount" step="0.01" min="0">
+            </div>
+            <div class="form-group">
+                <label for="editDescription">Description</label>
+                <textarea id="editDescription" name="editDescription" oninput="checkWordLimit(this, 50)"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="editImage">Upload Image</label>
+                <input type="file" id="editImage" name="editImage" accept="image/*">
+            </div>
+            <input type="hidden" id="editProductId" name="editProductId">
+        </form>
+        <div class="modal-footer">
+            <button type="button" class="cancel_btn" id="cancelEditBtn">Cancel</button>
+            <button type="button" id="editProduct" class="button">Save changes</button>
+        </div>
+    </div>
+</div>
+
+<table id="productTable">
+    {% if products_list %}
+    <thead>
+        <tr>
+            <th>Primary Category</th>
+            <th>Name</th>
+            <th>Tagline</th>
+            <th>Price</th>
+            <th>Discount</th>
+            <th>Image</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for product in products_list %}
+        <tr id="{{ product['ID'] }}"
+            data-category="{{ product.Primary_Category_Alt if product.Primary_Category_Alt else '' }}">
+            <td>{{ product.Primary_Category_Alt if product.Primary_Category_Alt else '' }}</td>
+            <td width=10%>{{ product.Name if product.Name else '' }}</td>
+            <td>{{ product.Tagline if product.Tagline else '' }}</td>
+            <td width=10%>{{ product.Price if product.Price else '' }}</td>
+            <td width=8%>{{ product.Discount if product.Discount else '' }}</td>
+            <td>
+                <img src="{{ url_for('static', filename='assets/images/' ~ product.Image_Location) if product.Image_Location else '' }}"
+                    alt="{{ product.Primary_Category_Alt if product.Primary_Category_Alt else '' }}"
+                    onclick="showImageModal('{{ url_for('static', filename='assets/images/' ~ product.Image_Location) if product.Image_Location else '' }}')">
+            </td>
+            <td width=20%>{{ product.Description if product.Description else '' }}</td>
+            <td>
+                <div class="toggle-container">
+                    <input type="hidden" class="status-input"
+                        value="{{ product.Status if product.Status else 'Inactive' }}">
+                    <label class="toggle-switch">
+                        <input type="checkbox" class="toggle-checkbox" {% if product.Status=='Active' %} checked {%
+                            endif %}>
+                        <span class="slider"></span>
+                    </label>
+                    <span class="status-label">{{ product.Status if product.Status else 'Inactive' }}</span>
+                </div>
+            </td>
+            <td width=8% style="text-align: right;">
+                <button class="edit_btn" data-toggle="modal" data-target="#editModal">Edit</button>
+                <button class="delete_btn" onclick="confirmDelete(this)">Delete</button>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    {% endif %}
+</table>
+
+<script>
+    // Function to close the modals
+    function closeModal() {
+        var modals = document.querySelectorAll('.modal');
+        modals.forEach(function (modal) {
+            modal.style.display = "none";
+        });
+    }
+    // Product Modal
+    var openModalBtn = document.getElementById("openModalBtn");
+    var closeProductModal = document.getElementById("closeProductModal");
+    var cancelProductBtn = document.getElementById("cancelProductBtn");
+    var productStatusMessage = document.getElementById("productStatusMessage");
+    var productModal = document.getElementById("productModal");
+    openModalBtn.onclick = function () {
+        productModal.style.display = "block";
+        productStatusMessage.innerHTML = "";
+    }
+    closeProductModal.onclick = function () {
+        closeModal(); // Close all modals
+    }
+    cancelProductBtn.onclick = function () {
+        closeModal(); // Close all modals
+    }
+    // Edit Modal
+    var editModal = document.getElementById("editModal");
+    var closeEditModal = document.getElementById("closeEditModal");
+    var cancelEditBtn = document.getElementById("cancelEditBtn");
+    closeEditModal.onclick = function () {
+        closeModal(); // Close all modals
+    }
+    cancelEditBtn.onclick = function () {
+        closeModal(); // Close all modals
+    }
+    // Edit buttons in the table
+    const editBtns = document.querySelectorAll('.edit_btn');
+    editBtns.forEach(editBtn => {
+        editBtn.addEventListener('click', () => {
+            const row = editBtn.closest('tr');
+            const primaryCategory = row.cells[0].innerText;
+            const name = row.cells[1].innerText;
+            const category = row.cells[2].innerText;
+            const price = row.cells[3].innerText;
+            const discount = row.cells[4].innerText;
+            const description = row.cells[6].innerText;
+            const productId = row.id;
+
+            document.getElementById('editPrimaryCategory').value = primaryCategory;
+            document.getElementById('editCategory').value = category;
+            document.getElementById('editName').value = name;
+            document.getElementById('editPrice').value = price;
+            document.getElementById('editDiscount').value = discount;
+            document.getElementById('editDescription').value = description;
+            document.getElementById('editProductId').value = productId;
+
+            editModal.style.display = "block";
+        });
+    });
+    // Edit product save changes button
+    document.getElementById('editProduct').onclick = function () {
+        const formData = new FormData(document.getElementById('editForm'));
+        fetch('/updateproduct', {
+            method: 'POST',
+            body: formData
+        }).then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    closeModal(); // Close all modals
+                    location.reload();
+                } else {
+                    alert('There was an error updating the product. Please try again.');
+                }
+            }).catch(error => {
+                console.error('Error:', error);
+                alert('There was an error updating the product. Please try again.');
+            });
+    }
+    function confirmDelete(button) {
+        if (window.confirm('Are you sure you want to delete?')) {
+            deleteRow(button);
+        }
+    }
+    function deleteRow(button) {
+        var row = button.parentElement.parentElement;
+        var rowId = row.id;
+        var primaryCategory = row.cells[0].innerText;
+        var category = row.cells[1].innerText;
+        var name = row.cells[2].innerText;
+        var price = row.cells[3].innerText;
+        var discount = row.cells[4].innerText;
+        var imageLocation = row.cells[5].querySelector('img').src.split('/').pop();
+
+        fetch('/deleteproduct', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                row_ID: rowId,
+                PrimaryCategory: primaryCategory,
+                category: category,
+                name: name,
+                price: price,
+                discount: discount,
+                imageLocation: imageLocation
+            })
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    row.remove();
+                    window.location.reload();
+                } else {
+                    alert('There was an error deleting the product. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error deleting the product. Please try again.');
+            });
+    }
+
+    // Primary Category Modal
+    var openCategoryModalBtn = document.getElementById("openCategoryModalBtn");
+    var closeCategoryModal = document.getElementById("closeCategoryModal");
+    var cancelCategoryBtn = document.getElementById("cancelCategoryBtn");
+    var categoryStatusMessage = document.getElementById("categoryStatusMessage");
+    var categoryModal = document.getElementById("categoryModal");
+
+    openCategoryModalBtn.onclick = function () {
+        categoryModal.style.display = "block";
+        categoryStatusMessage.innerHTML = "";
+    }
+
+    closeCategoryModal.onclick = function () {
+        closeModal(); // Close all modals
+    }
+
+    cancelCategoryBtn.onclick = function () {
+        closeModal(); // Close all modals
+    }
+
+    // Add new primary category
+    document.addEventListener('DOMContentLoaded', function () {
+        const categoryForm = document.getElementById('categoryForm');
+
+        categoryForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            fetch('/newprimarycategoryaddition', {
+                method: 'POST',
+                body: new FormData(categoryForm)
+            })
+                .then(response => {
+                    if (response.ok) {
+                        location.reload();
+                    } else {
+                        throw new Error('Failed to submit form');
+                    }
+                })
+                .catch(error => {
+                    document.getElementById('categoryStatusMessage').innerText = 'Failed to save. Please try again.';
+                });
+        });
+    });
+
+    // Scroll category buttons
+    function scrollCategories(direction) {
+        var container = document.querySelector('.scroll-wrapper');
+        container.scrollBy({
+            left: direction * 100,
+            behavior: 'smooth'
+        });
+    }
+
+    // Filter table based on primary category
+    function filterTable(category) {
+        var rows = document.querySelectorAll('#productTable tbody tr');
+        rows.forEach(row => {
+            if (row.getAttribute('data-category') === category || category === 'All') {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+
+    // Check word limit of an input field
+    function checkWordLimit(input, maxWords) {
+        const words = input.value.split(/\s+/);
+        if (words.length > maxWords) {
+            input.value = words.slice(0, maxWords).join(" ");
+        }
+    }
+
+</script>
+<script>
+    document.getElementById('productForm').addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent default form submission
+        var form = this;
+        var statusMessage = document.getElementById('productStatusMessage');
+
+        // Display loading message
+        statusMessage.innerHTML = "Loading...";
+
+        // Create FormData object from the form
+        var formData = new FormData(form);
+
+        // Send the form data using Fetch API
+        fetch(form.action, {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Display success message
+                    statusMessage.innerHTML = "Product saved successfully!";
+                    // Refresh the page after a short delay
+                    // setTimeout(() => {
+                    location.reload();
+                    // }, 1000); // Adjust the delay as needed
+                } else {
+                    // Display error message from the server
+                    statusMessage.innerHTML = "Error: " + (data.error || "Unknown error occurred");
+                }
+            })
+            .catch(error => {
+                // Display error message
+                statusMessage.innerHTML = "There was an error saving the product. Please try again.";
+            });
+    });
+</script>
+
+<script>
+    // toggle product status
+    document.querySelectorAll('.toggle-checkbox').forEach(toggle => {
+        toggle.addEventListener('change', async () => {
+            const row = toggle.closest('tr');
+            const statusLabel = row.querySelector('.status-label');
+            const statusInput = row.querySelector('.status-input');
+            const productId = row.id;
+            const isChecked = toggle.checked;
+            const statusText = isChecked ? 'Active' : 'Inactive';
+
+            statusLabel.textContent = statusText;
+            statusInput.value = statusText;
+
+            const data = {
+                id: productId,
+                status: statusText
+            };
+
+            try {
+                const response = await fetch('/stockupdateproduct', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    console.log('Product status updated successfully');
+                } else {
+                    console.error('Failed to update product status');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+    });
+
+</script>
+<script>
+    document.getElementById('image').addEventListener('change', function (event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const img = new Image();
+                img.onload = function () {
+                    const canvas = document.getElementById('canvas');
+                    const ctx = canvas.getContext('2d');
+                    canvas.width = 280;
+                    canvas.height = 210;
+                    ctx.drawImage(img, 0, 0, 280, 210);
+
+                    const resizedImageURL = canvas.toDataURL('image/jpeg');
+                    document.getElementById('output').innerHTML = `<img src="${resizedImageURL}" alt="Resized Image">`;
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,142 @@
+{% extends "layout/layout.html" %}
+{% block body %}
+
+<!-- Edit site Modal -->
+<div id="siteeditModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeEditModal">&times;</span>
+        <form id="editForm">
+            <div class="form-group">
+                <label for="editsite">Platform</label>
+                <input type="text" id="editsite" name="editsite" readonly>
+            </div>
+            <div class="form-group">
+                <label for="editCategory">link</label>
+                <input type="text" id="editCategory" name="editCategory">
+            </div>
+        </form>
+        <div class="modal-footer">
+            <button type="button" class="cancel_btn" id="cancelEditBtn">Cancel</button>
+            <button type="button" id="editProduct" class="button">Save changes</button>
+        </div>
+    </div>
+</div>
+
+<section id="social-media">
+    <h2>Edit Social Media Links</h2>
+    <table id="productTable">
+        {% if social_site_list %}
+        <thead>
+            <tr>
+                <th>Plaform</th>
+                <th>Link</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for site in social_site_list %}
+            <tr id="{{ site['ID'] }}">
+                <td width=10%>{{ site['site'] }}</td>
+                <td width=10%>{{ site['link']}}</td>
+                <td width=8% style="text-align: right;">
+                    <button class="edit_btn" data-toggle="modal" data-target="#siteeditModal">Edit</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        {% endif %}
+    </table>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Get elements
+        const modal = document.getElementById('siteeditModal');
+        const closeModalButton = document.getElementById('closeEditModal');
+        const cancelEditButton = document.getElementById('cancelEditBtn');
+        const editButtons = document.querySelectorAll('.edit_btn');
+        const editSiteInput = document.getElementById('editsite');
+        const editLinkInput = document.getElementById('editCategory');
+        const saveChangesButton = document.getElementById('editProduct');
+        let currentRowId = null; // To store the ID of the row being edited
+
+        // Function to open modal
+        const openModal = (siteData, rowId) => {
+            editSiteInput.value = siteData.site || '';
+            editLinkInput.value = siteData.link || '';
+            currentRowId = rowId; // Store the ID of the row being edited
+            modal.style.display = 'block';
+        };
+
+        // Function to close modal
+        const closeModal = () => {
+            modal.style.display = 'none';
+        };
+
+        // Event listener for edit buttons
+        editButtons.forEach(button => {
+            button.addEventListener('click', (event) => {
+                const row = event.target.closest('tr');
+                const siteData = {
+                    site: row.children[0].textContent.trim(),
+                    link: row.children[1].textContent.trim()
+                };
+                const rowId = row.id; // Get the row ID
+                openModal(siteData, rowId);
+            });
+        });
+
+        // Event listeners for closing the modal
+        closeModalButton.addEventListener('click', closeModal);
+        cancelEditButton.addEventListener('click', closeModal);
+
+        // Event listener for save changes button
+        saveChangesButton.addEventListener('click', () => {
+            const site = editSiteInput.value.trim();
+            const link = editLinkInput.value.trim();
+
+            if (site && link) {
+                // Send the updated data to the Flask server
+                fetch('/update_site', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        id: currentRowId,
+                        site: site,
+                        link: link
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Close the modal and reload the page
+                        closeModal();
+                        window.location.reload(); // Reload the page to reflect changes
+                    } else {
+                        console.error('Error updating site:', data.message);
+                        alert('Error updating site: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An unexpected error occurred.');
+                });
+            } else {
+                console.error('Please fill in all fields.');
+                alert('Please fill in all fields.');
+            }
+        });
+
+        // Close the modal when clicking outside of it
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+    });
+</script>
+
+
+{% endblock %}

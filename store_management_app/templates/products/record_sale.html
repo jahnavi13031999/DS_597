@@ -1,0 +1,55 @@
+{% extends "layout/layout.html" %}
+
+{% block body %}
+<div class="container">
+    <h1>Record a Sale</h1>
+    <form id="salesForm">
+        <label for="productName">Product Name:</label>
+        <input type="text" id="productName" name="productName" required>
+
+        <label for="quantity">Quantity Sold:</label>
+        <input type="number" id="quantity" name="quantity" min="1" required>
+
+        <label for="salePrice">Sale Price:</label>
+        <input type="number" id="salePrice" name="salePrice" step="0.01" required>
+
+        <button type="submit" class="button">Record Sale</button>
+    </form>
+    <p id="responseMessage"></p>
+</div>
+<script>
+    document.getElementById('salesForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const productName = document.getElementById('productName').value;
+        const quantity = document.getElementById('quantity').value;
+        const salePrice = document.getElementById('salePrice').value;
+
+        const saleData = {
+            productName: productName,
+            quantity: parseInt(quantity),  // Convert to integer for validation
+            salePrice: parseFloat(salePrice) // Convert to float for consistency
+        };
+
+        fetch('/record_sale', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(saleData)
+        })
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.json();
+        })
+        .then(data => {
+            document.getElementById('responseMessage').textContent = data.message;
+            document.getElementById('salesForm').reset(); // Clear form upon success
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById('responseMessage').textContent = 'An error occurred while recording the sale.';
+        });
+    });
+</script>
+{% endblock %}

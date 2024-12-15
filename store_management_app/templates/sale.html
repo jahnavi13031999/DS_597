@@ -1,0 +1,206 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Data Overview for the Next 30 days</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Custom tooltip styling */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* Button styles */
+        .btn-order {
+            background-color: #ff4b4b;
+            color: white;
+        }
+
+        .btn-order:hover {
+            background-color: #d32f2f;
+        }
+
+        .btn-monitor {
+            background-color: #addde5;
+            color: white;
+        }
+
+        .btn-monitor:hover {
+            background-color: #ff9900;
+        }
+
+        .btn-reorder {
+            background-color: #ee6c21;
+            color: white;
+        }
+
+        .btn-reorder:hover {
+            background-color: #ffb300;
+        }
+
+        /* Tabs */
+        .btn-suppliers,
+        .btn-ml-demand,
+        .btn-sales {
+            color: rgb(11, 3, 80);
+            transition: background-color 0.3s;
+        }
+
+        /* Success Modal Styles */
+        #successModalContent {
+            transform: scale(0.9);
+            opacity: 0;
+        }
+
+        #successModalContent.scale-100 {
+            transform: scale(1);
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<div class="container mx-auto">
+    <h1 class="text-3xl font-bold mb-4 text-center">Sales Data Analysis</h1>
+
+    <div>
+        <div>
+            <label class="block text-gray-700">Select Week</label>
+            <select id="weekFilter" class="border border-gray-300 rounded px-2 py-1">
+                <option value="">All Weeks</option>
+                {% for sale in sales_data %}
+                    <option value="{{ sale.week }}">{{ sale.week }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <label class="block text-gray-700">Minimum Demand</label>
+            <input type="number" id="minDemand" placeholder="Min Demand" class="border border-gray-300 rounded px-2 py-1" min="0">
+        </div>
+        <div>
+            <label class="block text-gray-700">Max Price</label>
+            <input type="number" id="maxPrice" placeholder="Max Price" class="border border-gray-300 rounded px-2 py-1" min="0" step="0.01">
+        </div>
+        <button onclick="applyFilters()" class="bg-blue-500 text-white px-4 py-2 rounded">Apply Filters</button>
+        <button onclick="resetFilters()" class="bg-gray-500 text-white px-4 py-2 rounded">Reset Filters</button>
+    </div>
+
+    <!-- Data Table -->
+    <div class="overflow-x-auto mt-4">
+        <table class="min-w-full bg-white border border-gray-300">
+            <thead class="bg-gray-200 text-gray-600 uppercase text-xs leading-normal">
+                <tr>
+                    {% for column in ["week", "ID", "Name", "Demand", "Discount_Percentage", "Price", "Total_Revenue", "Inventory_Level", "Reorder_Point", "Lead_Time_Days", "Supplier_Name", "Last_Restock_Date"] %}
+                        <th class="py-3 px-6 text-left cursor-pointer" onclick="sortTable('{{ column }}')">
+                            {{ column.replace('_', ' ') }}
+                        </th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody id="salesTableBody" class="text-gray-700 text-sm">
+                {% for sale in sales_data %}
+                    <tr>
+                        <td class="py-3 px-6">{{ sale.week }}</td>
+                        <td class="py-3 px-6">{{ sale.ID }}</td>
+                        <td class="py-3 px-6">{{ sale.Name }}</td>
+                        <td class="py-3 px-6">{{ sale.Demand }}</td>
+                        <td class="py-3 px-6">{{ sale.Discount_Percentage }}</td>
+                        <td class="py-3 px-6">{{ sale.Price }}</td>
+                        <td class="py-3 px-6">{{ sale.Total_Revenue }}</td>
+                        <td class="py-3 px-6">{{ sale.Inventory_Level }}</td>
+                        <td class="py-3 px-6">{{ sale.Reorder_Point }}</td>
+                        <td class="py-3 px-6">{{ sale.Lead_Time_Days }}</td>
+                        <td class="py-3 px-6">{{ sale.Supplier_Name }}</td>
+                        <td class="py-3 px-6">{{ sale.Last_Restock_Date }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    const salesData = {{ sales_data | tojson }};
+    let currentSortColumn = null;
+    let currentSortDirection = 'asc';
+
+    function applyFilters() {
+        const selectedWeek = document.getElementById('weekFilter').value.trim();
+        const minDemand = parseInt(document.getElementById('minDemand').value) || 0;
+        const maxPrice = parseFloat(document.getElementById('maxPrice').value) || Infinity;
+
+        const filteredData = salesData.filter(item => {
+            const weekMatch = selectedWeek ? item.week.toString() === selectedWeek : true;  // Ensure week is compared as string
+            const demandMatch = item.Demand >= minDemand;
+            const priceMatch = item.Price <= maxPrice;
+
+            return weekMatch && demandMatch && priceMatch;
+        });
+
+        renderTable(filteredData);
+    }
+
+    function renderTable(data) {
+        const tableBody = document.getElementById('salesTableBody');
+        tableBody.innerHTML = ''; // Clear current table content
+        if (data.length === 0) {
+            tableBody.innerHTML = '<tr><td colspan="12" class="py-3 px-6 text-center">No data available for the selected filters.</td></tr>';
+            return;
+        }
+        data.forEach(item => {
+            const row = `
+                <tr>
+                    <td class="py-3 px-6">${item.week}</td>
+                    <td class="py-3 px-6">${item.ID}</td>
+                    <td class="py-3 px-6">${item.Name}</td>
+                    <td class="py-3 px-6">${item.Demand}</td>
+                    <td class="py-3 px-6">${item.Discount_Percentage}</td>
+                    <td class="py-3 px-6">${item.Price}</td>
+                    <td class="py-3 px-6">${item.Total_Revenue}</td>
+                    <td class="py-3 px-6">${item.Inventory_Level}</td>
+                    <td class="py-3 px-6">${item.Reorder_Point}</td>
+                    <td class="py-3 px-6">${item.Lead_Time_Days}</td>
+                    <td class="py-3 px-6">${item.Supplier_Name}</td>
+                    <td class="py-3 px-6">${item.Last_Restock_Date}</td>
+                </tr>
+            `;
+            tableBody.insertAdjacentHTML('beforeend', row);
+        });
+    }
+
+    function resetFilters() {
+        document.getElementById('weekFilter').value = '';
+        document.getElementById('minDemand').value = '';
+        document.getElementById('maxPrice').value = '';
+
+        renderTable(salesData); // Reset the table to the original data
+    }
+</script>
+
+{% endblock %}

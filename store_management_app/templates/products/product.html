@@ -1,0 +1,268 @@
+{% extends "layout/layout.html" %} {% block body %}
+
+<!-- Primary Category -->
+<section class="text-foreground font-sans flex justify-center">
+    <div class="scroll-wrapper flex items-center w-full">
+        <div class="scroll-container overflow-x-auto snap-x flex gap-4 whitespace-nowrap">
+            {% for category in AllPrimaryCategory %}
+            <a href="{{ url_for('product_category_details', category=category) }}" class="inline-flex">
+                <button class="scroll-snap-align-start cat category-button bg-card p-4 rounded-lg shadow-lg min-w-[200px] flex flex-col items-center justify-center text-center h-full min-h-[60px]">
+                    {{ category }}
+                </button>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Hero -->
+<h1 class="text-4xl font-bold mb-4 text-center">Trending Products</h1>
+<section class="hero bg-zinc-200 relative">
+    <div class="hero-container relative w-full h-[30vh] flex justify-center items-center overflow-hidden">
+        <div class="hero-slides absolute w-full h-full flex transition-transform duration-1000">
+            {% for product in products_df %}
+            <div
+                class="hero-slide absolute w-full h-full flex justify-center items-center space-x-4 opacity-0 transition-opacity duration-1000">
+                <div class="hero-content bg-white p-6 rounded-lg shadow-lg max-w-md">
+                    <h2 class="text-xl font-bold mb-2"> {{product['Name'] }}</h2>
+                    {% if product and product.get('Price') and product.get('Discount') and product['Price']|trim
+                    != '' and product['Discount']|trim != '' %}
+                    <div class="price-container">
+                        <p class="disc-percent">Discount: ${{ product['Discount'] }}</p>
+                        <p class="font-bold text-primary">Price: ${{ product['Price'] }}</p>
+                    </div>
+                    {% elif product and product.get('Price') and product['Price']|trim != '' %}
+                    <div class="price-container">
+                        <p class="font-bold text-primary">Price: ${{ product['Price'] }}</p>
+                    </div>
+                    {% elif product and product.get('Discount') and product['Discount']|trim != '' %}
+                    <div class="price-container">
+                        <p class="disc-percent">Discount: ${{ product['Discount'] }}</p>
+                    </div>
+                    {% endif %}
+                </div>
+                <img src="{{ url_for('static', filename='assets/images/' ~ product['Image_Location']) }}"
+                    alt="{{ product['Primary_Category_Alt'] }}"
+                    class="hero-image rounded-lg shadow-lg w-[200px] h-[200px]" />
+                <a>
+                    <h2 class="text-xl font-bold mb-2">{{ product['Primary_Category_Alt'] }}</h2>
+                    <p class="text-muted-foreground">{{ product['Tagline'] }}</p>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        <!-- Navigation controls -->
+        <button
+            class="prev-slide absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full">
+            &#10094;
+        </button>
+        <button
+            class="next-slide absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full">
+            &#10095;
+        </button>
+</section>
+
+<!-- Products -->
+<div id="products-container">
+    {% for category in FilteredPrimaryCategory if category != "All" %}
+    <div class="category-section" data-category="{{ category }}">
+        <h2 class="ctg text-4xl font-bold mb-4">{{ category }}</h2>
+        <section class="text-foreground font-sans overflow-hidden">
+            <ul class="results-base grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {% for product in products_df if product['Primary_Category_Alt'] == category %}
+                {% if product and product['Image_Location'] %}
+                <li class="product-base">
+                    <div class="card p-2 rounded-lg shadow-lg w-full">
+                        <div class="relative product-container">
+                            <a href="{{ url_for('product_details', product_id=product['ID']) }}">
+                                <img id="zoomableImage" class="card-img-top rounded-lg mb-4 shadow-md transform transition-transform duration-300 hover:scale-105"
+                                    src="{{ url_for('static', filename='assets/images/' ~ product['Image_Location']) }}"
+                                    alt="{{ product['Primary_Category_Alt'] }}"
+                                    style="height: 280px; width: 210px; background: rgb(229, 241, 255); position: relative;" />
+                            </a>
+                            <h3 class="prod-title"><b>{{ product['Name'] }}</b></h3>
+                            <h4 class="prod-title text-foreground">{{ product['Tagline'] }}</h4>
+                            <div class="text-muted-foreground mb-2 break-words description">
+                                {{ product['Description'] }}
+                            </div>
+                            <a href="{{ url_for('product_details', product_id=product['ID']) }}" class="read-more">Read More</a>
+                            <div class="spacer"></div>
+                            <a href="https://wa.me/{{ whatsapp }}?text=Hello,%20I'm%20interested%20in%20the%20following%20product:%0A%0A*Product%20Name:*%20{{ product['Name'] }}%0A*Tagline:*%20{{ product['Tagline'] }}%0A*Description:*%20{{ product['Description'] }}%0A*Discount:*%20${{ product['Discount'] }}%0A*Price:*%20${{ product['Price'] }}%0A%0A%20Please%20provide%20more%20information.%0A"
+                                target="_blank" class="contact-button">
+                                <i class="fab fa-whatsapp"></i> Ask for more info
+                            </a>
+                            {% if product and product.get('Price') and product.get('Discount') and product['Price']|trim != '' and product['Discount']|trim != '' %}
+                            <div class="price-container">
+                                <p class="disc-percent">Discount: ${{ product['Discount'] }}</p>
+                                <p class="font-bold text-primary">Price: ${{ product['Price'] }}</p>
+                            </div>
+                            {% elif product and product.get('Price') and product['Price']|trim != '' %}
+                            <div class="price-container">
+                                <p class="font-bold text-primary">Price: ${{ product['Price'] }}</p>
+                            </div>
+                            {% elif product and product.get('Discount') and product['Discount']|trim != '' %}
+                            <div class="price-container">
+                                <p class="disc-percent">Discount: ${{ product['Discount'] }}</p>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </section>
+    </div>
+    {% endfor %}
+</div>
+
+<style>
+    .description {
+        max-height: 4.5em;
+        /* Adjust based on the line-height */
+        overflow: hidden;
+        position: relative;
+    }
+
+    .read-more {
+        display: block;
+        color: #007bff;
+        /* Adjust to your theme color */
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+    .description.expanded {
+        max-height: none;
+    }
+
+    .zoomable {
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .zoomable.zoomed {
+        transform: scale(1.5);
+        /* Adjust scale as needed */
+        z-index: 1000;
+    }
+</style>
+
+<script>
+    document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('click', function () {
+            const detailsOverlay = this.querySelector('.details-overlay');
+            detailsOverlay.classList.toggle('visible');
+        });
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+        const slides = document.querySelectorAll(".hero-slide");
+        let currentSlideIndex = 0;
+        slides[currentSlideIndex].style.opacity = 1;
+
+        setInterval(() => {
+            slides[currentSlideIndex].style.opacity = 0;
+            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+            slides[currentSlideIndex].style.opacity = 1;
+        }, 4000);
+    });
+
+    function filterTable(category, button) {
+        const sections = document.querySelectorAll('.category-section');
+        const buttons = document.querySelectorAll('.category-button');
+
+        if (!category || !button) {
+            console.error('Invalid arguments: category and button must be provided');
+            return;
+        }
+
+        sections.forEach(section => {
+            const sectionCategory = section.getAttribute('data-category');
+            if (category === 'All' || (sectionCategory && sectionCategory === category)) {
+                section.style.display = 'block';
+            } else {
+                section.style.display = 'none';
+            }
+        });
+
+        if (buttons.length > 0) {
+            buttons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+        } else {
+            console.error('No category buttons found');
+        }
+    }
+    // hero slide
+    document.addEventListener('DOMContentLoaded', function () {
+        const slides = document.querySelectorAll('.hero-slide');
+        const prevButton = document.querySelector('.prev-slide');
+        const nextButton = document.querySelector('.next-slide');
+        const slidesContainer = document.querySelector('.hero-slides');
+        let currentSlide = 0;
+        let slideInterval;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.transform = `translateX(${(i - index) * 100}%)`;
+                slide.style.opacity = i === index ? '1' : '0';
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function startSlideShow() {
+            slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+        }
+
+        function stopSlideShow() {
+            clearInterval(slideInterval);
+        }
+
+        prevButton.addEventListener('click', () => {
+            stopSlideShow();
+            prevSlide();
+            startSlideShow();
+        });
+
+        nextButton.addEventListener('click', () => {
+            stopSlideShow();
+            nextSlide();
+            startSlideShow();
+        });
+
+        // slidesContainer.addEventListener('mouseover', stopSlideShow);
+        // slidesContainer.addEventListener('mouseout', startSlideShow);
+
+        // Initialize with the first slide and start auto-slideshow
+        showSlide(currentSlide);
+        startSlideShow();
+    });
+    document.addEventListener('DOMContentLoaded', function () {
+        const readMoreLinks = document.querySelectorAll('.read-more');
+
+        readMoreLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const description = this.previousElementSibling;
+                if (description.classList.contains('expanded')) {
+                    description.classList.remove('expanded');
+                    this.textContent = 'Read More';
+                } else {
+                    description.classList.add('expanded');
+                    this.textContent = 'Read Less';
+                }
+            });
+        });
+    });
+
+</script>
+
+{% endblock %}

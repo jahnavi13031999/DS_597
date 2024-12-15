@@ -1,0 +1,170 @@
+{% extends "layout/layout.html" %} {% block body %}
+
+<section class="text-foreground font-sans flex justify-center">
+    <div class="scroll-wrapper flex items-center w-full">
+        <div class="scroll-container overflow-x-auto snap-x flex gap-4 whitespace-nowrap">
+            {% for category in PrimaryCategory %}
+            <a href="{{ url_for('product_category_details', category=category) }}" class="inline-flex">
+                <button
+                    class="scroll-snap-align-start cat category-button bg-card p-4 rounded-lg shadow-lg min-w-[200px] flex flex-col items-center justify-center">
+                    {{ category }}
+                </button>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- product details -->
+<section class="container mx-auto py-8">
+    <div class="flex items-center space-x-8">
+        <!-- Product Image -->
+        <img src="{{ url_for('static', filename='assets/images/' ~ product['Image_Location']) }}"
+        alt="Main Product Image" id="main-image"
+        class="border-3 rounded-lg h-auto max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg bg-gray-200 transition-transform transform hover:scale-105">
+    
+
+        <!-- Product Details -->
+        <div class="flex-1">
+            <h3 class="text-3xl font-bold mb-2">{{ product['Name'] }}</h3>
+            <h4 class="text-xl text-gray-600 mb-4">{{ product['Tagline'] }}</h4>
+
+            {% if product and product.get('Price') and product.get('Discount') and product['Price']|trim != '' and product['Discount']|trim != '' %}
+            <div class="mt-4 mb-6">
+                <p class="text-lg text-red-500 font-medium">Discount: ${{ product['Discount'] }}</p>
+                <p class="text-2xl font-bold text-primary">Price: ${{ product['Price'] }}</p>
+            </div>
+            {% elif product and product.get('Price') and product['Price']|trim != '' %}
+            <div class="mt-4 mb-6">
+                <p class="text-2xl font-bold text-primary">Price: ${{ product['Price'] }}</p>
+            </div>
+            {% elif product and product.get('Discount') and product['Discount']|trim != '' %}
+            <div class="mt-4 mb-6">
+                <p class="text-lg text-red-500 font-medium">Discount: ${{ product['Discount'] }}</p>
+            </div>
+            {% endif %}
+
+            <div>
+                <h2 class="text-2xl font-semibold mb-2">Product Details</h2>
+                <p class="text-gray-700">{{ product['Description'] }}</p>
+                <div class="spacer"></div>
+                            <a href="{{whatsapp}}?text=Hello,%20I'm%20interested%20in%20the%20following%20product:%0A%0A*Product%20Name:*%20{{ product['Name'] }}%0A*Tagline:*%20{{ product['Tagline'] }}%0A*Description:*%20{{ product['Description'] }}%0A*Discount:*%20${{ product['Discount'] }}%0A*Price:*%20${{ product['Price'] }}%0A%0A%20Please%20provide%20more%20information.%0A"
+                                target="_blank" class="contact-button">
+                                <i class="fab fa-whatsapp"></i> Ask for more info
+                            </a>
+            </div>
+        </div>
+    </div>
+    
+    </div>
+</section>
+
+
+<section class="container mx-auto py-8">
+    <h2 class="text-4xl font-bold mb-8 text-center">Similar Styles</h2>
+    <div id="products-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {% for product in products_df %}
+        {% if product and product['Image_Location'] %}
+        <li class="product-base">
+            <div class="card p-2 rounded-lg shadow-lg w-full">
+                <div class="relative product-container">
+                    <a href="{{ url_for('product_details', product_id=product['ID']) }}">
+                        <img id="zoomableImage"
+                            class="card-img-top rounded-lg mb-4 shadow-md transform transition-transform duration-300 hover:scale-105"
+                            src="{{ url_for('static', filename='assets/images/' ~ product['Image_Location']) }}"
+                            alt="{{ product['Primary_Category_Alt'] }}"
+                            style="height: 280px; width: 210px; background: rgb(229, 241, 255); position: relative;" />
+                    </a>
+                    <h3 class="prod-title"><b>{{ product['Name'] }}</b></h3>
+                    <h4 class="prod-title text-foreground">{{ product['Tagline'] }}</h4>
+                    <div class="text-muted-foreground mb-2 break-words description">
+                        {{ product['Description'] }}
+                    </div>
+                    <a href="#" class="read-more">Read More</a>
+                    <div class="spacer"></div>
+                    <a href="{{whatsapp}}?text=Hello,%20I'm%20interested%20in%20the%20following%20product:%0A%0A*Product%20Name:*%20{{ product['Name'] }}%0A*Tagline:*%20{{ product['Tagline'] }}%0A*Description:*%20{{ product['Description'] }}%0A*Discount:*%20${{ product['Discount'] }}%0A*Price:*%20${{ product['Price'] }}%0A%0A%20Please%20provide%20more%20information.%0A"
+                        target="_blank" class="contact-button">
+                        <i class="fab fa-whatsapp"></i> Ask for more info
+                    </a>
+                    {% if product and product.get('Price') and product.get('Discount') and product['Price']|trim
+                    != '' and product['Discount']|trim != '' %}
+                    <div class="price-container">
+                        <p class="disc-percent">Discount: ${{ product['Discount'] }}</p>
+                        <p class="font-bold text-primary">Price: ${{ product['Price'] }}</p>
+                    </div>
+                    {% elif product and product.get('Price') and product['Price']|trim != '' %}
+                    <div class="price-container">
+                        <p class="font-bold text-primary">Price: ${{ product['Price'] }}</p>
+                    </div>
+                    {% elif product and product.get('Discount') and product['Discount']|trim != '' %}
+                    <div class="price-container">
+                        <p class="disc-percent">Discount: ${{ product['Discount'] }}</p>
+                    </div>
+                    {% endif %}
+
+                </div>
+            </div>
+        </li>
+        {% endif %}
+        {% endfor %}
+    </div>
+</section>
+<style>
+    .description {
+        max-height: 4.5em;
+        /* Adjust based on the line-height */
+        overflow: hidden;
+        position: relative;
+    }
+
+    .read-more {
+        display: block;
+        color: #007bff;
+        /* Adjust to your theme color */
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+    .description.expanded {
+        max-height: none;
+    }
+</style>
+<script>
+    document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('click', function () {
+            const detailsOverlay = this.querySelector('.details-overlay');
+            detailsOverlay.classList.toggle('visible');
+        });
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+        const slides = document.querySelectorAll(".hero-slide");
+        let currentSlideIndex = 0;
+        slides[currentSlideIndex].style.opacity = 1;
+
+        setInterval(() => {
+            slides[currentSlideIndex].style.opacity = 0;
+            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+            slides[currentSlideIndex].style.opacity = 1;
+        }, 4000);
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const readMoreLinks = document.querySelectorAll('.read-more');
+
+        readMoreLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const description = this.previousElementSibling;
+                if (description.classList.contains('expanded')) {
+                    description.classList.remove('expanded');
+                    this.textContent = 'Read More';
+                } else {
+                    description.classList.add('expanded');
+                    this.textContent = 'Read Less';
+                }
+            });
+        });
+    });
+
+</script>
+{% endblock %}

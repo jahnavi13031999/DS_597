@@ -1,0 +1,1001 @@
+week,ID,Demand,Discount_Percentage,lag_1,rolling_mean,upload_date_time,Primary_Category_Alt,Name,price_range_description,Price,Description,Status,Inventory_Level,Reorder_Point,Lead_Time_Days,Supplier,Supplier_Name,Last_Restock_Date,Total_Revenue
+14,2860,45,45.4,,,2023-04-06 01:14:53.525169,Men,Dress,Premium,431.87,Dress in Men category,Out of Stock,298,62,12,Supplier_6,S&S Activewear,2023-02-22 01:14:53.525169,10611.67
+52,7463,122,20.5,45.0,,2022-12-29 01:14:53.525169,Kids,Shorts,Medium,88.44,Shorts in Kids category,Out of Stock,259,15,8,Supplier_1,FashionGo,2022-11-09 01:14:53.525169,8577.96
+32,9367,26,8.46,122.0,,2024-08-05 01:14:53.525169,Shoes,Shorts,Premium,471.14,Shorts in Shoes category,Available,168,73,11,Supplier_5,Royal Apparel,2024-08-01 01:14:53.525169,11213.45
+22,8852,109,12.5,26.0,75.5,2022-06-04 01:14:53.525169,Shoes,Shorts,Medium,83.87,Shorts in Shoes category,Out of Stock,109,27,5,Supplier_4,Bella+Canvas,2022-05-27 01:14:53.525169,7999.33
+11,9910,38,32.03,109.0,73.75,2024-03-15 01:14:53.525169,Kids,Coat,Low,27.39,Coat in Kids category,Out of Stock,239,68,12,Supplier_4,Bella+Canvas,2024-03-13 01:14:53.525169,707.47
+10,1081,110,13.95,38.0,70.75,2023-03-09 01:14:53.525169,Accessories,Dress,Low,17.27,Dress in Accessories category,Available,260,20,5,Supplier_7,Blankstyle,2023-01-21 01:14:53.525169,1634.85
+44,7680,4,39.08,110.0,65.25,2022-11-06 01:14:53.525169,Accessories,Bags,High,181.87,Bags in Accessories category,Out of Stock,30,77,3,Supplier_10,JiffyShirts,2022-09-12 01:14:53.525169,443.2
+22,5945,114,39.56,4.0,66.5,2023-06-02 01:14:53.525169,Kids,Jacket,Medium,89.81,Jacket in Kids category,Out of Stock,144,67,11,Supplier_7,Blankstyle,2023-04-09 01:14:53.525169,6188.58
+25,4155,76,20.44,114.0,76.0,2022-06-24 01:14:53.525169,Accessories,Jeans,Premium,411.56,Jeans in Accessories category,Available,157,49,13,Supplier_4,Bella+Canvas,2022-04-15 01:14:53.525169,24886.4
+45,1634,31,15.92,76.0,56.25,2020-11-07 01:14:53.525169,Shoes,Coat,Premium,484.31,Coat in Shoes category,Out of Stock,31,5,12,Supplier_2,Apparel Distribution Center,2020-09-24 01:14:53.525169,12623.03
+37,1545,89,33.9,31.0,77.5,2022-09-17 01:14:53.525169,Women,Shorts,Premium,217.57,Shorts in Women category,Available,139,67,9,Supplier_9,Wholesale Fashion Square,2022-08-06 01:14:53.525169,12799.69
+33,8315,41,8.7,89.0,59.25,2022-08-19 01:14:53.525169,Women,Dress,Premium,302.11,Dress in Women category,Out of Stock,175,63,7,Supplier_10,JiffyShirts,2022-07-11 01:14:53.525169,11308.96
+27,6690,15,30.5,41.0,44.0,2021-07-11 01:14:53.525169,Men,Bags,Low,6.55,Bags in Men category,Available,243,73,12,Supplier_2,Apparel Distribution Center,2021-04-18 01:14:53.525169,68.28
+45,8022,27,14.34,15.0,43.0,2022-11-13 01:14:53.525169,Kids,Coat,Low,27.34,Coat in Kids category,Available,64,71,14,Supplier_6,S&S Activewear,2022-09-01 01:14:53.525169,632.24
+15,2964,84,41.31,27.0,41.75,2021-04-15 01:14:53.525169,Shoes,Bags,High,109.07,Bags in Shoes category,Available,192,48,4,Supplier_1,FashionGo,2021-02-19 01:14:53.525169,5377.01
+24,1285,65,9.66,84.0,47.75,2024-06-11 01:14:53.525169,Kids,Jeans,Premium,274.14,Jeans in Kids category,Out of Stock,65,36,3,Supplier_7,Blankstyle,2024-04-16 01:14:53.525169,16097.17
+52,5871,24,10.35,65.0,50.0,2023-12-27 01:14:53.525169,Shoes,Shorts,Medium,90.03,Shorts in Shoes category,Out of Stock,280,56,12,Supplier_10,JiffyShirts,2023-10-07 01:14:53.525169,1936.94
+7,6485,19,41.3,24.0,48.0,2022-02-20 01:14:53.525169,Kids,Hat,Low,11.79,Hat in Kids category,Available,29,70,7,Supplier_7,Blankstyle,2021-12-25 01:14:53.525169,131.46
+32,7016,43,37.21,19.0,37.75,2024-08-07 01:14:53.525169,Kids,Sweater,Medium,69.61,Sweater in Kids category,Out of Stock,261,72,4,Supplier_7,Blankstyle,2024-05-12 01:14:53.525169,1879.51
+10,4867,21,43.1,43.0,26.75,2024-03-07 01:14:53.525169,Kids,Jeans,High,150.57,Jeans in Kids category,Out of Stock,157,37,3,Supplier_7,Blankstyle,2023-12-24 01:14:53.525169,1799.05
+15,2710,24,37.51,21.0,26.75,2023-04-12 01:14:53.525169,Kids,Sneakers,High,122.02,Sneakers in Kids category,Available,295,69,3,Supplier_5,Royal Apparel,2023-03-23 01:14:53.525169,1830.07
+3,7241,76,26.43,24.0,41.0,2022-01-22 01:14:53.525169,Men,Jacket,High,115.85,Jacket in Men category,Available,280,78,6,Supplier_8,TSC Apparel,2021-11-25 01:14:53.525169,6477.82
+27,7602,19,7.45,76.0,35.0,2021-07-07 01:14:53.525169,Women,Shorts,Premium,470.77,Shorts in Women category,Out of Stock,19,7,14,Supplier_4,Bella+Canvas,2021-05-03 01:14:53.525169,8278.02
+49,6252,124,5.98,19.0,60.75,2023-12-07 01:14:53.525169,Kids,Sweater,High,198.48,Sweater in Kids category,Available,149,9,13,Supplier_4,Bella+Canvas,2023-11-14 01:14:53.525169,23138.4
+29,7971,152,46.56,124.0,92.75,2024-07-19 01:14:53.525169,Accessories,Shirt,High,100.27,Shirt in Accessories category,Out of Stock,261,17,9,Supplier_7,Blankstyle,2024-04-21 01:14:53.525169,8144.77
+45,1542,13,27.3,152.0,77.0,2022-11-07 01:14:53.525169,Men,Sneakers,High,196.59,Sneakers in Men category,Available,250,20,14,Supplier_3,AlphaBroder,2022-11-07 01:14:53.525169,1857.87
+25,7255,120,14.69,13.0,102.25,2023-06-19 01:14:53.525169,Men,Jacket,High,192.2,Jacket in Men category,Available,204,74,13,Supplier_2,Apparel Distribution Center,2023-05-30 01:14:53.525169,19676.2
+40,4958,33,47.99,120.0,79.5,2024-10-03 01:14:53.525169,Women,Jacket,Medium,92.98,Jacket in Women category,Available,110,46,6,Supplier_7,Blankstyle,2024-07-29 01:14:53.525169,1595.85
+17,9867,57,43.0,33.0,55.75,2021-04-27 01:14:53.525169,Men,Bags,Premium,401.02,Bags in Men category,Available,233,19,9,Supplier_6,S&S Activewear,2021-03-01 01:14:53.525169,13027.97
+27,1027,46,24.07,57.0,64.0,2022-07-10 01:14:53.525169,Shoes,Jacket,High,159.42,Jacket in Shoes category,Available,46,29,12,Supplier_5,Royal Apparel,2022-07-03 01:14:53.525169,5568.24
+10,3116,79,6.52,46.0,53.75,2022-03-09 01:14:53.525169,Women,Bags,Low,21.51,Bags in Women category,Out of Stock,175,71,12,Supplier_9,Wholesale Fashion Square,2021-12-23 01:14:53.525169,1588.49
+45,4654,52,17.77,79.0,58.5,2022-11-09 01:14:53.525169,Accessories,Sneakers,High,133.81,Sneakers in Accessories category,Available,107,32,1,Supplier_3,AlphaBroder,2022-11-01 01:14:53.525169,5721.38
+52,8014,67,23.82,52.0,61.0,2022-12-29 01:14:53.525169,Kids,Bags,Medium,46.84,Bags in Kids category,Out of Stock,203,72,4,Supplier_9,Wholesale Fashion Square,2022-10-17 01:14:53.525169,2391.1
+3,9757,77,8.72,67.0,68.75,2022-01-19 01:14:53.525169,Men,Dress,High,158.54,Dress in Men category,Available,103,80,6,Supplier_3,AlphaBroder,2021-12-20 01:14:53.525169,11143.31
+25,9091,76,24.41,77.0,68.0,2023-06-23 01:14:53.525169,Accessories,Jeans,High,194.74,Jeans in Accessories category,Out of Stock,92,62,7,Supplier_9,Wholesale Fashion Square,2023-06-23 01:14:53.525169,11187.49
+16,5624,44,6.0,76.0,66.0,2024-04-20 01:14:53.525169,Women,Jeans,Low,10.11,Jeans in Women category,Available,260,49,10,Supplier_5,Royal Apparel,2024-02-15 01:14:53.525169,418.12
+30,4127,10,11.03,44.0,51.75,2021-07-26 01:14:53.525169,Accessories,Coat,Medium,86.67,Coat in Accessories category,Out of Stock,10,68,5,Supplier_3,AlphaBroder,2021-07-06 01:14:53.525169,771.13
+9,1469,74,35.88,10.0,51.0,2023-02-28 01:14:53.525169,Women,Jacket,Medium,72.4,Jacket in Women category,Out of Stock,74,15,10,Supplier_2,Apparel Distribution Center,2022-12-01 01:14:53.525169,3435.6
+39,7167,120,27.82,74.0,62.0,2022-09-28 01:14:53.525169,Men,Coat,Low,20.79,Coat in Men category,Available,279,9,2,Supplier_1,FashionGo,2022-08-03 01:14:53.525169,1801.12
+46,2184,138,24.79,120.0,85.5,2021-11-15 01:14:53.525169,Men,Dress,Medium,79.81,Dress in Men category,Available,259,34,11,Supplier_8,TSC Apparel,2021-08-21 01:14:53.525169,8284.23
+13,1973,130,26.76,138.0,115.5,2022-03-28 01:14:53.525169,Shoes,Shirt,Low,8.78,Shirt in Shoes category,Out of Stock,216,67,6,Supplier_9,Wholesale Fashion Square,2022-02-22 01:14:53.525169,836.27
+36,3097,25,30.22,130.0,103.25,2024-09-05 01:14:53.525169,Kids,Shirt,High,150.15,Shirt in Kids category,Out of Stock,115,28,12,Supplier_2,Apparel Distribution Center,2024-08-21 01:14:53.525169,2619.42
+37,9721,141,18.51,25.0,108.5,2024-09-10 01:14:53.525169,Men,Shorts,High,104.31,Shorts in Men category,Out of Stock,282,33,1,Supplier_2,Apparel Distribution Center,2024-06-27 01:14:53.525169,11984.36
+32,4825,70,5.4,141.0,91.5,2023-08-11 01:14:53.525169,Men,Sneakers,Medium,79.05,Sneakers in Men category,Available,205,44,1,Supplier_1,FashionGo,2023-06-15 01:14:53.525169,5234.88
+51,2616,78,19.39,70.0,78.5,2023-12-20 01:14:53.525169,Kids,Sweater,Premium,279.94,Sweater in Kids category,Out of Stock,263,71,9,Supplier_5,Royal Apparel,2023-09-28 01:14:53.525169,17601.6
+33,8162,7,45.92,78.0,74.0,2023-08-20 01:14:53.525169,Accessories,Coat,Medium,43.45,Coat in Accessories category,Out of Stock,58,69,6,Supplier_8,TSC Apparel,2023-06-26 01:14:53.525169,164.47
+47,9545,3,34.03,7.0,39.5,2021-11-28 01:14:53.525169,Accessories,Coat,Premium,380.2,Coat in Accessories category,Out of Stock,49,68,1,Supplier_7,Blankstyle,2021-09-27 01:14:53.525169,752.46
+10,6488,37,18.41,3.0,31.25,2022-03-07 01:14:53.525169,Women,Shorts,Low,9.06,Shorts in Women category,Available,291,43,3,Supplier_9,Wholesale Fashion Square,2022-02-15 01:14:53.525169,273.38
+21,6940,21,25.86,37.0,17.0,2023-05-23 01:14:53.525169,Accessories,Coat,High,127.74,Coat in Accessories category,Out of Stock,46,75,12,Supplier_4,Bella+Canvas,2023-04-18 01:14:53.525169,1988.7
+27,6526,137,42.02,21.0,49.5,2021-07-10 01:14:53.525169,Shoes,Shorts,Premium,341.7,Shorts in Shoes category,Out of Stock,257,67,5,Supplier_6,S&S Activewear,2021-05-29 01:14:53.525169,27144.01
+43,5382,47,49.1,137.0,60.5,2024-10-26 01:14:53.525169,Kids,Shirt,High,183.69,Shirt in Kids category,Out of Stock,219,14,12,Supplier_10,JiffyShirts,2024-09-29 01:14:53.525169,4394.51
+38,3361,94,17.26,47.0,74.75,2023-09-19 01:14:53.525169,Men,Jeans,Low,8.96,Jeans in Men category,Out of Stock,234,23,5,Supplier_6,S&S Activewear,2023-08-16 01:14:53.525169,697.01
+40,7046,55,12.39,94.0,83.25,2021-10-08 01:14:53.525169,Kids,Sweater,Premium,379.74,Sweater in Kids category,Out of Stock,193,77,4,Supplier_6,S&S Activewear,2021-09-15 01:14:53.525169,18297.22
+18,1742,46,38.74,55.0,60.5,2022-05-08 01:14:53.525169,Women,Shorts,Low,17.51,Shorts in Women category,Out of Stock,77,68,1,Supplier_4,Bella+Canvas,2022-03-08 01:14:53.525169,493.35
+25,4312,79,8.73,46.0,68.5,2024-06-22 01:14:53.525169,Men,Coat,High,105.29,Coat in Men category,Out of Stock,119,24,4,Supplier_7,Blankstyle,2024-04-04 01:14:53.525169,7591.7
+32,1945,44,40.91,79.0,56.0,2021-08-15 01:14:53.526160,Shoes,Sneakers,High,163.69,Sneakers in Shoes category,Available,44,38,9,Supplier_6,S&S Activewear,2021-07-10 01:14:53.526160,4256.28
+29,3227,17,44.96,44.0,46.5,2021-07-22 01:14:53.526160,Kids,Jacket,Medium,73.29,Jacket in Kids category,Out of Stock,63,64,4,Supplier_4,Bella+Canvas,2021-05-29 01:14:53.526160,685.78
+34,3545,126,36.64,17.0,66.5,2023-08-24 01:14:53.526160,Men,Shirt,Low,11.93,Shirt in Men category,Out of Stock,170,6,11,Supplier_4,Bella+Canvas,2023-06-30 01:14:53.526160,952.46
+22,2471,149,31.14,126.0,84.0,2024-05-29 01:14:53.526160,Men,Sneakers,High,137.9,Sneakers in Men category,Available,181,62,9,Supplier_1,FashionGo,2024-04-27 01:14:53.526160,14149.36
+10,4149,89,48.23,149.0,95.25,2024-03-07 01:14:53.526160,Women,Shorts,Low,12.39,Shorts in Women category,Available,193,35,13,Supplier_5,Royal Apparel,2023-12-17 01:14:53.526160,570.97
+27,1596,62,39.57,89.0,106.5,2023-07-06 01:14:53.526160,Women,Shorts,Low,12.24,Shorts in Women category,Out of Stock,94,48,3,Supplier_4,Bella+Canvas,2023-06-21 01:14:53.526160,458.59
+15,6767,80,24.88,62.0,95.0,2023-04-11 01:14:53.526160,Men,Coat,High,136.43,Coat in Men category,Available,284,26,15,Supplier_5,Royal Apparel,2023-03-03 01:14:53.526160,8198.74
+6,9677,65,44.92,80.0,74.0,2021-02-08 01:14:53.526160,Shoes,Dress,Premium,399.51,Dress in Shoes category,Out of Stock,283,19,9,Supplier_9,Wholesale Fashion Square,2020-11-29 01:14:53.526160,14303.99
+44,8392,31,19.98,65.0,59.5,2022-11-05 01:14:53.526160,Women,Coat,High,110.93,Coat in Women category,Available,266,35,8,Supplier_3,AlphaBroder,2022-09-02 01:14:53.526160,2751.63
+31,2113,90,37.95,31.0,66.5,2024-07-29 01:14:53.526160,Shoes,Sneakers,Premium,408.86,Sneakers in Shoes category,Available,226,36,4,Supplier_6,S&S Activewear,2024-06-05 01:14:53.526160,22831.24
+41,2113,11,8.54,90.0,49.25,2022-10-15 01:14:53.526160,Women,Shirt,Low,27.94,Shirt in Women category,Out of Stock,22,39,15,Supplier_3,AlphaBroder,2022-09-27 01:14:53.526160,281.07
+46,2539,142,7.43,11.0,68.5,2020-11-13 01:14:53.526160,Shoes,Shorts,Medium,36.95,Shorts in Shoes category,Out of Stock,142,24,3,Supplier_1,FashionGo,2020-09-29 01:14:53.526160,4857.0
+6,2951,116,27.96,142.0,89.75,2022-02-11 01:14:53.526160,Women,Jeans,Medium,30.47,Jeans in Women category,Out of Stock,233,56,6,Supplier_9,Wholesale Fashion Square,2021-12-05 01:14:53.526160,2546.81
+48,3067,54,19.02,116.0,80.75,2022-12-04 01:14:53.526160,Shoes,Shirt,Low,17.69,Shirt in Shoes category,Out of Stock,54,36,12,Supplier_3,AlphaBroder,2022-11-25 01:14:53.526160,773.47
+22,6430,39,29.73,54.0,87.75,2024-05-29 01:14:53.526160,Women,Shorts,High,169.67,Shorts in Women category,Available,39,17,4,Supplier_8,TSC Apparel,2024-03-03 01:14:53.526160,4650.13
+39,6125,77,34.09,39.0,71.5,2023-09-29 01:14:53.526160,Shoes,Jeans,High,171.37,Jeans in Shoes category,Out of Stock,218,18,1,Supplier_6,S&S Activewear,2023-08-02 01:14:53.526160,8697.26
+21,3738,47,7.2,77.0,54.25,2022-05-25 01:14:53.526160,Women,Shirt,Medium,84.31,Shirt in Women category,Available,236,15,12,Supplier_6,S&S Activewear,2022-04-09 01:14:53.526160,3676.98
+44,2415,66,40.77,47.0,57.25,2024-10-28 01:14:53.526160,Accessories,Shirt,Low,27.69,Shirt in Accessories category,Out of Stock,229,39,15,Supplier_5,Royal Apparel,2024-10-02 01:14:53.526160,1082.49
+6,9488,14,34.4,66.0,51.0,2024-02-07 01:14:53.526160,Kids,Coat,Low,13.4,Coat in Kids category,Available,163,22,4,Supplier_1,FashionGo,2023-12-07 01:14:53.526160,123.09
+42,7363,0,32.63,14.0,31.75,2024-10-18 01:14:53.526160,Shoes,Coat,Medium,53.36,Coat in Shoes category,Available,11,14,3,Supplier_5,Royal Apparel,2024-08-24 01:14:53.526160,0.0
+46,2062,71,33.76,0.0,37.75,2023-11-14 01:14:53.526160,Men,Dress,High,164.47,Dress in Men category,Available,81,68,3,Supplier_1,FashionGo,2023-11-06 01:14:53.526160,7734.99
+5,5689,75,39.02,71.0,40.0,2024-01-29 01:14:53.526160,Accessories,Hat,Medium,69.63,Hat in Accessories category,Available,152,40,3,Supplier_6,S&S Activewear,2023-11-06 01:14:53.526160,3184.77
+50,7823,79,35.81,75.0,56.25,2020-12-09 01:14:53.526160,Men,Sweater,Low,14.61,Sweater in Men category,Out of Stock,141,7,4,Supplier_8,TSC Apparel,2020-10-18 01:14:53.526160,740.76
+43,5149,89,36.49,79.0,78.5,2024-10-27 01:14:53.526160,Kids,Dress,Medium,96.17,Dress in Kids category,Out of Stock,271,41,15,Supplier_4,Bella+Canvas,2024-10-17 01:14:53.526160,5435.73
+29,9635,95,23.73,89.0,84.5,2022-07-23 01:14:53.526160,Accessories,Shorts,High,129.21,Shorts in Accessories category,Out of Stock,153,27,3,Supplier_9,Wholesale Fashion Square,2022-05-30 01:14:53.526160,9361.18
+31,1816,168,11.97,95.0,107.75,2021-08-07 01:14:53.526160,Kids,Shorts,Medium,79.76,Shorts in Kids category,Out of Stock,168,43,3,Supplier_1,FashionGo,2021-08-03 01:14:53.526160,11794.4
+9,9338,13,45.42,168.0,91.25,2023-02-27 01:14:53.526160,Men,Shirt,Medium,95.51,Shirt in Men category,Out of Stock,54,39,13,Supplier_7,Blankstyle,2023-02-10 01:14:53.526160,677.73
+15,7687,14,46.45,13.0,72.5,2022-04-17 01:14:53.526160,Accessories,Shirt,Medium,51.33,Shirt in Accessories category,Available,42,58,6,Supplier_7,Blankstyle,2022-02-28 01:14:53.526160,384.77
+44,5593,75,16.95,14.0,67.5,2024-10-31 01:14:53.526160,Accessories,Jeans,Medium,71.61,Jeans in Accessories category,Out of Stock,75,38,5,Supplier_2,Apparel Distribution Center,2024-08-15 01:14:53.526160,4460.53
+5,8438,13,45.06,75.0,28.75,2022-02-06 01:14:53.526160,Women,Shorts,High,109.49,Shorts in Women category,Out of Stock,169,65,7,Supplier_2,Apparel Distribution Center,2021-11-11 01:14:53.526160,782.05
+10,7210,57,49.33,13.0,39.75,2022-03-07 01:14:53.526160,Women,Jeans,Low,11.75,Jeans in Women category,Available,297,7,2,Supplier_6,S&S Activewear,2022-01-13 01:14:53.526160,339.37
+17,8104,106,15.39,57.0,62.75,2022-04-27 01:14:53.526160,Accessories,Coat,High,100.93,Coat in Accessories category,Available,282,60,7,Supplier_5,Royal Apparel,2022-02-25 01:14:53.526160,9052.34
+14,1993,85,37.94,106.0,65.25,2024-04-04 01:14:53.526160,Women,Shorts,High,165.79,Shorts in Women category,Out of Stock,172,5,9,Supplier_9,Wholesale Fashion Square,2024-02-09 01:14:53.526160,8745.58
+25,2980,18,49.85,85.0,66.5,2021-06-25 01:14:53.526160,Men,Sweater,High,106.13,Sweater in Men category,Out of Stock,71,75,12,Supplier_8,TSC Apparel,2021-04-19 01:14:53.526160,958.09
+30,6465,93,37.88,18.0,75.5,2021-07-30 01:14:53.526160,Kids,Shirt,High,195.76,Shirt in Kids category,Out of Stock,93,57,9,Supplier_10,JiffyShirts,2021-05-24 01:14:53.526160,11308.38
+26,5497,85,34.44,93.0,70.25,2024-06-27 01:14:53.526160,Accessories,Shorts,High,132.17,Shorts in Accessories category,Out of Stock,85,21,5,Supplier_7,Blankstyle,2024-06-13 01:14:53.526160,7364.8
+18,9158,109,16.02,85.0,76.25,2022-05-06 01:14:53.526160,Accessories,Shorts,High,137.23,Shorts in Accessories category,Out of Stock,109,6,15,Supplier_10,JiffyShirts,2022-04-14 01:14:53.526160,12560.74
+51,3690,59,15.18,109.0,86.5,2020-12-14 01:14:53.526160,Kids,Jacket,Low,5.4,Jacket in Kids category,Available,59,11,12,Supplier_4,Bella+Canvas,2020-10-06 01:14:53.526160,270.1
+48,5024,28,26.71,59.0,70.25,2020-11-28 01:14:53.526160,Women,Jacket,Medium,98.25,Jacket in Women category,Out of Stock,214,38,5,Supplier_5,Royal Apparel,2020-09-23 01:14:53.526160,2016.11
+49,6653,115,14.1,28.0,77.75,2023-12-05 01:14:53.526160,Kids,Sneakers,Medium,82.77,Sneakers in Kids category,Out of Stock,184,55,15,Supplier_4,Bella+Canvas,2023-10-31 01:14:53.526160,8176.16
+9,9460,32,6.91,115.0,58.5,2022-03-03 01:14:53.526160,Shoes,Shorts,Low,24.4,Shorts in Shoes category,Available,136,58,10,Supplier_9,Wholesale Fashion Square,2022-01-14 01:14:53.526160,726.77
+22,3286,31,39.37,32.0,51.5,2023-06-01 01:14:53.526160,Kids,Sweater,Low,5.07,Sweater in Kids category,Available,60,35,3,Supplier_2,Apparel Distribution Center,2023-03-24 01:14:53.526160,95.35
+2,7649,41,40.48,31.0,54.75,2024-01-11 01:14:53.526160,Men,Jacket,Medium,71.09,Jacket in Men category,Out of Stock,41,13,6,Supplier_8,TSC Apparel,2023-11-05 01:14:53.526160,1734.77
+15,7102,79,38.5,41.0,45.75,2023-04-11 01:14:53.526160,Kids,Jacket,High,189.89,Jacket in Kids category,Out of Stock,198,30,8,Supplier_8,TSC Apparel,2023-02-25 01:14:53.526160,9225.67
+21,7759,13,30.17,79.0,41.0,2023-05-28 01:14:53.526160,Men,Jeans,High,176.17,Jeans in Men category,Available,16,77,6,Supplier_5,Royal Apparel,2023-05-01 01:14:53.526160,1599.39
+19,3176,68,39.91,13.0,50.25,2022-05-13 01:14:53.526160,Men,Sneakers,Premium,492.1,Sneakers in Men category,Out of Stock,143,47,11,Supplier_8,TSC Apparel,2022-05-05 01:14:53.526160,20106.17
+49,4867,14,34.86,68.0,43.5,2022-12-05 01:14:53.526160,Women,Bags,High,155.6,Bags in Women category,Available,18,57,4,Supplier_1,FashionGo,2022-11-12 01:14:53.526160,1419.13
+1,8636,58,35.74,14.0,38.25,2021-01-05 01:14:53.526160,Women,Jacket,Premium,455.96,Jacket in Women category,Available,207,38,4,Supplier_3,AlphaBroder,2020-11-04 01:14:53.526160,16993.88
+16,8990,26,27.59,58.0,41.5,2024-04-21 01:14:53.526160,Accessories,Dress,Low,13.69,Dress in Accessories category,Available,26,10,12,Supplier_8,TSC Apparel,2024-02-25 01:14:53.526160,257.77
+31,5703,113,22.96,26.0,52.75,2023-07-31 01:14:53.526160,Women,Sweater,High,135.79,Sweater in Women category,Out of Stock,156,41,15,Supplier_4,Bella+Canvas,2023-05-30 01:14:53.526160,11821.72
+19,5467,25,47.85,113.0,55.5,2021-05-14 01:14:53.526160,Shoes,Jeans,Low,22.49,Jeans in Shoes category,Available,172,40,15,Supplier_3,AlphaBroder,2021-03-28 01:14:53.526160,293.17
+40,8404,101,18.5,25.0,66.25,2022-10-04 01:14:53.526160,Men,Jeans,Low,23.0,Jeans in Men category,Available,291,73,10,Supplier_10,JiffyShirts,2022-08-10 01:14:53.526160,1892.91
+25,9865,39,6.23,101.0,69.5,2024-06-20 01:14:53.526160,Women,Sweater,Medium,83.98,Sweater in Women category,Available,77,29,9,Supplier_6,S&S Activewear,2024-05-14 01:14:53.526160,3071.15
+12,3411,0,40.98,39.0,41.25,2021-03-28 01:14:53.526160,Kids,Coat,High,105.74,Coat in Kids category,Available,10,33,8,Supplier_3,AlphaBroder,2021-03-07 01:14:53.526160,0.0
+4,8136,53,8.07,0.0,48.25,2021-01-28 01:14:53.526160,Kids,Hat,Premium,262.01,Hat in Kids category,Out of Stock,66,26,5,Supplier_1,FashionGo,2020-11-14 01:14:53.526160,12765.42
+29,1089,79,9.57,53.0,42.75,2023-07-18 01:14:53.526160,Men,Hat,High,157.89,Hat in Men category,Out of Stock,93,44,10,Supplier_7,Blankstyle,2023-04-23 01:14:53.526160,11279.79
+47,3634,46,37.54,79.0,44.5,2023-11-24 01:14:53.526160,Men,Jeans,Low,26.17,Jeans in Men category,Out of Stock,256,76,1,Supplier_3,AlphaBroder,2023-10-20 01:14:53.526160,751.95
+46,3011,113,7.64,46.0,72.75,2022-11-14 01:14:53.526160,Kids,Jeans,Premium,282.2,Jeans in Kids category,Out of Stock,218,67,15,Supplier_3,AlphaBroder,2022-09-10 01:14:53.526160,29451.14
+31,9616,22,14.97,113.0,65.0,2021-08-08 01:14:53.527162,Women,Dress,High,134.63,Dress in Women category,Out of Stock,152,29,3,Supplier_5,Royal Apparel,2021-06-13 01:14:53.527162,2518.56
+32,4357,62,17.34,22.0,60.75,2021-08-11 01:14:53.527162,Kids,Jeans,Premium,473.73,Jeans in Kids category,Out of Stock,175,75,8,Supplier_10,JiffyShirts,2021-07-06 01:14:53.527162,24279.51
+6,1457,76,15.56,62.0,68.25,2023-02-12 01:14:53.527162,Kids,Dress,Low,6.02,Dress in Kids category,Out of Stock,292,54,15,Supplier_2,Apparel Distribution Center,2023-01-23 01:14:53.527162,386.51
+39,7235,89,15.03,76.0,62.25,2021-10-02 01:14:53.527162,Accessories,Hat,Medium,47.65,Hat in Accessories category,Available,154,8,5,Supplier_9,Wholesale Fashion Square,2021-07-13 01:14:53.527162,3603.35
+24,6298,223,5.22,89.0,112.5,2024-06-16 01:14:53.527162,Kids,Shirt,Low,21.14,Shirt in Kids category,Out of Stock,223,69,5,Supplier_7,Blankstyle,2024-03-27 01:14:53.527162,4469.2
+20,6669,63,6.44,223.0,112.75,2021-05-20 01:14:53.527162,Shoes,Shorts,High,176.1,Shorts in Shoes category,Out of Stock,223,41,1,Supplier_5,Royal Apparel,2021-04-17 01:14:53.527162,10380.37
+28,6470,16,23.5,63.0,97.75,2024-07-08 01:14:53.527162,Shoes,Sweater,Low,11.81,Sweater in Shoes category,Available,292,44,5,Supplier_10,JiffyShirts,2024-04-15 01:14:53.527162,144.51
+21,7167,50,24.81,16.0,88.0,2022-05-27 01:14:53.527162,Men,Sweater,Low,17.75,Sweater in Men category,Available,84,20,2,Supplier_2,Apparel Distribution Center,2022-03-20 01:14:53.527162,667.49
+44,9532,81,34.25,50.0,52.5,2022-11-04 01:14:53.527162,Shoes,Shorts,Medium,39.23,Shorts in Shoes category,Available,258,54,4,Supplier_6,S&S Activewear,2022-10-20 01:14:53.527162,2089.18
+43,3191,5,39.4,81.0,38.0,2023-10-23 01:14:53.527162,Women,Hat,Low,24.74,Hat in Women category,Out of Stock,18,59,9,Supplier_7,Blankstyle,2023-07-26 01:14:53.527162,74.95
+41,5003,75,23.45,5.0,52.75,2021-10-16 01:14:53.527162,Shoes,Hat,Medium,35.98,Hat in Shoes category,Out of Stock,85,13,5,Supplier_2,Apparel Distribution Center,2021-08-11 01:14:53.527162,2065.59
+26,6684,196,16.79,75.0,89.25,2023-06-30 01:14:53.527162,Women,Shorts,Low,28.49,Shorts in Women category,Available,278,50,7,Supplier_8,TSC Apparel,2023-05-01 01:14:53.527162,4647.22
+24,5598,115,8.35,196.0,97.75,2021-06-14 01:14:53.527162,Kids,Shirt,High,114.55,Shirt in Kids category,Out of Stock,115,36,3,Supplier_1,FashionGo,2021-06-10 01:14:53.527162,12073.99
+26,8448,129,36.6,115.0,128.75,2024-06-24 01:14:53.527162,Women,Shorts,Low,15.07,Shorts in Women category,Available,298,40,9,Supplier_9,Wholesale Fashion Square,2024-05-02 01:14:53.527162,1232.81
+29,2649,38,25.65,129.0,119.5,2024-07-18 01:14:53.527162,Shoes,Coat,Premium,453.77,Coat in Shoes category,Available,293,26,1,Supplier_2,Apparel Distribution Center,2024-05-06 01:14:53.527162,12819.82
+5,4630,70,22.08,38.0,88.0,2024-01-29 01:14:53.527162,Women,Coat,Low,18.75,Coat in Women category,Out of Stock,256,19,14,Supplier_4,Bella+Canvas,2023-12-31 01:14:53.527162,1022.39
+18,7875,63,32.63,70.0,75.0,2023-05-05 01:14:53.527162,Kids,Sweater,Low,28.44,Sweater in Kids category,Out of Stock,239,48,3,Supplier_3,AlphaBroder,2023-02-07 01:14:53.527162,1207.15
+48,6228,0,34.73,63.0,42.75,2023-12-01 01:14:53.527162,Women,Bags,Low,6.36,Bags in Women category,Out of Stock,13,38,11,Supplier_2,Apparel Distribution Center,2023-09-17 01:14:53.527162,0.0
+12,5793,65,43.99,0.0,49.5,2021-03-28 01:14:53.527162,Men,Coat,Medium,94.53,Coat in Men category,Available,86,46,2,Supplier_4,Bella+Canvas,2021-03-25 01:14:53.527162,3441.39
+26,7939,0,21.85,65.0,32.0,2021-07-01 01:14:53.527162,Women,Hat,Medium,39.57,Hat in Women category,Available,23,62,2,Supplier_2,Apparel Distribution Center,2021-04-27 01:14:53.527162,0.0
+42,6953,48,44.66,0.0,28.25,2023-10-20 01:14:53.527162,Shoes,Hat,High,112.84,Hat in Shoes category,Out of Stock,93,46,11,Supplier_7,Blankstyle,2023-08-25 01:14:53.527162,2997.41
+14,4051,112,17.51,48.0,56.25,2022-04-10 01:14:53.527162,Men,Shorts,Medium,77.85,Shorts in Men category,Available,115,8,14,Supplier_4,Bella+Canvas,2022-01-31 01:14:53.527162,7192.78
+15,1069,58,9.61,112.0,54.5,2022-04-16 01:14:53.527162,Shoes,Sneakers,Medium,62.8,Sneakers in Shoes category,Available,223,50,9,Supplier_3,AlphaBroder,2022-03-30 01:14:53.527162,3292.7
+4,2344,44,39.47,58.0,65.5,2022-01-26 01:14:53.527162,Men,Sneakers,Premium,342.46,Sneakers in Men category,Available,60,31,4,Supplier_6,S&S Activewear,2022-01-18 01:14:53.527162,9120.67
+3,4963,59,16.84,44.0,68.25,2024-01-19 01:14:53.527162,Accessories,Coat,Low,5.11,Coat in Accessories category,Available,288,24,8,Supplier_8,TSC Apparel,2023-12-28 01:14:53.527162,250.87
+11,5867,96,21.69,59.0,64.25,2023-03-13 01:14:53.527162,Kids,Coat,Low,14.75,Coat in Kids category,Out of Stock,292,79,12,Supplier_4,Bella+Canvas,2023-01-14 01:14:53.527162,1108.74
+2,9550,111,34.74,96.0,77.5,2023-01-15 01:14:53.527162,Women,Coat,Medium,72.85,Coat in Women category,Out of Stock,294,14,8,Supplier_9,Wholesale Fashion Square,2022-10-25 01:14:53.527162,5277.24
+18,2580,85,41.3,111.0,87.75,2024-05-01 01:14:53.527162,Shoes,Shirt,Medium,65.58,Shirt in Shoes category,Available,299,23,7,Supplier_4,Bella+Canvas,2024-03-26 01:14:53.527162,3272.03
+19,9700,75,42.32,85.0,91.75,2024-05-11 01:14:53.527162,Women,Bags,High,172.82,Bags in Women category,Available,141,55,2,Supplier_5,Royal Apparel,2024-02-27 01:14:53.527162,7476.19
+30,1870,68,43.23,75.0,84.75,2023-07-25 01:14:53.527162,Men,Coat,High,165.09,Coat in Men category,Out of Stock,200,76,9,Supplier_5,Royal Apparel,2023-06-02 01:14:53.527162,6373.4
+15,3610,19,46.8,68.0,61.75,2023-04-13 01:14:53.527162,Accessories,Jeans,Low,15.83,Jeans in Accessories category,Out of Stock,19,7,7,Supplier_7,Blankstyle,2023-03-31 01:14:53.527162,160.05
+19,7758,90,44.33,19.0,63.0,2023-05-11 01:14:53.527162,Men,Hat,Premium,220.77,Hat in Men category,Out of Stock,259,69,13,Supplier_5,Royal Apparel,2023-03-04 01:14:53.527162,11061.89
+42,7002,36,42.52,90.0,53.25,2024-10-15 01:14:53.527162,Kids,Sneakers,Low,23.66,Sneakers in Kids category,Out of Stock,176,74,2,Supplier_4,Bella+Canvas,2024-08-13 01:14:53.527162,489.68
+18,3101,65,32.7,36.0,52.5,2022-05-02 01:14:53.527162,Shoes,Bags,High,186.52,Bags in Shoes category,Available,117,80,3,Supplier_8,TSC Apparel,2022-04-08 01:14:53.527162,8159.09
+48,5279,45,6.41,65.0,59.0,2020-11-25 01:14:53.527162,Accessories,Shirt,High,113.92,Shirt in Accessories category,Out of Stock,45,21,1,Supplier_2,Apparel Distribution Center,2020-11-08 01:14:53.527162,4797.88
+24,7656,133,34.99,45.0,69.75,2023-06-16 01:14:53.527162,Shoes,Sneakers,High,105.58,Sneakers in Shoes category,Out of Stock,292,28,15,Supplier_8,TSC Apparel,2023-04-21 01:14:53.527162,9129.07
+6,6010,85,47.27,133.0,82.0,2023-02-10 01:14:53.527162,Kids,Shirt,High,165.03,Shirt in Kids category,Out of Stock,178,9,11,Supplier_3,AlphaBroder,2023-01-05 01:14:53.527162,7396.97
+24,1960,75,28.16,85.0,84.5,2023-06-16 01:14:53.527162,Accessories,Bags,High,179.46,Bags in Accessories category,Out of Stock,75,33,14,Supplier_5,Royal Apparel,2023-05-09 01:14:53.527162,9669.67
+26,7261,85,47.0,75.0,94.5,2021-06-28 01:14:53.527162,Men,Coat,Medium,81.64,Coat in Men category,Available,159,6,1,Supplier_9,Wholesale Fashion Square,2021-05-04 01:14:53.527162,3677.62
+24,6977,14,26.75,85.0,64.75,2023-06-15 01:14:53.527162,Men,Jacket,High,118.81,Jacket in Men category,Available,34,37,3,Supplier_5,Royal Apparel,2023-04-05 01:14:53.527162,1218.45
+38,2388,16,23.24,14.0,47.5,2024-09-16 01:14:53.527162,Kids,Jacket,Low,23.56,Jacket in Kids category,Available,263,27,13,Supplier_9,Wholesale Fashion Square,2024-08-25 01:14:53.527162,289.35
+50,5862,83,43.61,16.0,49.5,2020-12-08 01:14:53.527162,Men,Sweater,Premium,399.67,Sweater in Men category,Available,181,70,2,Supplier_8,TSC Apparel,2020-10-11 01:14:53.527162,18706.55
+35,3370,53,45.02,83.0,41.5,2024-08-27 01:14:53.527162,Shoes,Coat,Medium,68.32,Coat in Shoes category,Out of Stock,215,41,4,Supplier_1,FashionGo,2024-06-10 01:14:53.527162,1990.68
+47,2742,18,41.33,53.0,42.5,2021-11-23 01:14:53.527162,Kids,Shorts,Medium,45.13,Shorts in Kids category,Out of Stock,51,12,13,Supplier_6,S&S Activewear,2021-10-14 01:14:53.527162,476.56
+42,4184,108,18.11,18.0,65.5,2023-10-17 01:14:53.527162,Accessories,Shirt,Premium,298.92,Shirt in Accessories category,Available,231,7,8,Supplier_4,Bella+Canvas,2023-09-09 01:14:53.527162,26438.24
+11,1564,30,15.51,108.0,52.25,2022-03-17 01:14:53.527162,Men,Dress,High,199.57,Dress in Men category,Out of Stock,166,37,9,Supplier_8,TSC Apparel,2022-01-04 01:14:53.527162,5058.57
+52,4709,63,13.36,30.0,54.75,2021-12-30 01:14:53.527162,Accessories,Sneakers,High,124.27,Sneakers in Accessories category,Out of Stock,122,65,12,Supplier_8,TSC Apparel,2021-12-25 01:14:53.527162,6782.91
+9,8034,43,31.75,63.0,61.0,2022-03-05 01:14:53.527162,Accessories,Dress,High,151.43,Dress in Accessories category,Out of Stock,144,31,3,Supplier_1,FashionGo,2022-03-04 01:14:53.527162,4444.15
+27,7701,75,13.48,43.0,52.75,2021-07-06 01:14:53.527162,Shoes,Jeans,High,114.52,Jeans in Shoes category,Available,300,48,15,Supplier_4,Bella+Canvas,2021-05-25 01:14:53.527162,7431.57
+2,4430,58,44.96,75.0,59.75,2024-01-13 01:14:53.527162,Shoes,Shirt,Low,26.03,Shirt in Shoes category,Out of Stock,199,26,10,Supplier_10,JiffyShirts,2023-11-18 01:14:53.527162,830.96
+50,4143,117,26.2,58.0,73.25,2020-12-10 01:14:53.527162,Shoes,Sweater,Medium,95.43,Sweater in Shoes category,Out of Stock,234,11,6,Supplier_8,TSC Apparel,2020-10-05 01:14:53.527162,8240.42
+24,2661,96,43.19,117.0,86.5,2021-06-20 01:14:53.527162,Men,Bags,Premium,217.56,Bags in Men category,Out of Stock,108,79,6,Supplier_7,Blankstyle,2021-04-27 01:14:53.527162,11865.95
+11,5189,14,42.97,96.0,71.25,2023-03-16 01:14:53.527162,Kids,Sneakers,Premium,312.32,Sneakers in Kids category,Out of Stock,66,72,6,Supplier_6,S&S Activewear,2023-02-07 01:14:53.527162,2493.59
+23,2577,110,41.21,14.0,84.25,2022-06-07 01:14:53.527162,Accessories,Sweater,High,120.5,Sweater in Accessories category,Available,131,51,5,Supplier_10,JiffyShirts,2022-05-08 01:14:53.527162,7792.49
+26,8518,91,24.93,110.0,77.75,2023-06-27 01:14:53.527162,Shoes,Bags,Medium,92.59,Bags in Shoes category,Out of Stock,183,17,11,Supplier_6,S&S Activewear,2023-03-29 01:14:53.527162,6324.88
+28,5885,96,49.7,91.0,77.75,2021-07-18 01:14:53.527162,Women,Jacket,Low,22.47,Jacket in Women category,Out of Stock,251,57,14,Supplier_2,Apparel Distribution Center,2021-04-28 01:14:53.527162,1085.17
+12,1296,80,13.8,96.0,94.25,2022-03-22 01:14:53.527162,Women,Jeans,Medium,56.26,Jeans in Women category,Available,80,24,10,Supplier_8,TSC Apparel,2022-01-09 01:14:53.527162,3879.81
+37,8325,82,42.6,80.0,87.25,2021-09-17 01:14:53.527162,Shoes,Coat,High,140.08,Coat in Shoes category,Out of Stock,215,26,12,Supplier_3,AlphaBroder,2021-07-23 01:14:53.527162,6592.68
+50,7972,75,5.78,82.0,83.25,2023-12-17 01:14:53.527162,Shoes,Dress,Medium,99.06,Dress in Shoes category,Available,80,26,11,Supplier_10,JiffyShirts,2023-11-18 01:14:53.527162,7000.08
+17,4770,25,9.2,75.0,65.5,2023-04-26 01:14:53.527162,Accessories,Jeans,Medium,56.08,Jeans in Accessories category,Available,41,38,10,Supplier_3,AlphaBroder,2023-03-27 01:14:53.527162,1273.04
+51,6355,55,36.03,25.0,59.25,2021-12-20 01:14:53.527162,Men,Hat,High,184.09,Hat in Men category,Out of Stock,231,11,9,Supplier_7,Blankstyle,2021-11-10 01:14:53.527162,6477.32
+46,2649,11,45.16,55.0,41.5,2021-11-16 01:14:53.527162,Men,Hat,Low,16.53,Hat in Men category,Available,11,11,10,Supplier_5,Royal Apparel,2021-09-24 01:14:53.527162,99.69
+52,6022,37,7.86,11.0,32.0,2020-12-24 01:14:53.528161,Men,Shorts,Medium,82.05,Shorts in Men category,Available,171,15,14,Supplier_6,S&S Activewear,2020-12-15 01:14:53.528161,2797.33
+29,5701,40,36.33,37.0,35.75,2021-07-21 01:14:53.528161,Accessories,Coat,Premium,349.71,Coat in Accessories category,Available,162,78,7,Supplier_8,TSC Apparel,2021-06-28 01:14:53.528161,8906.67
+30,1712,26,20.6,40.0,28.5,2022-07-26 01:14:53.528161,Kids,Hat,Low,22.66,Hat in Kids category,Available,95,80,15,Supplier_1,FashionGo,2022-07-11 01:14:53.528161,467.77
+7,1425,72,24.87,26.0,43.75,2024-02-15 01:14:53.528161,Accessories,Jeans,Low,21.35,Jeans in Accessories category,Available,80,43,11,Supplier_3,AlphaBroder,2024-02-08 01:14:53.528161,1154.82
+12,5718,20,39.62,72.0,39.5,2024-03-22 01:14:53.528161,Kids,Hat,Medium,75.52,Hat in Kids category,Available,141,22,14,Supplier_2,Apparel Distribution Center,2023-12-28 01:14:53.528161,911.92
+24,4428,136,22.68,20.0,63.5,2021-06-20 01:14:53.528161,Men,Shirt,Medium,59.12,Shirt in Men category,Available,136,18,3,Supplier_7,Blankstyle,2021-06-03 01:14:53.528161,6216.79
+32,9547,56,9.18,136.0,71.0,2022-08-12 01:14:53.528161,Shoes,Jacket,Medium,33.35,Jacket in Shoes category,Available,101,11,3,Supplier_6,S&S Activewear,2022-06-03 01:14:53.528161,1695.9
+1,3026,84,30.08,56.0,74.0,2022-01-03 01:14:53.528161,Men,Shirt,Medium,96.59,Shirt in Men category,Out of Stock,144,33,12,Supplier_5,Royal Apparel,2021-11-11 01:14:53.528161,5673.5
+51,7049,103,17.25,84.0,94.75,2021-12-25 01:14:53.528161,Shoes,Coat,Medium,46.48,Coat in Shoes category,Out of Stock,298,71,9,Supplier_4,Bella+Canvas,2021-10-22 01:14:53.528161,3961.7
+46,3780,1,23.41,103.0,61.0,2023-11-15 01:14:53.528161,Men,Shorts,High,189.28,Shorts in Men category,Out of Stock,24,59,6,Supplier_1,FashionGo,2023-09-06 01:14:53.528161,144.96
+38,8678,63,39.37,1.0,62.75,2022-09-25 01:14:53.528161,Kids,Jeans,Medium,96.36,Jeans in Kids category,Available,144,20,15,Supplier_9,Wholesale Fashion Square,2022-07-19 01:14:53.528161,3680.9
+24,5013,114,9.81,63.0,70.25,2021-06-20 01:14:53.528161,Women,Sneakers,Medium,86.03,Sneakers in Women category,Out of Stock,184,55,8,Supplier_2,Apparel Distribution Center,2021-05-15 01:14:53.528161,8845.32
+53,1480,23,46.82,114.0,50.25,2020-12-29 01:14:53.528161,Kids,Jacket,High,191.01,Jacket in Kids category,Available,79,73,11,Supplier_5,Royal Apparel,2020-10-13 01:14:53.528161,2336.5
+47,7859,16,46.23,23.0,54.0,2020-11-16 01:14:53.528161,Accessories,Jacket,Medium,76.15,Jacket in Accessories category,Available,55,61,9,Supplier_7,Blankstyle,2020-10-04 01:14:53.528161,655.15
+21,1892,106,5.08,16.0,64.75,2024-05-21 01:14:53.528161,Kids,Sneakers,Premium,226.54,Sneakers in Kids category,Available,217,78,5,Supplier_6,S&S Activewear,2024-05-04 01:14:53.528161,22793.4
+11,2788,103,38.04,106.0,62.0,2022-03-14 01:14:53.528161,Accessories,Shirt,Medium,58.38,Shirt in Accessories category,Out of Stock,293,38,12,Supplier_6,S&S Activewear,2021-12-16 01:14:53.528161,3725.21
+44,2048,29,26.62,103.0,63.5,2021-11-07 01:14:53.528161,Women,Bags,High,108.67,Bags in Women category,Out of Stock,255,73,8,Supplier_9,Wholesale Fashion Square,2021-08-10 01:14:53.528161,2312.56
+27,7356,38,39.38,29.0,69.0,2023-07-07 01:14:53.528161,Shoes,Coat,Premium,485.14,Coat in Shoes category,Out of Stock,291,18,8,Supplier_4,Bella+Canvas,2023-04-16 01:14:53.528161,11175.34
+28,6562,53,36.16,38.0,55.75,2022-07-17 01:14:53.528161,Shoes,Sweater,Premium,243.94,Sweater in Shoes category,Available,187,15,4,Supplier_4,Bella+Canvas,2022-07-02 01:14:53.528161,8254.34
+13,8883,94,12.42,53.0,53.5,2024-03-25 01:14:53.528161,Men,Shirt,Low,21.09,Shirt in Men category,Available,259,57,8,Supplier_7,Blankstyle,2024-03-14 01:14:53.528161,1736.7
+47,8150,7,44.79,94.0,48.0,2023-11-23 01:14:53.528161,Kids,Sweater,Low,19.58,Sweater in Kids category,Out of Stock,14,65,1,Supplier_7,Blankstyle,2023-09-25 01:14:53.528161,75.68
+19,4616,38,23.96,7.0,48.0,2021-05-11 01:14:53.528161,Shoes,Hat,Low,25.09,Hat in Shoes category,Available,181,51,14,Supplier_5,Royal Apparel,2021-02-18 01:14:53.528161,724.92
+51,4744,50,12.67,38.0,47.25,2021-12-23 01:14:53.528161,Women,Sweater,High,183.81,Sweater in Women category,Out of Stock,166,63,5,Supplier_10,JiffyShirts,2021-12-09 01:14:53.528161,8026.57
+8,7801,104,30.39,50.0,49.75,2024-02-23 01:14:53.528161,Accessories,Jacket,Low,25.91,Jacket in Accessories category,Out of Stock,187,61,15,Supplier_1,FashionGo,2023-12-01 01:14:53.528161,1875.44
+18,3378,60,47.53,104.0,63.0,2021-05-04 01:14:53.528161,Men,Shirt,Premium,427.74,Shirt in Men category,Out of Stock,60,31,9,Supplier_7,Blankstyle,2021-02-22 01:14:53.528161,13466.67
+1,7760,116,15.49,60.0,82.5,2023-01-05 01:14:53.528161,Shoes,Shirt,High,184.84,Shirt in Shoes category,Available,241,53,9,Supplier_8,TSC Apparel,2022-11-22 01:14:53.528161,18120.27
+33,9931,35,46.75,116.0,78.75,2024-08-17 01:14:53.528161,Men,Jacket,Medium,64.52,Jacket in Men category,Available,216,10,11,Supplier_7,Blankstyle,2024-07-17 01:14:53.528161,1202.54
+47,4148,130,16.56,35.0,85.25,2021-11-23 01:14:53.528161,Women,Coat,Medium,64.92,Coat in Women category,Out of Stock,241,13,10,Supplier_7,Blankstyle,2021-10-15 01:14:53.528161,7041.54
+46,4769,47,35.19,130.0,82.0,2020-11-09 01:14:53.528161,Women,Bags,Premium,457.19,Bags in Women category,Available,300,51,9,Supplier_3,AlphaBroder,2020-09-09 01:14:53.528161,13926.07
+24,7513,88,31.72,47.0,75.0,2024-06-14 01:14:53.528161,Women,Shirt,High,199.15,Shirt in Women category,Out of Stock,239,20,4,Supplier_1,FashionGo,2024-06-08 01:14:53.528161,11965.87
+27,7447,39,14.37,88.0,76.0,2023-07-06 01:14:53.528161,Women,Jeans,Premium,282.96,Jeans in Women category,Out of Stock,118,48,3,Supplier_6,S&S Activewear,2023-04-24 01:14:53.528161,9449.56
+7,8063,96,47.5,39.0,67.5,2022-02-17 01:14:53.528161,Women,Shirt,High,184.68,Shirt in Women category,Available,96,77,1,Supplier_6,S&S Activewear,2022-01-23 01:14:53.528161,9307.84
+45,3043,41,19.66,96.0,66.0,2020-11-08 01:14:53.528161,Kids,Shorts,High,118.6,Shorts in Kids category,Available,294,77,2,Supplier_2,Apparel Distribution Center,2020-10-27 01:14:53.528161,3906.45
+2,2024,31,21.38,41.0,51.75,2024-01-12 01:14:53.528161,Men,Sweater,Medium,77.06,Sweater in Men category,Out of Stock,215,77,13,Supplier_6,S&S Activewear,2023-11-17 01:14:53.528161,1878.1
+38,5523,36,40.03,31.0,51.0,2021-09-25 01:14:53.528161,Shoes,Bags,High,155.48,Bags in Shoes category,Out of Stock,221,59,9,Supplier_4,Bella+Canvas,2021-09-02 01:14:53.528161,3356.64
+30,8331,28,13.93,36.0,34.0,2024-07-27 01:14:53.528161,Kids,Jeans,Premium,436.18,Jeans in Kids category,Available,296,80,8,Supplier_10,JiffyShirts,2024-05-23 01:14:53.528161,10512.36
+7,4225,14,28.59,28.0,27.25,2023-02-13 01:14:53.528161,Kids,Sneakers,Low,20.94,Sneakers in Kids category,Out of Stock,72,75,1,Supplier_8,TSC Apparel,2022-12-31 01:14:53.528161,209.34
+51,3306,132,31.02,14.0,52.5,2022-12-24 01:14:53.528161,Shoes,Jacket,High,125.66,Jacket in Shoes category,Out of Stock,191,34,4,Supplier_6,S&S Activewear,2022-10-13 01:14:53.528161,11442.13
+6,5667,100,10.98,132.0,68.5,2023-02-12 01:14:53.528161,Men,Shorts,Low,27.71,Shorts in Men category,Out of Stock,168,14,10,Supplier_1,FashionGo,2023-01-23 01:14:53.528161,2466.44
+11,5968,75,17.17,100.0,80.25,2024-03-11 01:14:53.528161,Kids,Sweater,Low,5.77,Sweater in Kids category,Out of Stock,75,73,6,Supplier_10,JiffyShirts,2023-12-18 01:14:53.528161,358.74
+28,6954,9,15.4,75.0,79.0,2024-07-09 01:14:53.528161,Men,Coat,High,180.19,Coat in Men category,Available,58,58,13,Supplier_9,Wholesale Fashion Square,2024-04-24 01:14:53.528161,1371.95
+40,5909,26,25.38,9.0,52.5,2022-10-06 01:14:53.528161,Men,Sweater,Medium,66.19,Sweater in Men category,Available,68,42,12,Supplier_9,Wholesale Fashion Square,2022-09-30 01:14:53.528161,1284.2
+24,4576,24,29.27,26.0,33.5,2023-06-12 01:14:53.528161,Men,Coat,High,133.75,Coat in Men category,Available,170,45,7,Supplier_1,FashionGo,2023-04-05 01:14:53.528161,2270.39
+7,3189,4,31.87,24.0,15.75,2022-02-16 01:14:53.528161,Accessories,Coat,High,103.51,Coat in Accessories category,Out of Stock,65,70,2,Supplier_7,Blankstyle,2022-01-18 01:14:53.528161,282.09
+20,5927,25,22.54,4.0,19.75,2022-05-20 01:14:53.528161,Men,Jeans,High,146.13,Jeans in Men category,Out of Stock,26,49,11,Supplier_1,FashionGo,2022-03-01 01:14:53.528161,2829.62
+15,7627,76,10.3,25.0,32.25,2023-04-12 01:14:53.528161,Kids,Shorts,Low,6.79,Shorts in Kids category,Available,228,61,12,Supplier_3,AlphaBroder,2023-02-02 01:14:53.528161,462.85
+38,4378,31,46.36,76.0,34.0,2023-09-19 01:14:53.528161,Women,Bags,Premium,474.38,Bags in Women category,Available,167,7,13,Supplier_3,AlphaBroder,2023-06-22 01:14:53.528161,7888.07
+30,4017,150,21.71,31.0,70.5,2021-07-26 01:14:53.528161,Men,Shirt,Low,10.79,Shirt in Men category,Available,164,55,10,Supplier_5,Royal Apparel,2021-07-11 01:14:53.528161,1267.47
+51,1376,32,17.56,150.0,72.25,2020-12-18 01:14:53.528161,Accessories,Jacket,Premium,262.86,Jacket in Accessories category,Available,87,21,13,Supplier_10,JiffyShirts,2020-12-14 01:14:53.528161,6934.45
+44,7152,66,10.51,32.0,69.75,2023-10-30 01:14:53.528161,Men,Dress,Low,17.73,Dress in Men category,Out of Stock,185,62,2,Supplier_7,Blankstyle,2023-08-01 01:14:53.528161,1047.33
+8,2281,32,7.19,66.0,70.0,2024-02-25 01:14:53.528161,Kids,Sweater,High,191.5,Sweater in Kids category,Available,194,13,2,Supplier_6,S&S Activewear,2023-12-18 01:14:53.528161,5687.8
+28,8597,44,44.0,32.0,43.5,2022-07-17 01:14:53.528161,Accessories,Hat,Low,26.42,Hat in Accessories category,Out of Stock,242,20,8,Supplier_5,Royal Apparel,2022-06-16 01:14:53.528161,650.97
+18,3492,26,41.06,44.0,42.0,2024-05-05 01:14:53.528161,Accessories,Coat,Low,5.21,Coat in Accessories category,Available,113,19,12,Supplier_8,TSC Apparel,2024-04-28 01:14:53.528161,79.88
+48,8694,115,44.07,26.0,54.25,2021-12-03 01:14:53.528161,Accessories,Jeans,Medium,57.55,Jeans in Accessories category,Out of Stock,206,73,3,Supplier_10,JiffyShirts,2021-10-22 01:14:53.528161,3702.17
+46,3726,110,8.31,115.0,73.75,2023-11-19 01:14:53.528161,Accessories,Coat,Premium,245.48,Coat in Accessories category,Out of Stock,233,77,8,Supplier_7,Blankstyle,2023-10-14 01:14:53.528161,24759.53
+11,1810,16,16.08,110.0,66.75,2021-03-20 01:14:53.528161,Kids,Shorts,Medium,81.23,Shorts in Kids category,Out of Stock,16,37,14,Supplier_4,Bella+Canvas,2020-12-24 01:14:53.528161,1090.7
+35,6520,52,12.15,16.0,73.25,2022-09-04 01:14:53.528161,Shoes,Bags,High,175.78,Bags in Shoes category,Out of Stock,191,73,5,Supplier_4,Bella+Canvas,2022-09-01 01:14:53.528161,8029.67
+17,1792,56,13.74,52.0,58.5,2024-04-28 01:14:53.528161,Women,Bags,High,164.32,Bags in Women category,Out of Stock,230,69,2,Supplier_6,S&S Activewear,2024-03-23 01:14:53.528161,7937.48
+46,1468,16,34.63,56.0,35.0,2023-11-19 01:14:53.528161,Kids,Sweater,Low,18.04,Sweater in Kids category,Available,16,44,8,Supplier_6,S&S Activewear,2023-09-04 01:14:53.528161,188.7
+50,6119,30,6.0,16.0,38.5,2020-12-09 01:14:53.528161,Shoes,Shirt,Premium,288.76,Shirt in Shoes category,Out of Stock,51,75,12,Supplier_1,FashionGo,2020-11-16 01:14:53.528161,8142.7
+47,7075,84,16.46,30.0,46.5,2020-11-21 01:14:53.528161,Accessories,Sweater,High,175.71,Sweater in Accessories category,Out of Stock,84,42,6,Supplier_8,TSC Apparel,2020-11-13 01:14:53.528161,12330.9
+50,2820,119,14.24,84.0,62.25,2020-12-11 01:14:53.528161,Women,Shorts,Premium,371.0,Shorts in Women category,Available,138,48,13,Supplier_7,Blankstyle,2020-10-25 01:14:53.528161,37862.07
+29,7008,54,44.53,119.0,71.75,2024-07-20 01:14:53.528161,Kids,Hat,Medium,30.47,Hat in Kids category,Available,160,32,2,Supplier_10,JiffyShirts,2024-05-09 01:14:53.528161,912.83
+23,2630,111,39.35,54.0,92.0,2024-06-05 01:14:53.528161,Men,Jacket,Premium,497.7,Jacket in Men category,Available,285,27,14,Supplier_9,Wholesale Fashion Square,2024-04-21 01:14:53.528161,33504.42
+34,1112,50,10.46,111.0,83.5,2024-08-19 01:14:53.529161,Kids,Dress,Low,20.26,Dress in Kids category,Out of Stock,296,11,7,Supplier_5,Royal Apparel,2024-07-20 01:14:53.529161,907.22
+40,3246,57,15.05,50.0,68.0,2021-10-05 01:14:53.529161,Women,Dress,High,125.21,Dress in Women category,Out of Stock,278,44,5,Supplier_2,Apparel Distribution Center,2021-09-22 01:14:53.529161,6063.09
+50,4954,19,9.66,57.0,59.25,2023-12-12 01:14:53.529161,Men,Bags,Premium,297.83,Bags in Men category,Available,209,5,13,Supplier_3,AlphaBroder,2023-09-20 01:14:53.529161,5111.93
+31,8754,23,38.94,19.0,37.25,2024-07-30 01:14:53.529161,Kids,Hat,High,188.66,Hat in Kids category,Out of Stock,260,42,10,Supplier_6,S&S Activewear,2024-06-16 01:14:53.529161,2649.78
+28,1611,59,27.53,23.0,39.5,2023-07-11 01:14:53.529161,Women,Coat,Low,27.04,Coat in Women category,Out of Stock,225,25,10,Supplier_3,AlphaBroder,2023-06-15 01:14:53.529161,1156.37
+48,2557,124,45.67,59.0,56.25,2020-11-25 01:14:53.529161,Kids,Shirt,Premium,393.07,Shirt in Kids category,Out of Stock,125,36,2,Supplier_2,Apparel Distribution Center,2020-11-22 01:14:53.529161,26482.58
+3,3761,128,21.54,124.0,83.5,2021-01-20 01:14:53.529161,Accessories,Sweater,Premium,343.69,Sweater in Accessories category,Out of Stock,170,47,13,Supplier_1,FashionGo,2020-12-13 01:14:53.529161,34517.51
+51,8878,87,16.29,128.0,99.5,2023-12-24 01:14:53.529161,Kids,Jeans,High,113.84,Jeans in Kids category,Available,246,14,8,Supplier_1,FashionGo,2023-10-16 01:14:53.529161,8290.44
+15,2856,95,9.66,87.0,108.5,2023-04-10 01:14:53.529161,Shoes,Hat,Premium,270.48,Hat in Shoes category,Available,95,67,11,Supplier_4,Bella+Canvas,2023-04-01 01:14:53.529161,23213.74
+9,1645,26,12.74,95.0,84.0,2021-03-02 01:14:53.529161,Men,Bags,High,151.62,Bags in Men category,Out of Stock,121,48,1,Supplier_7,Blankstyle,2021-01-01 01:14:53.529161,3439.79
+29,2601,114,37.77,26.0,80.5,2023-07-18 01:14:53.529161,Kids,Shorts,Medium,57.67,Shorts in Kids category,Out of Stock,293,30,3,Supplier_3,AlphaBroder,2023-04-22 01:14:53.529161,4091.23
+17,1647,105,27.87,114.0,85.0,2024-04-24 01:14:53.529161,Men,Shirt,High,142.49,Shirt in Men category,Available,176,27,6,Supplier_9,Wholesale Fashion Square,2024-04-10 01:14:53.529161,10792.43
+7,1915,83,49.03,105.0,82.0,2023-02-19 01:14:53.529161,Accessories,Shirt,Low,6.29,Shirt in Accessories category,Out of Stock,299,18,11,Supplier_8,TSC Apparel,2022-11-23 01:14:53.529161,265.94
+5,2724,19,6.88,83.0,80.25,2022-02-06 01:14:53.529161,Kids,Jacket,Low,19.96,Jacket in Kids category,Available,111,60,13,Supplier_4,Bella+Canvas,2022-01-10 01:14:53.529161,353.13
+48,1427,93,28.35,19.0,75.0,2021-12-05 01:14:53.529161,Accessories,Coat,Premium,355.28,Coat in Accessories category,Available,146,73,13,Supplier_1,FashionGo,2021-11-08 01:14:53.529161,23673.34
+47,7089,0,20.82,93.0,48.75,2023-11-26 01:14:53.529161,Shoes,Bags,Premium,397.65,Bags in Shoes category,Out of Stock,35,66,1,Supplier_5,Royal Apparel,2023-10-15 01:14:53.529161,0.0
+37,3403,110,11.34,0.0,55.5,2022-09-17 01:14:53.529161,Men,Hat,Medium,77.34,Hat in Men category,Out of Stock,171,33,3,Supplier_5,Royal Apparel,2022-08-27 01:14:53.529161,7542.63
+35,5734,79,32.13,110.0,70.5,2021-08-30 01:14:53.529161,Men,Jacket,Premium,335.09,Jacket in Men category,Available,216,68,9,Supplier_4,Bella+Canvas,2021-07-29 01:14:53.529161,17965.84
+26,5820,8,36.17,79.0,49.25,2024-06-28 01:14:53.529161,Men,Jacket,High,106.88,Jacket in Men category,Out of Stock,11,50,2,Supplier_8,TSC Apparel,2024-06-26 01:14:53.529161,545.73
+17,9863,117,17.64,8.0,78.5,2021-04-28 01:14:53.529161,Men,Shirt,Low,17.58,Shirt in Men category,Out of Stock,142,46,3,Supplier_2,Apparel Distribution Center,2021-04-12 01:14:53.529161,1694.27
+42,1764,17,34.53,117.0,55.25,2022-10-17 01:14:53.529161,Men,Jacket,Medium,87.82,Jacket in Men category,Out of Stock,19,52,5,Supplier_7,Blankstyle,2022-09-18 01:14:53.529161,977.48
+25,7827,111,37.15,17.0,63.25,2024-06-17 01:14:53.529161,Kids,Shirt,High,120.56,Shirt in Kids category,Out of Stock,118,20,1,Supplier_1,FashionGo,2024-03-22 01:14:53.529161,8410.39
+48,3089,13,37.3,111.0,64.5,2020-11-24 01:14:53.529161,Kids,Jacket,Low,23.51,Jacket in Kids category,Out of Stock,124,79,2,Supplier_4,Bella+Canvas,2020-10-25 01:14:53.529161,191.64
+34,7021,70,9.89,13.0,52.75,2021-08-28 01:14:53.529161,Shoes,Hat,Low,19.97,Hat in Shoes category,Available,134,78,12,Supplier_4,Bella+Canvas,2021-07-19 01:14:53.529161,1259.7
+4,3545,12,36.33,70.0,51.5,2023-01-23 01:14:53.529161,Kids,Dress,Medium,62.58,Dress in Kids category,Available,12,37,10,Supplier_1,FashionGo,2022-11-05 01:14:53.529161,478.16
+50,5609,23,42.47,12.0,29.5,2020-12-10 01:14:53.529161,Shoes,Sneakers,Low,10.8,Sneakers in Shoes category,Available,141,69,1,Supplier_10,JiffyShirts,2020-12-05 01:14:53.529161,142.94
+8,7789,93,43.69,23.0,49.5,2024-02-23 01:14:53.529161,Kids,Shorts,Premium,204.49,Shorts in Kids category,Available,232,79,2,Supplier_3,AlphaBroder,2024-01-31 01:14:53.529161,10709.17
+27,6165,151,15.61,93.0,69.75,2023-07-05 01:14:53.529161,Kids,Shirt,Premium,340.88,Shirt in Kids category,Available,153,77,9,Supplier_6,S&S Activewear,2023-05-04 01:14:53.529161,43440.28
+43,8179,68,15.99,151.0,83.75,2022-10-30 01:14:53.529161,Women,Dress,High,199.41,Dress in Women category,Available,292,61,14,Supplier_6,S&S Activewear,2022-08-22 01:14:53.529161,11392.24
+44,1434,64,35.37,68.0,94.0,2024-11-02 01:14:53.529161,Shoes,Shorts,High,151.83,Shorts in Shoes category,Available,64,47,6,Supplier_9,Wholesale Fashion Square,2024-10-29 01:14:53.529161,6280.36
+9,2948,27,46.3,64.0,77.5,2024-02-29 01:14:53.529161,Women,Hat,Premium,461.47,Hat in Women category,Out of Stock,134,72,9,Supplier_5,Royal Apparel,2024-02-25 01:14:53.529161,6690.72
+6,5407,5,45.16,27.0,41.0,2023-02-12 01:14:53.529161,Men,Jacket,Premium,380.04,Jacket in Men category,Out of Stock,38,72,15,Supplier_3,AlphaBroder,2023-01-31 01:14:53.529161,1041.98
+26,1546,65,14.24,5.0,40.25,2024-06-28 01:14:53.529161,Shoes,Jeans,High,197.86,Jeans in Shoes category,Available,98,18,11,Supplier_2,Apparel Distribution Center,2024-06-10 01:14:53.529161,11029.06
+43,2738,19,47.28,65.0,29.0,2023-10-26 01:14:53.529161,Women,Hat,High,168.47,Hat in Women category,Out of Stock,55,55,4,Supplier_10,JiffyShirts,2023-09-24 01:14:53.529161,1687.66
+12,6126,108,38.94,19.0,49.25,2023-03-23 01:14:53.529161,Kids,Shirt,Premium,222.87,Shirt in Kids category,Out of Stock,292,36,7,Supplier_8,TSC Apparel,2023-01-31 01:14:53.529161,14696.33
+16,6204,99,16.93,108.0,72.75,2024-04-15 01:14:53.529161,Women,Dress,Medium,64.1,Dress in Women category,Out of Stock,297,53,2,Supplier_8,TSC Apparel,2024-04-07 01:14:53.529161,5271.44
+17,3361,127,24.47,99.0,88.25,2023-04-25 01:14:53.529161,Shoes,Hat,Low,7.28,Hat in Shoes category,Available,127,24,5,Supplier_1,FashionGo,2023-02-14 01:14:53.529161,698.57
+22,1033,102,28.88,127.0,109.0,2024-05-31 01:14:53.529161,Women,Bags,Premium,447.54,Bags in Women category,Available,186,44,4,Supplier_4,Bella+Canvas,2024-05-14 01:14:53.529161,32467.72
+16,6388,18,8.66,102.0,86.5,2024-04-21 01:14:53.529161,Women,Shirt,High,122.81,Shirt in Women category,Out of Stock,18,15,5,Supplier_6,S&S Activewear,2024-02-06 01:14:53.529161,2019.06
+51,9560,67,36.62,18.0,78.5,2022-12-19 01:14:53.529161,Shoes,Dress,High,131.34,Dress in Shoes category,Out of Stock,283,13,4,Supplier_7,Blankstyle,2022-10-14 01:14:53.529161,5577.14
+25,8981,40,39.46,67.0,56.75,2024-06-22 01:14:53.529161,Accessories,Sweater,Medium,72.95,Sweater in Accessories category,Out of Stock,250,8,14,Supplier_10,JiffyShirts,2024-06-14 01:14:53.529161,1766.51
+52,9081,46,35.43,40.0,42.75,2022-12-26 01:14:53.529161,Men,Sweater,High,174.83,Sweater in Men category,Out of Stock,101,25,7,Supplier_7,Blankstyle,2022-10-05 01:14:53.529161,5192.6
+38,2869,51,48.96,46.0,51.0,2023-09-23 01:14:53.529161,Shoes,Jeans,Medium,59.53,Jeans in Shoes category,Out of Stock,51,47,11,Supplier_7,Blankstyle,2023-08-15 01:14:53.529161,1549.73
+41,6797,47,10.07,51.0,46.0,2023-10-13 01:14:53.529161,Shoes,Shirt,Low,26.12,Shirt in Shoes category,Available,47,25,15,Supplier_3,AlphaBroder,2023-09-18 01:14:53.529161,1104.04
+16,6918,20,26.76,47.0,41.0,2023-04-22 01:14:53.529161,Shoes,Shorts,Low,15.35,Shorts in Shoes category,Available,58,71,6,Supplier_8,TSC Apparel,2023-04-03 01:14:53.529161,224.81
+7,4789,12,45.63,20.0,32.5,2021-02-20 01:14:53.529161,Men,Dress,Medium,80.12,Dress in Men category,Out of Stock,100,67,5,Supplier_7,Blankstyle,2020-12-10 01:14:53.529161,522.76
+41,8201,40,25.55,12.0,29.75,2023-10-12 01:14:53.529161,Men,Jacket,Premium,276.68,Jacket in Men category,Available,172,68,13,Supplier_5,Royal Apparel,2023-08-29 01:14:53.529161,8239.45
+35,1553,65,18.2,40.0,34.25,2023-08-31 01:14:53.529161,Women,Jacket,Premium,288.82,Jacket in Women category,Available,157,13,9,Supplier_7,Blankstyle,2023-08-04 01:14:53.529161,15357.31
+2,9747,95,43.32,65.0,53.0,2023-01-10 01:14:53.529161,Men,Jacket,High,195.8,Jacket in Men category,Available,249,68,14,Supplier_3,AlphaBroder,2022-12-31 01:14:53.529161,10543.58
+46,5470,126,15.8,95.0,81.5,2023-11-15 01:14:53.529161,Women,Sneakers,High,110.89,Sneakers in Women category,Out of Stock,262,24,4,Supplier_3,AlphaBroder,2023-09-11 01:14:53.529161,11763.6
+44,6934,45,6.77,126.0,82.75,2024-11-03 01:14:53.529161,Kids,Shorts,Premium,417.42,Shorts in Kids category,Out of Stock,94,7,2,Supplier_5,Royal Apparel,2024-08-05 01:14:53.529161,17511.38
+47,4673,135,23.81,45.0,100.25,2021-11-27 01:14:53.529161,Shoes,Sweater,Medium,69.01,Sweater in Shoes category,Out of Stock,173,37,1,Supplier_9,Wholesale Fashion Square,2021-11-22 01:14:53.529161,7098.21
+17,1047,115,32.16,135.0,105.25,2023-04-24 01:14:53.529161,Shoes,Coat,Low,9.99,Coat in Shoes category,Out of Stock,134,52,4,Supplier_1,FashionGo,2023-03-18 01:14:53.529161,779.15
+47,4840,121,12.24,115.0,104.0,2020-11-17 01:14:53.529161,Shoes,Hat,High,141.56,Hat in Shoes category,Out of Stock,260,80,14,Supplier_4,Bella+Canvas,2020-10-07 01:14:53.529161,15032.0
+32,8389,75,46.0,121.0,111.5,2024-08-10 01:14:53.529161,Men,Jacket,Low,14.44,Jacket in Men category,Out of Stock,86,43,13,Supplier_5,Royal Apparel,2024-05-27 01:14:53.529161,584.7
+10,5257,54,25.36,75.0,91.25,2024-03-07 01:14:53.529161,Accessories,Hat,Medium,70.49,Hat in Accessories category,Available,300,12,13,Supplier_3,AlphaBroder,2023-12-20 01:14:53.529161,2841.09
+52,4352,60,9.57,54.0,77.5,2021-12-31 01:14:53.529161,Kids,Hat,Premium,470.63,Hat in Kids category,Out of Stock,60,43,9,Supplier_4,Bella+Canvas,2021-11-13 01:14:53.529161,25534.69
+19,6850,1,22.63,60.0,47.5,2021-05-13 01:14:53.529161,Men,Jacket,Low,15.79,Jacket in Men category,Out of Stock,14,79,12,Supplier_7,Blankstyle,2021-04-25 01:14:53.529161,12.22
+45,3262,94,15.45,1.0,52.25,2021-11-14 01:14:53.529161,Accessories,Dress,Premium,306.56,Dress in Accessories category,Available,143,58,8,Supplier_5,Royal Apparel,2021-11-08 01:14:53.529161,24364.97
+26,3995,38,21.62,94.0,48.25,2022-06-30 01:14:53.529161,Kids,Bags,Low,12.07,Bags in Kids category,Out of Stock,275,17,10,Supplier_2,Apparel Distribution Center,2022-05-19 01:14:53.529161,359.38
+41,3056,86,49.97,38.0,54.75,2021-10-17 01:14:53.529161,Kids,Shirt,Premium,473.53,Shirt in Kids category,Available,293,71,8,Supplier_8,TSC Apparel,2021-09-15 01:14:53.529161,20373.18
+2,8473,70,19.51,86.0,72.0,2022-01-10 01:14:53.529161,Shoes,Jeans,High,120.84,Jeans in Shoes category,Available,206,22,11,Supplier_6,S&S Activewear,2021-10-12 01:14:53.529161,6808.61
+25,1647,50,18.02,70.0,61.0,2022-06-23 01:14:53.530162,Men,Sneakers,Low,7.24,Sneakers in Men category,Available,270,17,15,Supplier_2,Apparel Distribution Center,2022-06-02 01:14:53.530162,296.67
+45,4927,34,18.35,50.0,60.0,2022-11-11 01:14:53.530162,Accessories,Dress,Low,5.73,Dress in Accessories category,Out of Stock,280,72,3,Supplier_4,Bella+Canvas,2022-08-19 01:14:53.530162,159.09
+21,1554,22,18.13,34.0,44.0,2024-05-25 01:14:53.530162,Men,Sneakers,Low,8.04,Sneakers in Men category,Out of Stock,79,63,4,Supplier_4,Bella+Canvas,2024-05-23 01:14:53.530162,144.83
+1,8769,43,44.35,22.0,37.25,2022-01-09 01:14:53.530162,Accessories,Jacket,Premium,288.11,Jacket in Accessories category,Out of Stock,178,25,5,Supplier_9,Wholesale Fashion Square,2021-12-17 01:14:53.530162,6893.87
+53,8898,15,40.99,43.0,28.5,2020-12-28 01:14:53.530162,Men,Sneakers,Low,24.17,Sneakers in Men category,Out of Stock,266,45,11,Supplier_10,JiffyShirts,2020-12-24 01:14:53.530162,213.93
+19,8139,27,45.45,15.0,26.75,2021-05-13 01:14:53.530162,Accessories,Dress,Low,21.78,Dress in Accessories category,Available,109,41,5,Supplier_5,Royal Apparel,2021-03-24 01:14:53.530162,320.8
+32,6704,103,46.6,27.0,47.0,2022-08-08 01:14:53.530162,Accessories,Sneakers,Medium,61.87,Sneakers in Accessories category,Out of Stock,169,60,1,Supplier_5,Royal Apparel,2022-05-30 01:14:53.530162,3403.33
+16,6136,44,7.77,103.0,47.25,2022-04-21 01:14:53.530162,Accessories,Hat,Low,11.97,Hat in Accessories category,Available,90,70,2,Supplier_5,Royal Apparel,2022-03-01 01:14:53.530162,485.85
+5,8222,121,9.82,44.0,73.75,2024-02-01 01:14:53.530162,Women,Coat,Medium,53.6,Coat in Women category,Out of Stock,154,14,6,Supplier_10,JiffyShirts,2023-11-21 01:14:53.530162,5848.35
+12,4984,74,36.26,121.0,85.5,2023-03-24 01:14:53.530162,Accessories,Dress,Low,11.16,Dress in Accessories category,Out of Stock,247,9,1,Supplier_5,Royal Apparel,2023-02-08 01:14:53.530162,526.18
+17,2945,47,36.97,74.0,71.5,2022-04-28 01:14:53.530162,Men,Bags,High,138.53,Bags in Men category,Available,211,66,2,Supplier_5,Royal Apparel,2022-02-21 01:14:53.530162,4103.74
+41,5383,66,23.16,47.0,77.0,2023-10-13 01:14:53.530162,Men,Bags,Medium,59.83,Bags in Men category,Out of Stock,231,72,12,Supplier_3,AlphaBroder,2023-07-22 01:14:53.530162,3034.54
+51,7745,123,16.69,66.0,77.5,2020-12-18 01:14:53.530162,Accessories,Sweater,Low,9.54,Sweater in Accessories category,Available,190,11,5,Supplier_1,FashionGo,2020-10-23 01:14:53.530162,977.54
+17,4573,73,28.71,123.0,77.25,2021-04-30 01:14:53.530162,Men,Jacket,Low,24.12,Jacket in Men category,Out of Stock,124,32,1,Supplier_6,S&S Activewear,2021-02-13 01:14:53.530162,1255.42
+33,6105,85,45.38,73.0,86.75,2024-08-18 01:14:53.530162,Shoes,Shorts,Premium,490.83,Shorts in Shoes category,Out of Stock,240,70,7,Supplier_7,Blankstyle,2024-08-12 01:14:53.530162,22787.96
+7,2123,82,17.22,85.0,90.75,2024-02-16 01:14:53.530162,Shoes,Sweater,Medium,31.54,Sweater in Shoes category,Available,82,23,7,Supplier_6,S&S Activewear,2024-01-04 01:14:53.530162,2140.98
+13,9886,15,21.09,82.0,63.75,2024-03-30 01:14:53.530162,Shoes,Shorts,High,129.86,Shorts in Shoes category,Out of Stock,132,52,2,Supplier_10,JiffyShirts,2024-03-08 01:14:53.530162,1537.11
+10,4635,48,48.85,15.0,57.5,2021-03-12 01:14:53.530162,Women,Coat,Medium,45.74,Coat in Women category,Out of Stock,196,9,5,Supplier_1,FashionGo,2021-01-12 01:14:53.530162,1122.91
+2,7694,24,30.58,48.0,42.25,2021-01-14 01:14:53.530162,Shoes,Hat,High,170.33,Hat in Shoes category,Available,44,36,14,Supplier_8,TSC Apparel,2021-01-01 01:14:53.530162,2837.6
+31,1357,118,33.01,24.0,51.25,2024-08-04 01:14:53.530162,Accessories,Shorts,High,182.83,Shorts in Accessories category,Available,282,6,14,Supplier_6,S&S Activewear,2024-07-17 01:14:53.530162,14453.29
+49,1448,11,44.11,118.0,50.25,2022-12-10 01:14:53.530162,Men,Hat,Low,27.76,Hat in Men category,Available,183,78,15,Supplier_1,FashionGo,2022-10-11 01:14:53.530162,170.67
+37,8938,64,48.49,11.0,54.25,2021-09-18 01:14:53.530162,Women,Sweater,Premium,304.27,Sweater in Women category,Available,117,16,6,Supplier_8,TSC Apparel,2021-08-08 01:14:53.530162,10031.7
+41,5829,8,45.59,64.0,50.25,2021-10-13 01:14:53.530162,Shoes,Sweater,Low,16.13,Sweater in Shoes category,Available,59,75,9,Supplier_8,TSC Apparel,2021-07-28 01:14:53.530162,70.2
+50,8813,67,16.34,8.0,37.5,2021-12-14 01:14:53.530162,Shoes,Sweater,Low,8.1,Sweater in Shoes category,Out of Stock,263,62,6,Supplier_7,Blankstyle,2021-10-15 01:14:53.530162,454.22
+21,1857,34,25.11,67.0,43.25,2024-05-24 01:14:53.530162,Women,Coat,Premium,332.22,Coat in Women category,Out of Stock,195,76,6,Supplier_1,FashionGo,2024-04-24 01:14:53.530162,8459.68
+16,8448,116,45.87,34.0,56.25,2021-04-24 01:14:53.530162,Kids,Shorts,Medium,30.29,Shorts in Kids category,Out of Stock,151,10,9,Supplier_3,AlphaBroder,2021-01-31 01:14:53.530162,1901.9
+1,5872,19,24.49,116.0,59.0,2023-01-04 01:14:53.530162,Men,Shorts,High,190.14,Shorts in Men category,Out of Stock,108,44,1,Supplier_9,Wholesale Fashion Square,2022-11-27 01:14:53.530162,2727.95
+16,6084,56,14.61,19.0,56.25,2022-04-18 01:14:53.530162,Accessories,Shorts,Premium,214.75,Shorts in Accessories category,Available,95,24,7,Supplier_2,Apparel Distribution Center,2022-01-30 01:14:53.530162,10269.34
+23,7712,60,45.74,56.0,62.75,2022-06-11 01:14:53.530162,Women,Jacket,Low,23.99,Jacket in Women category,Available,250,63,4,Supplier_5,Royal Apparel,2022-04-29 01:14:53.530162,781.05
+24,1351,59,39.73,60.0,48.5,2024-06-15 01:14:53.530162,Kids,Sneakers,Medium,54.2,Sneakers in Kids category,Available,112,6,4,Supplier_7,Blankstyle,2024-05-08 01:14:53.530162,1927.33
+30,2388,93,17.1,59.0,67.0,2021-07-29 01:14:53.530162,Women,Hat,High,132.95,Hat in Women category,Out of Stock,190,54,5,Supplier_8,TSC Apparel,2021-05-18 01:14:53.530162,10249.79
+32,7676,99,8.29,93.0,77.75,2022-08-09 01:14:53.530162,Accessories,Jacket,Medium,61.27,Jacket in Accessories category,Available,297,43,7,Supplier_10,JiffyShirts,2022-07-12 01:14:53.530162,5562.65
+53,7674,125,16.23,99.0,94.0,2020-12-28 01:14:53.530162,Shoes,Shorts,Low,13.13,Shorts in Shoes category,Out of Stock,147,40,15,Supplier_5,Royal Apparel,2020-12-25 01:14:53.530162,1374.53
+45,2242,109,17.01,125.0,106.5,2021-11-13 01:14:53.530162,Kids,Bags,Premium,204.91,Bags in Kids category,Available,142,5,11,Supplier_1,FashionGo,2021-08-22 01:14:53.530162,18536.13
+33,1929,53,39.34,109.0,96.5,2024-08-15 01:14:53.530162,Men,Dress,Medium,69.52,Dress in Men category,Available,110,41,13,Supplier_10,JiffyShirts,2024-07-07 01:14:53.530162,2235.06
+44,7378,55,34.69,53.0,85.5,2024-10-28 01:14:53.530162,Men,Sneakers,Medium,69.65,Sneakers in Men category,Out of Stock,55,38,11,Supplier_2,Apparel Distribution Center,2024-09-20 01:14:53.530162,2502.01
+14,8033,78,42.79,55.0,73.75,2024-04-03 01:14:53.530162,Women,Sweater,High,170.36,Sweater in Women category,Available,176,62,9,Supplier_4,Bella+Canvas,2024-03-16 01:14:53.530162,7601.3
+9,2736,24,23.33,78.0,52.5,2021-03-07 01:14:53.530162,Women,Jeans,Low,13.05,Jeans in Women category,Out of Stock,58,69,13,Supplier_7,Blankstyle,2021-01-09 01:14:53.530162,240.05
+19,7497,87,39.43,24.0,61.0,2022-05-12 01:14:53.530162,Shoes,Bags,Premium,211.72,Bags in Shoes category,Out of Stock,300,30,15,Supplier_8,TSC Apparel,2022-03-27 01:14:53.530162,11157.46
+12,3419,77,21.09,87.0,66.5,2022-03-21 01:14:53.530162,Kids,Jacket,Medium,91.78,Jacket in Kids category,Available,218,43,9,Supplier_7,Blankstyle,2021-12-24 01:14:53.530162,5576.5
+50,6733,52,11.04,77.0,60.0,2023-12-11 01:14:53.530162,Accessories,Bags,Low,8.86,Bags in Accessories category,Out of Stock,247,29,9,Supplier_1,FashionGo,2023-10-12 01:14:53.530162,409.97
+11,3711,60,47.59,52.0,69.0,2021-03-18 01:14:53.530162,Accessories,Sneakers,Premium,227.76,Sneakers in Accessories category,Available,179,9,13,Supplier_10,JiffyShirts,2021-01-17 01:14:53.530162,7162.67
+50,3874,70,20.86,60.0,64.75,2020-12-09 01:14:53.530162,Accessories,Dress,Low,16.55,Dress in Accessories category,Available,70,9,6,Supplier_6,S&S Activewear,2020-11-11 01:14:53.530162,916.62
+49,6162,9,42.18,70.0,47.75,2020-12-03 01:14:53.530162,Accessories,Coat,Medium,44.87,Coat in Accessories category,Available,30,63,2,Supplier_7,Blankstyle,2020-10-17 01:14:53.530162,233.47
+51,8437,110,46.91,9.0,62.25,2020-12-17 01:14:53.530162,Kids,Jeans,Medium,53.32,Jeans in Kids category,Available,122,30,10,Supplier_2,Apparel Distribution Center,2020-10-22 01:14:53.530162,3113.75
+30,5176,64,37.08,110.0,63.25,2024-07-24 01:14:53.530162,Men,Sweater,Medium,79.93,Sweater in Men category,Out of Stock,167,65,12,Supplier_2,Apparel Distribution Center,2024-07-13 01:14:53.530162,3218.84
+36,8016,118,13.18,64.0,75.25,2024-09-02 01:14:53.530162,Women,Shirt,High,109.33,Shirt in Women category,Available,161,47,6,Supplier_2,Apparel Distribution Center,2024-06-28 01:14:53.530162,11200.4
+31,1222,41,38.0,118.0,83.25,2021-08-02 01:14:53.530162,Shoes,Hat,Low,5.1,Hat in Shoes category,Out of Stock,214,17,6,Supplier_7,Blankstyle,2021-06-10 01:14:53.530162,129.7
+45,8820,28,49.56,41.0,62.75,2022-11-13 01:14:53.530162,Shoes,Dress,High,183.78,Dress in Shoes category,Out of Stock,219,27,14,Supplier_2,Apparel Distribution Center,2022-10-14 01:14:53.530162,2595.43
+1,3757,13,24.15,28.0,50.0,2023-01-04 01:14:53.530162,Shoes,Jacket,Medium,33.39,Jacket in Shoes category,Out of Stock,70,75,13,Supplier_3,AlphaBroder,2022-12-04 01:14:53.530162,329.22
+39,6932,127,20.87,13.0,52.25,2021-10-01 01:14:53.530162,Accessories,Shirt,Low,12.66,Shirt in Accessories category,Out of Stock,264,41,1,Supplier_7,Blankstyle,2021-08-14 01:14:53.530162,1272.46
+27,5637,81,16.73,127.0,62.25,2022-07-04 01:14:53.530162,Kids,Sneakers,Low,17.04,Sneakers in Kids category,Out of Stock,81,65,4,Supplier_5,Royal Apparel,2022-05-13 01:14:53.530162,1149.07
+39,4173,50,36.89,81.0,67.75,2024-09-24 01:14:53.530162,Shoes,Jacket,Low,28.51,Jacket in Shoes category,Out of Stock,207,9,3,Supplier_10,JiffyShirts,2024-08-02 01:14:53.530162,899.61
+43,9015,83,26.05,50.0,85.25,2024-10-23 01:14:53.530162,Kids,Coat,Medium,96.96,Coat in Kids category,Available,192,70,8,Supplier_5,Royal Apparel,2024-09-28 01:14:53.530162,5950.75
+48,9139,22,35.68,83.0,59.0,2020-11-26 01:14:53.530162,Kids,Shorts,High,149.77,Shorts in Kids category,Available,70,11,14,Supplier_9,Wholesale Fashion Square,2020-10-11 01:14:53.530162,2119.13
+41,2717,69,39.13,22.0,56.0,2023-10-14 01:14:53.530162,Kids,Coat,Low,28.39,Coat in Kids category,Available,183,21,8,Supplier_2,Apparel Distribution Center,2023-08-23 01:14:53.530162,1192.66
+50,1603,46,10.12,69.0,55.0,2022-12-17 01:14:53.530162,Women,Shorts,Medium,96.52,Shorts in Women category,Available,117,51,3,Supplier_7,Blankstyle,2022-10-04 01:14:53.530162,3990.53
+31,9674,56,31.83,46.0,48.25,2023-08-05 01:14:53.530162,Kids,Bags,Low,28.06,Bags in Kids category,Out of Stock,231,52,9,Supplier_8,TSC Apparel,2023-06-05 01:14:53.530162,1071.14
+9,3495,30,49.26,56.0,50.25,2023-02-27 01:14:53.530162,Shoes,Shirt,Premium,468.57,Shirt in Shoes category,Out of Stock,293,29,3,Supplier_8,TSC Apparel,2023-01-17 01:14:53.530162,7132.99
+51,7447,43,25.36,30.0,43.75,2020-12-15 01:14:53.530162,Kids,Shorts,Premium,478.43,Shorts in Kids category,Out of Stock,85,38,11,Supplier_6,S&S Activewear,2020-09-25 01:14:53.530162,15354.71
+5,6450,68,47.25,43.0,49.25,2021-02-07 01:14:53.530162,Shoes,Dress,Low,14.7,Dress in Shoes category,Available,139,37,10,Supplier_8,TSC Apparel,2020-11-09 01:14:53.530162,527.42
+31,3156,45,18.71,68.0,46.5,2022-08-06 01:14:53.530162,Kids,Sneakers,Premium,326.76,Sneakers in Kids category,Available,132,8,4,Supplier_10,JiffyShirts,2022-06-07 01:14:53.530162,11953.15
+10,8012,105,21.18,45.0,65.25,2024-03-07 01:14:53.530162,Kids,Jacket,Low,18.24,Jacket in Kids category,Available,105,26,14,Supplier_8,TSC Apparel,2024-02-07 01:14:53.530162,1509.52
+47,3342,69,48.62,105.0,71.75,2021-11-23 01:14:53.530162,Accessories,Bags,Medium,97.79,Bags in Accessories category,Out of Stock,154,63,3,Supplier_6,S&S Activewear,2021-10-08 01:14:53.530162,3466.89
+28,4872,115,32.55,69.0,83.5,2024-07-13 01:14:53.530162,Kids,Bags,Low,21.55,Bags in Kids category,Available,204,70,11,Supplier_5,Royal Apparel,2024-05-17 01:14:53.530162,1671.97
+15,3804,103,19.72,115.0,98.0,2024-04-11 01:14:53.530162,Men,Dress,Low,29.81,Dress in Men category,Available,148,30,5,Supplier_1,FashionGo,2024-02-20 01:14:53.530162,2465.01
+1,8473,21,27.5,103.0,77.0,2024-01-02 01:14:53.530162,Kids,Sweater,Premium,336.99,Sweater in Kids category,Out of Stock,223,18,8,Supplier_1,FashionGo,2023-10-23 01:14:53.530162,5130.62
+29,9765,40,38.04,21.0,69.75,2022-07-24 01:14:53.531160,Men,Shorts,Medium,90.45,Shorts in Men category,Available,116,32,8,Supplier_5,Royal Apparel,2022-05-19 01:14:53.531160,2241.67
+44,9583,6,15.12,40.0,42.5,2021-11-06 01:14:53.531160,Kids,Dress,Medium,34.55,Dress in Kids category,Available,10,23,7,Supplier_9,Wholesale Fashion Square,2021-08-15 01:14:53.531160,175.95
+41,1698,97,19.49,6.0,41.0,2021-10-17 01:14:53.531160,Women,Bags,Low,25.6,Bags in Women category,Out of Stock,118,29,15,Supplier_7,Blankstyle,2021-08-29 01:14:53.531160,1999.48
+36,3129,14,49.6,97.0,39.25,2024-09-03 01:14:53.531160,Accessories,Dress,Medium,95.1,Dress in Accessories category,Out of Stock,25,78,11,Supplier_10,JiffyShirts,2024-06-13 01:14:53.531160,671.03
+29,6796,50,34.69,14.0,41.75,2023-07-18 01:14:53.531160,Shoes,Coat,High,177.25,Coat in Shoes category,Available,50,12,2,Supplier_9,Wholesale Fashion Square,2023-07-09 01:14:53.531160,5788.2
+9,3746,108,8.39,50.0,67.25,2023-03-02 01:14:53.531160,Accessories,Shirt,Medium,83.95,Shirt in Accessories category,Available,268,50,7,Supplier_5,Royal Apparel,2023-02-24 01:14:53.531160,8306.08
+49,3237,80,45.64,108.0,63.0,2022-12-06 01:14:53.531160,Men,Dress,Low,15.12,Dress in Men category,Out of Stock,125,74,3,Supplier_7,Blankstyle,2022-09-23 01:14:53.531160,657.38
+19,2687,123,15.58,80.0,90.25,2021-05-16 01:14:53.531160,Women,Dress,Premium,212.41,Dress in Women category,Available,208,34,14,Supplier_6,S&S Activewear,2021-03-28 01:14:53.531160,22056.3
+6,3089,109,45.61,123.0,105.0,2021-02-08 01:14:53.531160,Men,Sweater,High,126.75,Sweater in Men category,Available,199,26,10,Supplier_5,Royal Apparel,2020-12-24 01:14:53.531160,7515.2
+51,9438,72,22.65,109.0,96.0,2023-12-22 01:14:53.531160,Women,Dress,High,189.46,Dress in Women category,Out of Stock,289,52,5,Supplier_5,Royal Apparel,2023-11-28 01:14:53.531160,10550.83
+46,1881,93,24.92,72.0,99.25,2021-11-18 01:14:53.531160,Accessories,Dress,Medium,68.02,Dress in Accessories category,Out of Stock,145,69,13,Supplier_10,JiffyShirts,2021-09-21 01:14:53.531160,4749.47
+16,6645,24,20.04,93.0,74.5,2022-04-22 01:14:53.531160,Women,Coat,Medium,42.03,Coat in Women category,Available,256,61,11,Supplier_2,Apparel Distribution Center,2022-02-23 01:14:53.531160,806.48
+36,5598,75,32.99,24.0,66.0,2021-09-11 01:14:53.531160,Men,Coat,Premium,233.37,Coat in Men category,Available,151,20,15,Supplier_7,Blankstyle,2021-08-07 01:14:53.531160,11729.3
+28,7738,43,8.07,75.0,58.75,2022-07-15 01:14:53.531160,Women,Bags,High,166.84,Bags in Women category,Out of Stock,190,57,3,Supplier_1,FashionGo,2022-07-15 01:14:53.531160,6595.29
+13,8629,92,32.26,43.0,58.5,2021-04-04 01:14:53.531160,Women,Sneakers,High,186.02,Sneakers in Women category,Available,144,73,12,Supplier_8,TSC Apparel,2021-03-21 01:14:53.531160,11593.14
+35,3578,2,30.08,92.0,53.0,2022-08-30 01:14:53.531160,Shoes,Sneakers,Low,9.78,Sneakers in Shoes category,Out of Stock,33,44,9,Supplier_5,Royal Apparel,2022-07-08 01:14:53.531160,13.68
+29,9365,43,31.69,2.0,45.0,2023-07-23 01:14:53.531160,Kids,Sneakers,Premium,229.7,Sneakers in Kids category,Available,174,34,1,Supplier_7,Blankstyle,2023-06-12 01:14:53.531160,6746.57
+33,6206,89,26.99,43.0,56.5,2022-08-15 01:14:53.531160,Kids,Hat,Premium,262.53,Hat in Kids category,Available,153,22,9,Supplier_3,AlphaBroder,2022-06-14 01:14:53.531160,17058.72
+38,5370,136,37.3,89.0,67.5,2021-09-23 01:14:53.531160,Women,Bags,High,133.19,Bags in Women category,Available,197,35,15,Supplier_5,Royal Apparel,2021-08-30 01:14:53.531160,11357.25
+28,1236,28,31.81,136.0,74.0,2022-07-14 01:14:53.531160,Men,Jeans,Medium,97.82,Jeans in Men category,Available,115,12,5,Supplier_1,FashionGo,2022-06-18 01:14:53.531160,1867.7
+36,6934,35,37.14,28.0,72.0,2023-09-05 01:14:53.531160,Women,Jacket,Premium,419.15,Jacket in Women category,Out of Stock,172,57,5,Supplier_4,Bella+Canvas,2023-07-30 01:14:53.531160,9221.67
+13,7821,106,10.26,35.0,76.25,2022-03-31 01:14:53.531160,Women,Bags,High,188.9,Bags in Women category,Available,155,12,11,Supplier_2,Apparel Distribution Center,2022-01-16 01:14:53.531160,17968.27
+26,9198,53,18.09,106.0,55.5,2023-06-29 01:14:53.531160,Men,Shirt,Premium,469.87,Shirt in Men category,Out of Stock,176,39,1,Supplier_6,S&S Activewear,2023-05-26 01:14:53.531160,20397.05
+18,5434,64,48.63,53.0,64.5,2021-05-09 01:14:53.531160,Accessories,Dress,Medium,64.2,Dress in Accessories category,Out of Stock,185,7,1,Supplier_1,FashionGo,2021-04-22 01:14:53.531160,2110.71
+2,3316,73,48.76,64.0,74.0,2023-01-09 01:14:53.531160,Women,Bags,Premium,339.9,Bags in Women category,Available,73,48,1,Supplier_1,FashionGo,2022-10-31 01:14:53.531160,12712.95
+21,3052,7,35.09,73.0,49.25,2021-05-27 01:14:53.531160,Men,Shirt,Low,9.43,Shirt in Men category,Available,18,72,6,Supplier_1,FashionGo,2021-05-21 01:14:53.531160,42.86
+35,4753,84,11.74,7.0,57.0,2021-09-01 01:14:53.531160,Shoes,Jeans,High,186.83,Jeans in Shoes category,Out of Stock,264,16,1,Supplier_4,Bella+Canvas,2021-06-08 01:14:53.531160,13851.44
+35,7565,26,6.5,84.0,47.5,2022-08-30 01:14:53.531160,Kids,Jeans,High,178.54,Jeans in Kids category,Available,234,33,15,Supplier_10,JiffyShirts,2022-08-02 01:14:53.531160,4340.47
+33,9069,67,44.97,26.0,46.0,2024-08-15 01:14:53.531160,Shoes,Sweater,Medium,78.35,Sweater in Shoes category,Out of Stock,67,21,4,Supplier_3,AlphaBroder,2024-07-25 01:14:53.531160,2888.59
+46,9184,30,28.51,67.0,51.75,2023-11-13 01:14:53.531160,Shoes,Dress,Low,9.9,Dress in Shoes category,Available,30,13,9,Supplier_5,Royal Apparel,2023-10-10 01:14:53.531160,212.28
+8,8888,14,47.15,30.0,34.25,2024-02-22 01:14:53.531160,Kids,Shorts,Low,28.25,Shorts in Kids category,Out of Stock,79,78,15,Supplier_4,Bella+Canvas,2023-11-29 01:14:53.531160,209.01
+25,2866,102,42.27,14.0,53.25,2021-06-24 01:14:53.531160,Kids,Dress,Medium,91.99,Dress in Kids category,Out of Stock,122,34,13,Supplier_8,TSC Apparel,2021-04-19 01:14:53.531160,5417.29
+27,2671,123,21.07,102.0,67.25,2021-07-08 01:14:53.531160,Kids,Shorts,Low,19.67,Shorts in Kids category,Available,171,22,10,Supplier_7,Blankstyle,2021-06-26 01:14:53.531160,1909.99
+19,8729,113,27.44,123.0,88.0,2021-05-11 01:14:53.531160,Men,Jeans,Low,22.49,Jeans in Men category,Available,201,64,2,Supplier_9,Wholesale Fashion Square,2021-03-19 01:14:53.531160,1843.74
+26,5533,83,23.0,113.0,105.25,2024-06-26 01:14:53.531160,Women,Coat,Medium,89.74,Coat in Women category,Out of Stock,290,8,5,Supplier_3,AlphaBroder,2024-04-20 01:14:53.531160,5735.13
+37,1466,80,13.33,83.0,99.75,2023-09-16 01:14:53.531160,Men,Shirt,Low,6.77,Shirt in Men category,Available,256,58,3,Supplier_1,FashionGo,2023-07-21 01:14:53.531160,469.56
+36,6723,47,16.54,80.0,80.75,2023-09-07 01:14:53.531160,Kids,Bags,Premium,424.6,Bags in Kids category,Out of Stock,47,32,7,Supplier_2,Apparel Distribution Center,2023-06-17 01:14:53.531160,16655.4
+30,7698,16,10.0,47.0,56.5,2021-07-28 01:14:53.531160,Shoes,Shorts,Premium,360.45,Shorts in Shoes category,Out of Stock,74,79,15,Supplier_5,Royal Apparel,2021-06-19 01:14:53.531160,5190.36
+17,5015,19,48.79,16.0,40.5,2023-04-28 01:14:53.531160,Kids,Dress,Medium,96.44,Dress in Kids category,Available,236,79,9,Supplier_5,Royal Apparel,2023-03-06 01:14:53.531160,938.29
+36,7436,50,13.64,19.0,33.0,2022-09-08 01:14:53.531160,Shoes,Hat,Premium,435.24,Hat in Shoes category,Out of Stock,125,27,7,Supplier_3,AlphaBroder,2022-07-21 01:14:53.531160,18794.76
+32,6873,9,47.77,50.0,23.5,2023-08-11 01:14:53.531160,Shoes,Jeans,Low,5.57,Jeans in Shoes category,Available,17,68,8,Supplier_5,Royal Apparel,2023-07-05 01:14:53.531160,26.17
+1,4567,58,38.12,9.0,34.0,2024-01-01 01:14:53.531160,Accessories,Hat,Medium,51.2,Hat in Accessories category,Available,58,35,8,Supplier_1,FashionGo,2023-11-05 01:14:53.531160,1837.61
+28,4584,28,17.33,58.0,36.25,2021-07-14 01:14:53.531160,Kids,Shorts,Medium,59.54,Shorts in Kids category,Available,134,17,2,Supplier_10,JiffyShirts,2021-06-11 01:14:53.531160,1378.22
+23,2067,34,41.15,28.0,32.25,2022-06-11 01:14:53.531160,Men,Jacket,Premium,205.61,Jacket in Men category,Available,265,70,5,Supplier_1,FashionGo,2022-03-24 01:14:53.531160,4114.36
+5,7328,113,41.96,34.0,58.25,2024-02-04 01:14:53.531160,Accessories,Shirt,Premium,208.59,Shirt in Accessories category,Out of Stock,130,58,8,Supplier_9,Wholesale Fashion Square,2023-11-08 01:14:53.531160,13680.09
+5,1855,39,30.73,113.0,53.5,2024-02-03 01:14:53.531160,Accessories,Jeans,Medium,61.46,Jeans in Accessories category,Available,242,63,1,Supplier_7,Blankstyle,2023-11-14 01:14:53.531160,1660.52
+10,3789,64,22.25,39.0,62.5,2024-03-04 01:14:53.531160,Women,Coat,Medium,85.58,Coat in Women category,Out of Stock,265,68,12,Supplier_7,Blankstyle,2024-01-21 01:14:53.531160,4258.53
+19,1407,67,17.83,64.0,70.75,2021-05-13 01:14:53.531160,Shoes,Shirt,High,162.74,Shirt in Shoes category,Available,119,9,1,Supplier_8,TSC Apparel,2021-03-27 01:14:53.531160,8959.65
+43,5515,2,37.3,67.0,43.0,2021-10-30 01:14:53.531160,Men,Shorts,Low,24.9,Shorts in Men category,Out of Stock,68,68,3,Supplier_1,FashionGo,2021-10-10 01:14:53.531160,31.22
+41,6392,113,49.99,2.0,61.5,2023-10-13 01:14:53.531160,Men,Shorts,High,137.77,Shorts in Men category,Out of Stock,241,30,4,Supplier_6,S&S Activewear,2023-08-22 01:14:53.531160,7786.05
+31,8176,38,48.58,113.0,55.0,2022-08-05 01:14:53.531160,Accessories,Shirt,High,150.02,Shirt in Accessories category,Out of Stock,95,32,8,Supplier_2,Apparel Distribution Center,2022-06-21 01:14:53.531160,2931.16
+19,6246,84,13.87,38.0,59.25,2023-05-10 01:14:53.531160,Women,Coat,Low,6.76,Coat in Women category,Out of Stock,135,27,11,Supplier_2,Apparel Distribution Center,2023-02-13 01:14:53.531160,489.06
+47,2812,72,42.59,84.0,76.75,2023-11-21 01:14:53.531160,Kids,Sneakers,Medium,75.52,Sneakers in Kids category,Available,129,8,14,Supplier_4,Bella+Canvas,2023-10-08 01:14:53.531160,3121.28
+5,7174,98,8.49,72.0,73.0,2024-02-01 01:14:53.531160,Women,Dress,High,166.29,Dress in Women category,Out of Stock,98,53,10,Supplier_3,AlphaBroder,2023-12-03 01:14:53.531160,14912.8
+17,6418,50,27.9,98.0,76.0,2023-04-25 01:14:53.531160,Shoes,Coat,Low,22.37,Coat in Shoes category,Out of Stock,229,56,10,Supplier_3,AlphaBroder,2023-04-08 01:14:53.531160,806.38
+22,4802,63,13.1,50.0,70.75,2021-06-05 01:14:53.531160,Men,Shorts,High,189.89,Shorts in Men category,Available,86,11,13,Supplier_5,Royal Apparel,2021-05-03 01:14:53.531160,10395.3
+39,3371,90,16.59,63.0,75.25,2021-10-02 01:14:53.531160,Shoes,Bags,Premium,234.49,Bags in Shoes category,Available,243,43,15,Supplier_7,Blankstyle,2021-07-16 01:14:53.531160,17603.33
+4,9212,35,38.74,90.0,59.5,2023-01-24 01:14:53.531160,Kids,Bags,Medium,34.37,Bags in Kids category,Available,241,58,14,Supplier_4,Bella+Canvas,2022-11-05 01:14:53.531160,736.97
+38,1017,11,33.77,35.0,49.75,2024-09-18 01:14:53.531160,Kids,Jacket,Medium,40.32,Jacket in Kids category,Out of Stock,25,32,14,Supplier_7,Blankstyle,2024-07-10 01:14:53.531160,293.76
+2,6894,16,38.85,11.0,38.0,2023-01-12 01:14:53.531160,Men,Jeans,Premium,331.37,Jeans in Men category,Out of Stock,169,8,13,Supplier_3,AlphaBroder,2022-12-03 01:14:53.531160,3242.24
+14,9753,69,5.79,16.0,32.75,2023-04-07 01:14:53.531160,Men,Hat,Low,5.31,Hat in Men category,Out of Stock,101,41,7,Supplier_2,Apparel Distribution Center,2023-02-26 01:14:53.531160,345.27
+10,4411,101,15.21,69.0,49.25,2023-03-10 01:14:53.531160,Shoes,Sweater,Medium,78.86,Sweater in Shoes category,Out of Stock,159,31,8,Supplier_10,JiffyShirts,2022-12-19 01:14:53.531160,6753.29
+8,7772,63,42.6,101.0,62.25,2024-02-22 01:14:53.531160,Men,Jeans,High,136.64,Jeans in Men category,Available,116,11,12,Supplier_4,Bella+Canvas,2023-12-30 01:14:53.531160,4941.15
+47,4778,70,13.7,63.0,75.75,2021-11-23 01:14:53.531160,Kids,Jeans,Medium,93.18,Jeans in Kids category,Out of Stock,257,11,7,Supplier_1,FashionGo,2021-09-20 01:14:53.531160,5628.58
+12,1538,67,40.4,70.0,75.25,2022-03-26 01:14:53.532163,Men,Bags,High,158.87,Bags in Men category,Available,149,78,5,Supplier_3,AlphaBroder,2022-01-02 01:14:53.532163,6343.55
+13,3898,55,36.76,67.0,63.75,2024-03-26 01:14:53.532163,Accessories,Bags,Premium,377.46,Bags in Accessories category,Out of Stock,208,41,12,Supplier_4,Bella+Canvas,2024-02-13 01:14:53.532163,13129.69
+12,4135,46,7.58,55.0,59.5,2022-03-21 01:14:53.532163,Accessories,Shorts,Premium,374.91,Shorts in Accessories category,Out of Stock,228,66,1,Supplier_8,TSC Apparel,2021-12-27 01:14:53.532163,15937.71
+25,6490,17,23.85,46.0,46.25,2022-06-22 01:14:53.532163,Accessories,Bags,Low,5.19,Bags in Accessories category,Out of Stock,31,76,1,Supplier_4,Bella+Canvas,2022-06-19 01:14:53.532163,67.18
+45,4474,54,42.2,17.0,43.0,2023-11-09 01:14:53.532163,Kids,Dress,Medium,63.08,Dress in Kids category,Available,108,39,5,Supplier_2,Apparel Distribution Center,2023-09-04 01:14:53.532163,1968.81
+37,7447,74,41.45,54.0,47.75,2024-09-12 01:14:53.532163,Kids,Sweater,Medium,73.65,Sweater in Kids category,Available,256,24,7,Supplier_5,Royal Apparel,2024-06-26 01:14:53.532163,3190.94
+25,1797,70,25.01,74.0,53.75,2023-06-21 01:14:53.532163,Kids,Shirt,Premium,485.96,Shirt in Kids category,Available,70,32,9,Supplier_10,JiffyShirts,2023-05-10 01:14:53.532163,25508.72
+17,2291,83,19.08,70.0,70.25,2023-04-25 01:14:53.532163,Women,Shorts,Medium,87.2,Shorts in Women category,Out of Stock,83,56,11,Supplier_9,Wholesale Fashion Square,2023-02-24 01:14:53.532163,5856.63
+16,8252,25,43.31,83.0,63.0,2022-04-20 01:14:53.532163,Men,Shirt,Premium,338.68,Shirt in Men category,Available,101,63,2,Supplier_10,JiffyShirts,2022-02-24 01:14:53.532163,4800.27
+24,8236,107,5.2,25.0,71.25,2021-06-19 01:14:53.532163,Women,Bags,Medium,98.51,Bags in Women category,Available,123,17,3,Supplier_7,Blankstyle,2021-05-29 01:14:53.532163,9992.48
+34,8531,72,19.94,107.0,71.75,2023-08-22 01:14:53.532163,Men,Sweater,Premium,490.41,Sweater in Men category,Available,223,70,12,Supplier_6,S&S Activewear,2023-06-09 01:14:53.532163,28268.44
+34,3338,67,42.84,72.0,67.75,2024-08-22 01:14:53.532163,Men,Jacket,Medium,73.93,Jacket in Men category,Out of Stock,144,20,4,Supplier_6,S&S Activewear,2024-08-04 01:14:53.532163,2831.59
+32,2002,92,36.01,67.0,84.5,2021-08-10 01:14:53.532163,Men,Jacket,Medium,86.91,Jacket in Men category,Available,92,67,13,Supplier_10,JiffyShirts,2021-06-19 01:14:53.532163,5117.13
+3,6084,143,6.77,92.0,93.5,2023-01-21 01:14:53.532163,Kids,Jacket,Low,26.25,Jacket in Kids category,Out of Stock,181,34,6,Supplier_4,Bella+Canvas,2022-12-27 01:14:53.532163,3500.11
+37,7051,50,40.59,143.0,88.0,2024-09-09 01:14:53.532163,Accessories,Bags,Medium,71.03,Bags in Accessories category,Out of Stock,141,53,7,Supplier_1,FashionGo,2024-08-18 01:14:53.532163,2110.02
+42,1114,83,23.87,50.0,92.0,2022-10-21 01:14:53.532163,Accessories,Shorts,Low,7.77,Shorts in Accessories category,Available,160,64,2,Supplier_10,JiffyShirts,2022-08-20 01:14:53.532163,491.18
+48,9485,37,22.78,83.0,78.25,2023-12-03 01:14:53.532163,Kids,Jeans,Premium,360.07,Jeans in Kids category,Available,257,49,11,Supplier_10,JiffyShirts,2023-10-29 01:14:53.532163,10288.09
+8,9868,73,45.33,37.0,60.75,2022-02-26 01:14:53.532163,Men,Hat,Premium,436.15,Hat in Men category,Available,73,28,13,Supplier_6,S&S Activewear,2021-12-09 01:14:53.532163,17406.18
+43,6783,31,46.12,73.0,56.0,2022-10-26 01:14:53.532163,Women,Shirt,Medium,89.3,Shirt in Women category,Available,31,7,3,Supplier_6,S&S Activewear,2022-10-21 01:14:53.532163,1491.47
+38,6925,86,22.83,31.0,56.75,2024-09-16 01:14:53.532163,Women,Bags,Premium,305.12,Bags in Women category,Available,86,71,3,Supplier_1,FashionGo,2024-07-18 01:14:53.532163,20249.16
+52,8154,7,46.98,86.0,49.25,2022-12-30 01:14:53.532163,Women,Sneakers,High,168.1,Sneakers in Women category,Available,63,66,1,Supplier_2,Apparel Distribution Center,2022-10-01 01:14:53.532163,623.85
+3,5761,15,28.73,7.0,34.75,2022-01-20 01:14:53.532163,Men,Sweater,Low,14.81,Sweater in Men category,Available,19,77,15,Supplier_1,FashionGo,2022-01-12 01:14:53.532163,158.35
+9,2684,12,34.6,15.0,30.0,2024-03-01 01:14:53.532163,Women,Jeans,Medium,52.29,Jeans in Women category,Out of Stock,54,15,3,Supplier_3,AlphaBroder,2024-02-04 01:14:53.532163,410.4
+23,2508,102,20.65,12.0,34.0,2022-06-09 01:14:53.532163,Kids,Jacket,Medium,60.12,Jacket in Kids category,Out of Stock,102,28,5,Supplier_3,AlphaBroder,2022-03-13 01:14:53.532163,4866.09
+5,6364,117,10.9,102.0,61.5,2022-02-05 01:14:53.532163,Kids,Sneakers,Medium,63.86,Sneakers in Kids category,Out of Stock,260,49,13,Supplier_5,Royal Apparel,2021-11-27 01:14:53.532163,6657.58
+41,3942,25,31.09,117.0,64.0,2021-10-16 01:14:53.532163,Accessories,Bags,Medium,65.75,Bags in Accessories category,Out of Stock,187,5,11,Supplier_6,S&S Activewear,2021-09-29 01:14:53.532163,1132.71
+18,7615,27,28.82,25.0,67.75,2024-05-03 01:14:53.532163,Women,Sneakers,Low,25.78,Sneakers in Women category,Out of Stock,191,49,10,Supplier_2,Apparel Distribution Center,2024-02-08 01:14:53.532163,495.37
+41,1580,16,43.05,27.0,46.25,2024-10-09 01:14:53.532163,Accessories,Bags,Low,12.19,Bags in Accessories category,Out of Stock,274,75,9,Supplier_3,AlphaBroder,2024-10-03 01:14:53.532163,111.04
+34,6029,15,46.7,16.0,20.75,2021-08-28 01:14:53.532163,Accessories,Sweater,Medium,56.97,Sweater in Accessories category,Out of Stock,65,66,12,Supplier_10,JiffyShirts,2021-07-19 01:14:53.532163,455.49
+13,5563,87,17.3,15.0,36.25,2021-03-31 01:14:53.532163,Women,Jeans,High,144.41,Jeans in Women category,Out of Stock,169,73,4,Supplier_1,FashionGo,2021-01-23 01:14:53.532163,10389.82
+44,3832,54,5.11,87.0,43.0,2023-10-30 01:14:53.532163,Shoes,Dress,High,187.34,Dress in Shoes category,Out of Stock,201,51,9,Supplier_9,Wholesale Fashion Square,2023-10-19 01:14:53.532163,9599.89
+33,2663,74,45.43,54.0,57.5,2021-08-17 01:14:53.532163,Kids,Jacket,High,180.87,Jacket in Kids category,Available,118,52,10,Supplier_7,Blankstyle,2021-06-23 01:14:53.532163,7303.13
+44,5464,50,25.15,74.0,66.25,2022-11-01 01:14:53.532163,Women,Jacket,High,179.45,Jacket in Women category,Out of Stock,50,32,13,Supplier_2,Apparel Distribution Center,2022-09-24 01:14:53.532163,6715.72
+25,5398,11,29.65,50.0,47.25,2024-06-18 01:14:53.532163,Men,Bags,High,158.81,Bags in Men category,Out of Stock,229,51,11,Supplier_10,JiffyShirts,2024-06-03 01:14:53.532163,1228.93
+13,9676,54,45.02,11.0,47.25,2023-03-30 01:14:53.532163,Kids,Hat,Low,5.81,Hat in Kids category,Available,54,53,4,Supplier_6,S&S Activewear,2023-03-23 01:14:53.532163,172.45
+19,2302,20,8.47,54.0,33.75,2024-05-12 01:14:53.532163,Accessories,Shirt,Low,8.29,Shirt in Accessories category,Out of Stock,170,64,9,Supplier_3,AlphaBroder,2024-04-24 01:14:53.532163,151.78
+33,5343,18,11.52,20.0,25.75,2021-08-21 01:14:53.532163,Kids,Sweater,Medium,37.08,Sweater in Kids category,Out of Stock,231,53,14,Supplier_7,Blankstyle,2021-05-26 01:14:53.532163,590.53
+8,3304,90,42.88,18.0,45.5,2023-02-23 01:14:53.532163,Shoes,Shirt,Low,18.53,Shirt in Shoes category,Out of Stock,121,74,3,Supplier_10,JiffyShirts,2022-12-01 01:14:53.532163,952.42
+29,3871,61,39.18,90.0,47.25,2022-07-18 01:14:53.532163,Shoes,Coat,Premium,467.49,Coat in Shoes category,Available,125,14,13,Supplier_5,Royal Apparel,2022-06-06 01:14:53.532163,17344.64
+33,1470,99,44.67,61.0,67.0,2023-08-17 01:14:53.532163,Men,Dress,High,115.63,Dress in Men category,Out of Stock,113,23,13,Supplier_10,JiffyShirts,2023-06-15 01:14:53.532163,6333.76
+17,7974,6,7.4,99.0,64.0,2021-05-01 01:14:53.532163,Men,Jacket,High,160.77,Jacket in Men category,Out of Stock,29,69,9,Supplier_4,Bella+Canvas,2021-04-19 01:14:53.532163,893.2
+36,5652,77,36.41,6.0,60.75,2021-09-12 01:14:53.532163,Shoes,Jeans,Premium,235.14,Jeans in Shoes category,Available,138,69,12,Supplier_8,TSC Apparel,2021-07-15 01:14:53.532163,11513.95
+34,7545,88,11.58,77.0,67.5,2023-08-27 01:14:53.532163,Shoes,Jeans,Medium,84.83,Jeans in Shoes category,Out of Stock,88,37,14,Supplier_1,FashionGo,2023-06-07 01:14:53.532163,6600.37
+15,2755,74,9.87,88.0,61.25,2024-04-11 01:14:53.532163,Women,Bags,High,159.22,Bags in Women category,Available,74,71,9,Supplier_8,TSC Apparel,2024-03-07 01:14:53.532163,10618.77
+51,3326,117,42.94,74.0,89.0,2023-12-24 01:14:53.532163,Shoes,Sweater,Low,17.7,Sweater in Shoes category,Available,263,21,11,Supplier_5,Royal Apparel,2023-11-11 01:14:53.532163,1181.84
+37,4324,39,45.68,117.0,79.5,2023-09-12 01:14:53.532163,Men,Sweater,Premium,239.66,Sweater in Men category,Available,161,16,11,Supplier_8,TSC Apparel,2023-09-08 01:14:53.532163,5076.72
+25,8914,106,32.11,39.0,84.0,2024-06-21 01:14:53.532163,Accessories,Dress,Premium,484.32,Dress in Accessories category,Available,181,37,2,Supplier_7,Blankstyle,2024-06-19 01:14:53.532163,34851.1
+23,5268,17,43.12,106.0,69.75,2022-06-10 01:14:53.532163,Kids,Bags,Premium,432.96,Bags in Kids category,Available,277,11,14,Supplier_8,TSC Apparel,2022-04-06 01:14:53.532163,4186.23
+27,6786,48,16.11,17.0,52.5,2022-07-07 01:14:53.532163,Women,Jeans,Medium,88.55,Jeans in Women category,Out of Stock,271,16,8,Supplier_9,Wholesale Fashion Square,2022-05-17 01:14:53.532163,3565.64
+16,9464,113,8.05,48.0,71.0,2022-04-19 01:14:53.532163,Men,Shorts,Low,25.19,Shorts in Men category,Available,159,18,12,Supplier_8,TSC Apparel,2022-04-16 01:14:53.532163,2617.13
+36,7248,63,10.58,113.0,60.25,2022-09-08 01:14:53.532163,Women,Sneakers,Medium,41.31,Sneakers in Women category,Available,235,58,5,Supplier_4,Bella+Canvas,2022-08-14 01:14:53.532163,2326.99
+11,8928,71,48.89,63.0,73.75,2021-03-18 01:14:53.532163,Accessories,Coat,Premium,445.38,Coat in Accessories category,Out of Stock,149,26,8,Supplier_2,Apparel Distribution Center,2021-02-26 01:14:53.532163,16160.9
+35,4965,67,5.04,71.0,78.5,2024-08-26 01:14:53.532163,Kids,Jeans,High,151.49,Jeans in Kids category,Available,67,21,6,Supplier_4,Bella+Canvas,2024-06-16 01:14:53.532163,9638.4
+5,5855,22,15.13,67.0,55.75,2022-02-05 01:14:53.532163,Shoes,Jeans,Medium,98.06,Jeans in Shoes category,Out of Stock,27,61,2,Supplier_10,JiffyShirts,2022-02-05 01:14:53.532163,1830.74
+34,4593,94,23.33,22.0,63.5,2023-08-24 01:14:53.532163,Kids,Sweater,Medium,86.05,Sweater in Kids category,Out of Stock,299,13,2,Supplier_4,Bella+Canvas,2023-07-17 01:14:53.532163,6201.41
+36,6581,99,44.16,94.0,70.5,2021-09-10 01:14:53.532163,Accessories,Coat,Medium,77.16,Coat in Accessories category,Available,163,23,10,Supplier_4,Bella+Canvas,2021-07-02 01:14:53.532163,4266.11
+38,5344,96,33.74,99.0,77.75,2021-09-21 01:14:53.532163,Men,Dress,Low,27.57,Dress in Men category,Available,99,54,13,Supplier_4,Bella+Canvas,2021-07-08 01:14:53.532163,1753.67
+2,9251,93,40.55,96.0,95.5,2023-01-15 01:14:53.532163,Men,Jacket,Medium,71.49,Jacket in Men category,Available,229,63,3,Supplier_7,Blankstyle,2023-01-02 01:14:53.532163,3952.36
+22,2400,47,49.06,93.0,83.75,2021-06-03 01:14:53.532163,Men,Bags,Medium,55.16,Bags in Men category,Available,47,38,12,Supplier_3,AlphaBroder,2021-05-13 01:14:53.532163,1320.67
+35,4907,18,7.89,47.0,63.5,2022-09-03 01:14:53.532163,Shoes,Sweater,Premium,206.37,Sweater in Shoes category,Out of Stock,59,60,11,Supplier_7,Blankstyle,2022-07-31 01:14:53.532163,3421.55
+22,2740,103,22.04,18.0,65.25,2024-05-29 01:14:53.532163,Women,Hat,Low,15.02,Hat in Women category,Out of Stock,124,64,13,Supplier_1,FashionGo,2024-03-15 01:14:53.532163,1206.29
+38,1886,78,17.68,103.0,61.5,2024-09-16 01:14:53.532163,Accessories,Bags,Medium,40.59,Bags in Accessories category,Out of Stock,288,22,9,Supplier_7,Blankstyle,2024-08-18 01:14:53.532163,2606.01
+25,4618,18,21.35,78.0,54.25,2024-06-19 01:14:53.532163,Shoes,Coat,Medium,95.32,Coat in Shoes category,Out of Stock,174,14,2,Supplier_7,Blankstyle,2024-04-27 01:14:53.532163,1349.45
+38,1346,51,16.85,18.0,62.5,2021-09-21 01:14:53.532163,Shoes,Shirt,High,102.18,Shirt in Shoes category,Out of Stock,277,10,11,Supplier_5,Royal Apparel,2021-08-06 01:14:53.532163,4333.08
+25,7013,68,20.62,51.0,53.75,2022-06-22 01:14:53.533159,Women,Jacket,Medium,82.63,Jacket in Women category,Out of Stock,68,7,1,Supplier_10,JiffyShirts,2022-04-10 01:14:53.533159,4460.63
+37,3715,45,14.0,68.0,45.5,2022-09-17 01:14:53.533159,Women,Jacket,Low,15.83,Jacket in Women category,Available,170,21,3,Supplier_1,FashionGo,2022-08-04 01:14:53.533159,612.63
+18,8230,108,32.18,45.0,68.0,2022-05-07 01:14:53.533159,Women,Shirt,High,100.59,Shirt in Women category,Available,123,5,4,Supplier_4,Bella+Canvas,2022-02-25 01:14:53.533159,7367.97
+37,8255,12,42.8,108.0,58.25,2022-09-17 01:14:53.533159,Accessories,Dress,Low,25.99,Dress in Accessories category,Available,24,61,9,Supplier_6,S&S Activewear,2022-08-03 01:14:53.533159,178.35
+5,7499,36,46.09,12.0,50.25,2024-01-31 01:14:53.533159,Kids,Sweater,Low,22.48,Sweater in Kids category,Available,72,37,5,Supplier_2,Apparel Distribution Center,2023-12-30 01:14:53.533159,436.3
+39,4243,81,33.27,36.0,59.25,2021-09-29 01:14:53.533159,Women,Dress,High,193.68,Dress in Women category,Available,276,23,13,Supplier_9,Wholesale Fashion Square,2021-09-08 01:14:53.533159,10468.6
+29,4993,104,9.34,81.0,58.25,2023-07-19 01:14:53.533159,Women,Dress,Low,12.5,Dress in Women category,Out of Stock,128,10,8,Supplier_8,TSC Apparel,2023-05-12 01:14:53.533159,1178.4
+44,2178,0,38.06,104.0,55.25,2022-11-05 01:14:53.533159,Women,Coat,Medium,81.31,Coat in Women category,Available,60,73,13,Supplier_5,Royal Apparel,2022-11-04 01:14:53.533159,0.0
+42,1844,51,33.34,0.0,59.0,2024-10-16 01:14:53.533159,Accessories,Coat,Low,11.88,Coat in Accessories category,Available,51,42,12,Supplier_8,TSC Apparel,2024-08-23 01:14:53.533159,404.04
+25,5834,10,32.63,51.0,41.25,2022-06-22 01:14:53.533159,Shoes,Dress,Premium,280.03,Dress in Shoes category,Available,21,80,3,Supplier_10,JiffyShirts,2022-05-22 01:14:53.533159,1886.49
+16,6050,113,29.56,10.0,43.5,2021-04-24 01:14:53.533159,Men,Sweater,High,175.85,Sweater in Men category,Available,179,10,13,Supplier_1,FashionGo,2021-02-03 01:14:53.533159,13996.16
+7,5309,95,20.84,113.0,67.25,2024-02-12 01:14:53.533159,Men,Shirt,Low,28.12,Shirt in Men category,Out of Stock,284,62,11,Supplier_1,FashionGo,2024-01-04 01:14:53.533159,2114.63
+14,7649,132,17.05,95.0,87.5,2023-04-06 01:14:53.533159,Shoes,Sweater,Medium,59.57,Sweater in Shoes category,Out of Stock,258,9,5,Supplier_7,Blankstyle,2023-03-19 01:14:53.533159,6522.72
+19,7249,42,36.96,132.0,95.5,2022-05-10 01:14:53.533159,Accessories,Dress,Low,21.17,Dress in Accessories category,Available,257,47,10,Supplier_1,FashionGo,2022-02-25 01:14:53.533159,560.54
+18,8265,85,38.88,42.0,88.5,2023-05-07 01:14:53.533159,Kids,Bags,High,155.89,Bags in Kids category,Out of Stock,170,74,8,Supplier_1,FashionGo,2023-02-21 01:14:53.533159,8098.31
+45,7762,92,32.15,85.0,87.75,2022-11-09 01:14:53.533159,Accessories,Sneakers,Low,22.09,Sneakers in Accessories category,Out of Stock,238,58,14,Supplier_10,JiffyShirts,2022-11-01 01:14:53.533159,1378.78
+35,7510,76,19.79,92.0,73.75,2023-08-29 01:14:53.533159,Women,Hat,Medium,64.14,Hat in Women category,Out of Stock,169,75,14,Supplier_7,Blankstyle,2023-06-27 01:14:53.533159,3910.2
+44,4526,62,5.01,76.0,78.75,2024-10-28 01:14:53.533159,Shoes,Jacket,Premium,467.31,Jacket in Shoes category,Available,222,21,11,Supplier_7,Blankstyle,2024-10-06 01:14:53.533159,27520.57
+7,4402,72,39.97,62.0,75.5,2022-02-18 01:14:53.533159,Shoes,Jeans,Low,20.04,Jeans in Shoes category,Out of Stock,72,65,14,Supplier_6,S&S Activewear,2022-02-10 01:14:53.533159,866.02
+1,5152,61,23.06,72.0,67.75,2021-01-04 01:14:53.533159,Women,Bags,Low,29.26,Bags in Women category,Available,61,49,13,Supplier_4,Bella+Canvas,2020-12-26 01:14:53.533159,1373.39
+3,3270,48,31.88,61.0,60.75,2021-01-24 01:14:53.533159,Shoes,Jeans,Low,23.67,Jeans in Shoes category,Out of Stock,133,46,14,Supplier_5,Royal Apparel,2020-12-25 01:14:53.533159,773.78
+22,8448,98,21.88,48.0,69.75,2023-05-30 01:14:53.533159,Men,Jeans,Premium,228.0,Jeans in Men category,Out of Stock,159,33,11,Supplier_10,JiffyShirts,2023-04-17 01:14:53.533159,17454.67
+32,6799,82,31.22,98.0,72.25,2024-08-10 01:14:53.533159,Accessories,Shorts,High,145.54,Shorts in Accessories category,Out of Stock,82,10,10,Supplier_3,AlphaBroder,2024-07-17 01:14:53.533159,8208.64
+4,2146,93,47.66,82.0,80.25,2021-01-29 01:14:53.533159,Accessories,Sweater,Medium,39.54,Sweater in Accessories category,Available,289,73,10,Supplier_6,S&S Activewear,2020-12-04 01:14:53.533159,1924.56
+47,8763,94,36.28,93.0,91.75,2021-11-26 01:14:53.533159,Women,Sneakers,Medium,30.38,Sneakers in Women category,Out of Stock,249,75,9,Supplier_2,Apparel Distribution Center,2021-11-09 01:14:53.533159,1819.92
+31,4897,117,13.66,94.0,96.5,2021-08-02 01:14:53.533159,Shoes,Coat,High,170.22,Coat in Shoes category,Available,122,32,12,Supplier_8,TSC Apparel,2021-05-26 01:14:53.533159,17196.0
+51,6467,18,44.36,117.0,80.5,2021-12-21 01:14:53.533159,Kids,Bags,Medium,68.71,Bags in Kids category,Available,177,22,8,Supplier_8,TSC Apparel,2021-09-22 01:14:53.533159,688.12
+19,7073,98,24.12,18.0,81.75,2023-05-08 01:14:53.533159,Accessories,Jacket,Medium,72.11,Jacket in Accessories category,Out of Stock,287,17,8,Supplier_8,TSC Apparel,2023-05-02 01:14:53.533159,5362.56
+35,7863,89,44.21,98.0,80.5,2021-09-02 01:14:53.533159,Kids,Coat,High,120.08,Coat in Kids category,Available,197,47,1,Supplier_2,Apparel Distribution Center,2021-07-25 01:14:53.533159,5961.68
+37,8621,47,11.33,89.0,63.0,2022-09-16 01:14:53.533159,Men,Jacket,Low,24.86,Jacket in Men category,Available,241,62,4,Supplier_6,S&S Activewear,2022-06-18 01:14:53.533159,1036.13
+17,5764,66,27.38,47.0,75.0,2022-04-25 01:14:53.533159,Accessories,Shorts,Premium,242.23,Shorts in Accessories category,Available,66,18,3,Supplier_9,Wholesale Fashion Square,2022-01-29 01:14:53.533159,11610.32
+22,7948,30,38.0,66.0,58.0,2024-06-01 01:14:53.533159,Men,Shirt,High,176.11,Shirt in Men category,Out of Stock,236,63,2,Supplier_1,FashionGo,2024-03-24 01:14:53.533159,3275.84
+16,1038,24,15.26,30.0,41.75,2022-04-24 01:14:53.533159,Men,Hat,High,156.12,Hat in Men category,Out of Stock,37,67,2,Supplier_4,Bella+Canvas,2022-03-22 01:14:53.533159,3175.21
+20,1474,10,36.32,24.0,32.5,2023-05-21 01:14:53.533159,Kids,Jeans,Low,13.73,Jeans in Kids category,Available,101,15,5,Supplier_7,Blankstyle,2023-04-03 01:14:53.533159,87.43
+17,3498,57,20.43,10.0,30.25,2022-04-27 01:14:53.533159,Shoes,Sweater,Premium,411.46,Sweater in Shoes category,Out of Stock,288,59,7,Supplier_4,Bella+Canvas,2022-04-20 01:14:53.533159,18661.07
+19,9458,36,46.17,57.0,31.75,2024-05-11 01:14:53.533159,Kids,Sneakers,Premium,403.07,Sneakers in Kids category,Out of Stock,103,34,1,Supplier_4,Bella+Canvas,2024-03-24 01:14:53.533159,7810.78
+38,5789,11,42.52,36.0,28.5,2024-09-21 01:14:53.533159,Kids,Dress,Low,16.04,Dress in Kids category,Available,27,18,8,Supplier_9,Wholesale Fashion Square,2024-06-24 01:14:53.533159,101.39
+32,6530,29,25.02,11.0,33.25,2021-08-13 01:14:53.533159,Men,Sneakers,Medium,58.03,Sneakers in Men category,Out of Stock,287,12,14,Supplier_1,FashionGo,2021-07-14 01:14:53.533159,1261.64
+35,2081,90,39.42,29.0,41.5,2023-08-31 01:14:53.533159,Kids,Shorts,Low,13.1,Shorts in Kids category,Out of Stock,106,48,9,Supplier_5,Royal Apparel,2023-08-27 01:14:53.533159,714.51
+12,3397,122,13.06,90.0,63.0,2024-03-22 01:14:53.533159,Accessories,Dress,Premium,320.38,Dress in Accessories category,Out of Stock,128,14,1,Supplier_9,Wholesale Fashion Square,2024-02-26 01:14:53.533159,33982.63
+28,6021,105,38.42,122.0,86.5,2022-07-11 01:14:53.533159,Women,Jeans,Medium,67.93,Jeans in Women category,Available,148,24,10,Supplier_8,TSC Apparel,2022-05-23 01:14:53.533159,4391.72
+3,4516,76,22.37,105.0,98.25,2023-01-16 01:14:53.533159,Kids,Jeans,High,157.71,Jeans in Kids category,Available,120,45,13,Supplier_10,JiffyShirts,2022-11-05 01:14:53.533159,9304.45
+16,2869,63,28.66,76.0,91.5,2023-04-22 01:14:53.533159,Kids,Hat,Low,18.42,Hat in Kids category,Available,151,48,11,Supplier_9,Wholesale Fashion Square,2023-01-27 01:14:53.533159,827.71
+11,1771,19,12.87,63.0,65.75,2024-03-15 01:14:53.533159,Kids,Coat,Premium,462.41,Coat in Kids category,Available,54,61,12,Supplier_5,Royal Apparel,2024-03-12 01:14:53.533159,7655.29
+3,2257,23,29.69,19.0,45.25,2021-01-22 01:14:53.533159,Accessories,Coat,High,139.49,Coat in Accessories category,Out of Stock,208,32,11,Supplier_4,Bella+Canvas,2020-12-02 01:14:53.533159,2255.71
+3,5843,13,46.94,23.0,29.5,2023-01-19 01:14:53.533159,Women,Shorts,Low,28.06,Shorts in Women category,Available,132,35,10,Supplier_3,AlphaBroder,2022-12-20 01:14:53.533159,193.58
+31,3575,12,8.45,13.0,16.75,2022-08-02 01:14:53.533159,Accessories,Sweater,Premium,299.65,Sweater in Accessories category,Available,12,18,9,Supplier_4,Bella+Canvas,2022-05-10 01:14:53.533159,3291.75
+3,4102,52,38.02,12.0,25.0,2021-01-18 01:14:53.533159,Kids,Sneakers,Low,11.0,Sneakers in Kids category,Available,190,77,6,Supplier_9,Wholesale Fashion Square,2020-12-21 01:14:53.533159,354.55
+39,4513,112,13.63,52.0,47.25,2024-09-25 01:14:53.533159,Kids,Coat,Premium,430.42,Coat in Kids category,Available,282,72,4,Supplier_9,Wholesale Fashion Square,2024-09-02 01:14:53.533159,41637.77
+8,8168,57,8.79,112.0,58.25,2023-02-24 01:14:53.533159,Shoes,Coat,High,173.86,Coat in Shoes category,Out of Stock,77,16,11,Supplier_5,Royal Apparel,2023-01-09 01:14:53.533159,9038.99
+45,8024,22,24.19,57.0,60.75,2023-11-08 01:14:53.533159,Women,Coat,Low,14.45,Coat in Women category,Available,24,37,11,Supplier_9,Wholesale Fashion Square,2023-10-25 01:14:53.533159,241.04
+13,2804,18,18.56,22.0,52.25,2021-03-29 01:14:53.533159,Accessories,Bags,Medium,39.69,Bags in Accessories category,Out of Stock,276,6,13,Supplier_9,Wholesale Fashion Square,2021-01-11 01:14:53.533159,581.8
+43,1900,125,6.36,18.0,55.5,2023-10-28 01:14:53.533159,Women,Jacket,Premium,302.65,Jacket in Women category,Available,267,40,7,Supplier_1,FashionGo,2023-09-18 01:14:53.533159,35426.77
+45,9854,60,17.6,125.0,56.25,2021-11-12 01:14:53.533159,Shoes,Jacket,Medium,84.02,Jacket in Shoes category,Available,181,79,8,Supplier_3,AlphaBroder,2021-10-17 01:14:53.533159,4153.71
+37,2722,43,36.15,60.0,61.5,2022-09-17 01:14:53.533159,Women,Sneakers,Low,20.85,Sneakers in Women category,Out of Stock,43,11,13,Supplier_1,FashionGo,2022-06-19 01:14:53.533159,572.37
+43,1859,108,14.36,43.0,84.0,2022-10-30 01:14:53.533159,Men,Sneakers,Low,19.73,Sneakers in Men category,Available,108,60,6,Supplier_10,JiffyShirts,2022-10-26 01:14:53.533159,1824.9
+1,5726,10,38.13,108.0,55.25,2022-01-06 01:14:53.533159,Shoes,Sneakers,High,127.08,Sneakers in Shoes category,Out of Stock,30,62,7,Supplier_3,AlphaBroder,2021-12-30 01:14:53.533159,786.26
+24,6517,26,9.31,10.0,46.75,2021-06-18 01:14:53.533159,Women,Jacket,Medium,83.88,Jacket in Women category,Out of Stock,58,77,10,Supplier_7,Blankstyle,2021-03-29 01:14:53.533159,1977.94
+17,4643,78,42.93,26.0,55.5,2022-05-01 01:14:53.533159,Shoes,Jeans,High,138.73,Jeans in Shoes category,Available,108,5,7,Supplier_1,FashionGo,2022-02-25 01:14:53.533159,6175.79
+51,5466,11,46.8,78.0,31.25,2022-12-22 01:14:53.533159,Kids,Shirt,Low,5.03,Shirt in Kids category,Out of Stock,197,15,9,Supplier_1,FashionGo,2022-11-21 01:14:53.533159,29.41
+45,8288,122,18.4,11.0,59.25,2021-11-11 01:14:53.533159,Accessories,Jacket,Low,9.8,Jacket in Accessories category,Available,226,30,8,Supplier_2,Apparel Distribution Center,2021-10-16 01:14:53.533159,975.94
+17,6395,22,27.24,122.0,58.25,2021-05-02 01:14:53.533159,Accessories,Coat,Low,10.67,Coat in Accessories category,Out of Stock,61,40,3,Supplier_2,Apparel Distribution Center,2021-02-28 01:14:53.533159,170.81
+29,6830,119,33.34,22.0,68.5,2023-07-17 01:14:53.533159,Men,Bags,Low,23.53,Bags in Men category,Out of Stock,280,59,4,Supplier_4,Bella+Canvas,2023-04-30 01:14:53.533159,1866.4
+42,9393,8,21.44,119.0,67.75,2022-10-17 01:14:53.533159,Women,Jeans,Low,16.13,Jeans in Women category,Out of Stock,18,29,13,Supplier_2,Apparel Distribution Center,2022-08-11 01:14:53.533159,101.36
+14,5095,61,19.65,8.0,52.5,2024-04-02 01:14:53.534161,Women,Jacket,Low,23.28,Jacket in Women category,Out of Stock,83,34,4,Supplier_5,Royal Apparel,2024-03-27 01:14:53.534161,1141.12
+11,5903,132,27.12,61.0,80.0,2021-03-17 01:14:53.534161,Men,Jacket,Medium,66.35,Jacket in Men category,Available,169,16,14,Supplier_6,S&S Activewear,2021-03-11 01:14:53.534161,6382.58
+27,5024,25,25.7,132.0,56.5,2023-07-04 01:14:53.534161,Shoes,Shirt,High,102.69,Shirt in Shoes category,Out of Stock,40,45,13,Supplier_5,Royal Apparel,2023-06-21 01:14:53.534161,1907.56
+22,3759,79,41.66,25.0,74.25,2024-06-02 01:14:53.534161,Kids,Shirt,Premium,263.65,Shirt in Kids category,Available,79,42,2,Supplier_6,S&S Activewear,2024-03-21 01:14:53.534161,12150.48
+19,3174,38,7.45,79.0,68.5,2021-05-11 01:14:53.534161,Accessories,Coat,Medium,97.91,Coat in Accessories category,Out of Stock,279,23,15,Supplier_10,JiffyShirts,2021-02-16 01:14:53.534161,3443.36
+30,5411,42,7.95,38.0,46.0,2022-07-25 01:14:53.534161,Shoes,Jacket,Medium,60.59,Jacket in Shoes category,Available,106,80,13,Supplier_4,Bella+Canvas,2022-07-16 01:14:53.534161,2342.46
+6,7448,102,45.08,42.0,65.25,2024-02-10 01:14:53.534161,Accessories,Shirt,Medium,43.84,Shirt in Accessories category,Available,123,48,11,Supplier_1,FashionGo,2023-12-07 01:14:53.534161,2455.66
+44,3881,110,18.67,102.0,73.0,2021-11-03 01:14:53.534161,Men,Jeans,Low,29.95,Jeans in Men category,Out of Stock,196,23,11,Supplier_5,Royal Apparel,2021-08-24 01:14:53.534161,2678.94
+38,6389,59,28.75,110.0,78.25,2022-09-24 01:14:53.534161,Shoes,Coat,High,160.85,Coat in Shoes category,Out of Stock,159,50,1,Supplier_2,Apparel Distribution Center,2022-07-02 01:14:53.534161,6761.6
+9,3453,79,9.08,59.0,87.5,2024-02-27 01:14:53.534161,Accessories,Sweater,High,118.73,Sweater in Accessories category,Available,79,64,11,Supplier_2,Apparel Distribution Center,2024-02-12 01:14:53.534161,8528.61
+17,4752,61,19.57,79.0,77.25,2023-04-27 01:14:53.534161,Shoes,Sweater,High,196.02,Sweater in Shoes category,Out of Stock,95,7,15,Supplier_8,TSC Apparel,2023-02-13 01:14:53.534161,9616.64
+34,6395,104,14.76,61.0,75.75,2023-08-24 01:14:53.534161,Accessories,Jeans,Low,28.31,Jeans in Accessories category,Out of Stock,171,24,9,Supplier_3,AlphaBroder,2023-06-02 01:14:53.534161,2509.38
+22,3054,43,26.12,104.0,71.75,2022-05-30 01:14:53.534161,Kids,Jacket,Medium,96.56,Jacket in Kids category,Available,192,19,7,Supplier_8,TSC Apparel,2022-04-24 01:14:53.534161,3067.44
+8,9749,133,13.06,43.0,85.25,2022-02-27 01:14:53.534161,Shoes,Coat,Low,27.78,Coat in Shoes category,Out of Stock,299,20,2,Supplier_2,Apparel Distribution Center,2021-12-15 01:14:53.534161,3211.88
+4,6841,25,21.06,133.0,76.25,2024-01-25 01:14:53.534161,Men,Jeans,Low,15.53,Jeans in Men category,Available,200,80,14,Supplier_2,Apparel Distribution Center,2023-12-15 01:14:53.534161,306.49
+52,4215,8,14.11,25.0,52.25,2023-12-31 01:14:53.534161,Men,Shirt,High,183.32,Shirt in Men category,Out of Stock,57,61,15,Supplier_9,Wholesale Fashion Square,2023-12-20 01:14:53.534161,1259.54
+39,8645,75,30.66,8.0,60.25,2021-10-02 01:14:53.534161,Men,Coat,Medium,92.79,Coat in Men category,Available,119,54,1,Supplier_3,AlphaBroder,2021-08-05 01:14:53.534161,4825.34
+16,5754,61,27.43,75.0,42.25,2024-04-19 01:14:53.534161,Shoes,Shirt,Medium,99.76,Shirt in Shoes category,Out of Stock,152,50,13,Supplier_9,Wholesale Fashion Square,2024-04-03 01:14:53.534161,4416.57
+51,8260,11,7.03,61.0,38.75,2021-12-20 01:14:53.534161,Women,Sneakers,Low,26.08,Sneakers in Women category,Out of Stock,11,45,8,Supplier_3,AlphaBroder,2021-12-06 01:14:53.534161,266.71
+27,9993,44,30.05,11.0,47.75,2024-07-03 01:14:53.534161,Kids,Bags,Premium,387.49,Bags in Kids category,Available,123,48,6,Supplier_2,Apparel Distribution Center,2024-06-21 01:14:53.534161,11925.78
+32,2221,43,15.01,44.0,39.75,2022-08-09 01:14:53.534483,Kids,Coat,Medium,99.83,Coat in Kids category,Out of Stock,176,34,2,Supplier_8,TSC Apparel,2022-06-04 01:14:53.534483,3648.45
+4,3022,19,10.0,43.0,29.25,2022-01-29 01:14:53.534483,Women,Dress,Low,11.57,Dress in Women category,Available,19,11,4,Supplier_1,FashionGo,2022-01-19 01:14:53.534483,197.85
+10,9467,27,25.94,19.0,33.25,2021-03-08 01:14:53.534483,Kids,Sweater,High,111.65,Sweater in Kids category,Out of Stock,283,48,12,Supplier_7,Blankstyle,2020-12-28 01:14:53.534483,2232.68
+19,1105,57,16.82,27.0,36.5,2023-05-11 01:14:53.534483,Shoes,Hat,Low,6.83,Hat in Shoes category,Available,89,30,15,Supplier_9,Wholesale Fashion Square,2023-04-25 01:14:53.534483,323.93
+30,2081,25,40.25,57.0,32.0,2022-07-26 01:14:53.534483,Accessories,Shorts,Low,7.19,Shorts in Accessories category,Out of Stock,135,56,15,Supplier_7,Blankstyle,2022-07-04 01:14:53.534483,107.45
+31,3910,84,10.46,25.0,48.25,2024-07-29 01:14:53.534483,Accessories,Jacket,Low,22.91,Jacket in Accessories category,Available,84,39,9,Supplier_2,Apparel Distribution Center,2024-07-13 01:14:53.534483,1723.15
+49,9118,27,38.91,84.0,48.25,2023-12-04 01:14:53.534483,Women,Jacket,High,188.81,Jacket in Women category,Out of Stock,291,7,6,Supplier_10,JiffyShirts,2023-10-17 01:14:53.534483,3114.07
+46,1298,15,26.13,27.0,37.75,2022-11-14 01:14:53.534483,Shoes,Coat,High,144.19,Coat in Shoes category,Available,52,63,11,Supplier_3,AlphaBroder,2022-09-09 01:14:53.534483,1597.59
+52,8584,123,17.4,15.0,62.25,2021-12-27 01:14:53.534483,Men,Dress,Premium,203.34,Dress in Men category,Available,266,37,12,Supplier_2,Apparel Distribution Center,2021-11-24 01:14:53.534483,20658.75
+21,5998,13,30.06,123.0,44.5,2021-05-27 01:14:53.534483,Women,Shirt,Medium,52.88,Shirt in Women category,Available,139,18,3,Supplier_2,Apparel Distribution Center,2021-05-27 01:14:53.534483,480.75
+33,9603,96,16.89,13.0,61.75,2021-08-20 01:14:53.534483,Women,Shirt,Medium,46.71,Shirt in Women category,Available,114,72,6,Supplier_3,AlphaBroder,2021-05-22 01:14:53.534483,3726.66
+19,1538,57,47.94,96.0,72.25,2022-05-14 01:14:53.534483,Accessories,Sweater,High,179.21,Sweater in Accessories category,Out of Stock,120,22,14,Supplier_8,TSC Apparel,2022-02-27 01:14:53.534483,5317.54
+40,3465,31,27.89,57.0,49.25,2023-10-03 01:14:53.534483,Men,Sweater,Low,17.74,Sweater in Men category,Out of Stock,274,53,9,Supplier_10,JiffyShirts,2023-07-27 01:14:53.534483,396.44
+17,8711,107,14.61,31.0,72.75,2022-04-29 01:14:53.534483,Accessories,Dress,High,130.08,Dress in Accessories category,Available,154,59,11,Supplier_7,Blankstyle,2022-03-14 01:14:53.534483,11885.43
+24,1070,84,22.35,107.0,69.75,2021-06-14 01:14:53.534483,Women,Jacket,High,135.7,Jacket in Women category,Available,138,64,1,Supplier_8,TSC Apparel,2021-05-22 01:14:53.534483,8851.6
+6,3751,79,17.26,84.0,75.25,2022-02-07 01:14:53.534483,Accessories,Jeans,Medium,61.66,Jeans in Accessories category,Out of Stock,224,68,6,Supplier_2,Apparel Distribution Center,2021-12-17 01:14:53.534483,4030.21
+38,1241,9,25.93,79.0,69.75,2022-09-19 01:14:53.534483,Accessories,Hat,Medium,68.92,Hat in Accessories category,Out of Stock,10,36,6,Supplier_2,Apparel Distribution Center,2022-07-16 01:14:53.534483,459.45
+22,5563,25,13.56,9.0,49.25,2023-05-31 01:14:53.534483,Kids,Shorts,High,139.36,Shorts in Kids category,Out of Stock,156,22,15,Supplier_8,TSC Apparel,2023-05-10 01:14:53.534483,3011.77
+9,4101,117,39.64,25.0,57.5,2024-02-29 01:14:53.534483,Women,Sneakers,Medium,49.46,Sneakers in Women category,Available,285,15,5,Supplier_7,Blankstyle,2024-02-20 01:14:53.534483,3492.82
+35,5467,70,17.7,117.0,55.25,2023-09-03 01:14:53.535105,Accessories,Bags,Premium,272.83,Bags in Accessories category,Available,263,61,2,Supplier_5,Royal Apparel,2023-08-07 01:14:53.535105,15716.83
+34,3018,85,39.61,70.0,74.25,2022-08-25 01:14:53.535105,Men,Dress,Low,28.49,Dress in Men category,Available,144,27,15,Supplier_1,FashionGo,2022-06-20 01:14:53.535105,1462.15
+48,4014,20,15.01,85.0,73.0,2022-12-04 01:14:53.535105,Accessories,Jacket,High,166.49,Jacket in Accessories category,Out of Stock,21,76,2,Supplier_9,Wholesale Fashion Square,2022-11-24 01:14:53.535105,2829.91
+2,5571,14,21.25,20.0,47.25,2024-01-14 01:14:53.535105,Kids,Coat,Medium,38.99,Coat in Kids category,Out of Stock,80,14,3,Supplier_6,S&S Activewear,2023-12-19 01:14:53.535105,429.87
+11,9040,33,5.36,14.0,38.0,2024-03-15 01:14:53.535105,Men,Shorts,Premium,401.65,Shorts in Men category,Out of Stock,231,65,12,Supplier_7,Blankstyle,2024-01-09 01:14:53.535105,12544.17
+2,6836,73,47.08,33.0,35.0,2024-01-14 01:14:53.535105,Kids,Jacket,Medium,80.82,Jacket in Kids category,Available,194,38,15,Supplier_7,Blankstyle,2024-01-12 01:14:53.535105,3121.95
+42,1132,32,28.84,73.0,38.0,2023-10-18 01:14:53.535105,Accessories,Shorts,Low,22.94,Shorts in Accessories category,Out of Stock,200,56,1,Supplier_10,JiffyShirts,2023-08-01 01:14:53.535105,522.36
+30,8282,87,17.04,32.0,56.25,2024-07-28 01:14:53.535105,Kids,Bags,Low,17.85,Bags in Kids category,Available,216,47,3,Supplier_5,Royal Apparel,2024-05-12 01:14:53.535105,1288.42
+43,2716,64,27.42,87.0,64.0,2024-10-22 01:14:53.535105,Shoes,Sweater,Premium,300.49,Sweater in Shoes category,Available,64,45,12,Supplier_3,AlphaBroder,2024-10-07 01:14:53.535105,13957.46
+5,9373,108,45.43,64.0,72.75,2022-02-05 01:14:53.535105,Kids,Hat,Premium,253.72,Hat in Kids category,Available,230,31,10,Supplier_5,Royal Apparel,2021-12-08 01:14:53.535105,14953.31
+35,8027,120,16.69,108.0,94.75,2022-08-29 01:14:53.535105,Shoes,Jacket,High,119.15,Jacket in Shoes category,Available,265,73,2,Supplier_10,JiffyShirts,2022-08-29 01:14:53.535105,11911.79
+38,8729,8,35.16,120.0,75.0,2024-09-20 01:14:53.535105,Shoes,Coat,High,176.91,Coat in Shoes category,Out of Stock,18,80,14,Supplier_2,Apparel Distribution Center,2024-07-04 01:14:53.535105,917.7
+7,9658,81,48.35,8.0,79.25,2024-02-16 01:14:53.535105,Men,Shirt,Low,12.29,Shirt in Men category,Available,143,62,3,Supplier_7,Blankstyle,2023-12-23 01:14:53.535105,514.3
+15,2219,23,22.79,81.0,58.0,2024-04-14 01:14:53.535105,Accessories,Dress,High,164.06,Dress in Accessories category,Available,201,25,8,Supplier_9,Wholesale Fashion Square,2024-04-08 01:14:53.535105,2913.47
+47,4428,23,32.93,23.0,33.75,2022-11-26 01:14:53.535105,Women,Jeans,Low,17.57,Jeans in Women category,Out of Stock,265,43,3,Supplier_10,JiffyShirts,2022-09-26 01:14:53.535105,271.07
+7,5994,47,31.51,23.0,43.5,2022-02-20 01:14:53.535105,Men,Jeans,High,156.69,Jeans in Men category,Available,214,72,10,Supplier_5,Royal Apparel,2022-02-17 01:14:53.535105,5043.81
+47,2114,78,37.07,47.0,42.75,2020-11-22 01:14:53.535105,Men,Coat,Low,26.81,Coat in Men category,Out of Stock,90,31,10,Supplier_10,JiffyShirts,2020-10-11 01:14:53.535105,1315.8
+31,1199,141,17.39,78.0,72.25,2023-07-31 01:14:53.535105,Women,Dress,Low,21.29,Dress in Women category,Available,159,56,3,Supplier_10,JiffyShirts,2023-05-09 01:14:53.535105,2479.6
+34,8023,75,40.9,141.0,85.25,2022-08-23 01:14:53.535105,Women,Coat,Premium,352.11,Coat in Women category,Available,222,59,4,Supplier_2,Apparel Distribution Center,2022-06-23 01:14:53.535105,15608.02
+39,7515,37,10.41,75.0,82.75,2022-09-27 01:14:53.535105,Accessories,Dress,Premium,436.94,Dress in Accessories category,Available,53,34,8,Supplier_6,S&S Activewear,2022-09-17 01:14:53.535105,14484.33
+9,4892,90,16.34,37.0,85.75,2021-03-07 01:14:53.535105,Men,Jeans,Medium,98.36,Jeans in Men category,Out of Stock,90,57,1,Supplier_4,Bella+Canvas,2021-01-31 01:14:53.535105,7406.22
+15,7371,36,38.09,90.0,59.5,2024-04-11 01:14:53.535105,Shoes,Shorts,Medium,88.8,Shorts in Shoes category,Available,36,27,12,Supplier_6,S&S Activewear,2024-02-25 01:14:53.535105,1979.03
+15,9963,96,6.69,36.0,64.75,2023-04-14 01:14:53.535105,Men,Coat,High,189.79,Coat in Men category,Available,216,45,7,Supplier_8,TSC Apparel,2023-04-07 01:14:53.535105,17001.22
+5,5180,31,43.11,96.0,63.25,2022-02-01 01:14:53.535105,Kids,Bags,Medium,75.69,Bags in Kids category,Available,107,17,9,Supplier_8,TSC Apparel,2021-11-27 01:14:53.535105,1334.81
+41,5964,60,48.98,31.0,55.75,2022-10-10 01:14:53.535105,Kids,Shirt,Medium,61.16,Shirt in Kids category,Available,258,20,6,Supplier_9,Wholesale Fashion Square,2022-08-11 01:14:53.535105,1872.29
+23,5132,42,7.48,60.0,57.25,2023-06-09 01:14:53.535105,Kids,Jeans,Premium,369.26,Jeans in Kids category,Out of Stock,52,9,6,Supplier_3,AlphaBroder,2023-05-14 01:14:53.535105,14349.42
+35,9017,92,10.9,42.0,56.25,2023-08-29 01:14:53.535105,Kids,Hat,Medium,76.37,Hat in Kids category,Out of Stock,92,62,14,Supplier_1,FashionGo,2023-06-20 01:14:53.535105,6260.11
+13,1852,111,23.85,92.0,76.25,2024-03-29 01:14:53.535105,Women,Shirt,Low,26.2,Shirt in Women category,Out of Stock,277,55,6,Supplier_3,AlphaBroder,2024-02-07 01:14:53.535105,2214.83
+33,4852,55,46.65,111.0,75.0,2023-08-20 01:14:53.535105,Men,Hat,Low,27.67,Hat in Men category,Out of Stock,195,18,2,Supplier_7,Blankstyle,2023-07-16 01:14:53.535105,811.91
+19,9638,39,14.94,55.0,74.25,2022-05-14 01:14:53.535105,Shoes,Dress,Premium,395.56,Dress in Shoes category,Available,80,65,11,Supplier_8,TSC Apparel,2022-02-28 01:14:53.535105,13122.57
+21,8313,83,43.59,39.0,72.0,2022-05-23 01:14:53.535105,Shoes,Bags,Premium,249.0,Bags in Shoes category,Out of Stock,87,15,8,Supplier_9,Wholesale Fashion Square,2022-04-28 01:14:53.535105,11658.4
+52,8804,54,43.02,83.0,57.75,2023-01-01 01:14:53.535105,Men,Shorts,Premium,416.06,Shorts in Men category,Available,205,69,15,Supplier_5,Royal Apparel,2022-11-30 01:14:53.535105,12801.28
+41,4141,43,26.29,54.0,54.75,2024-10-08 01:14:53.535105,Shoes,Jacket,High,192.21,Jacket in Shoes category,Available,75,13,15,Supplier_1,FashionGo,2024-09-28 01:14:53.535105,6092.46
+23,4876,92,40.34,43.0,68.0,2024-06-06 01:14:53.535105,Kids,Shirt,Premium,267.94,Shirt in Kids category,Out of Stock,92,18,10,Supplier_7,Blankstyle,2024-03-23 01:14:53.535105,14707.17
+49,4093,9,49.39,92.0,49.5,2022-12-08 01:14:53.535105,Men,Sneakers,Medium,97.29,Sneakers in Men category,Available,300,43,2,Supplier_5,Royal Apparel,2022-11-08 01:14:53.535105,443.09
+3,6580,74,32.58,9.0,54.5,2021-01-19 01:14:53.535105,Accessories,Shirt,Low,19.78,Shirt in Accessories category,Available,157,35,11,Supplier_4,Bella+Canvas,2020-11-20 01:14:53.535105,987.02
+23,5159,13,36.56,74.0,47.0,2023-06-11 01:14:53.535105,Kids,Sneakers,Low,21.2,Sneakers in Kids category,Available,20,39,2,Supplier_8,TSC Apparel,2023-05-23 01:14:53.535105,174.82
+45,1372,66,20.08,13.0,40.5,2022-11-07 01:14:53.535105,Kids,Hat,Premium,227.83,Hat in Kids category,Available,230,76,2,Supplier_3,AlphaBroder,2022-09-25 01:14:53.535105,12018.14
+49,8123,12,48.7,66.0,41.25,2022-12-09 01:14:53.535105,Kids,Jeans,Premium,345.82,Jeans in Kids category,Out of Stock,156,33,8,Supplier_7,Blankstyle,2022-09-15 01:14:53.535105,2128.85
+36,9922,59,32.5,12.0,37.5,2024-09-08 01:14:53.535105,Kids,Sneakers,Medium,35.25,Sneakers in Kids category,Out of Stock,74,70,7,Supplier_5,Royal Apparel,2024-08-02 01:14:53.535105,1403.82
+18,2273,50,36.77,59.0,46.75,2022-05-07 01:14:53.535105,Men,Sweater,Medium,46.22,Sweater in Men category,Out of Stock,224,68,3,Supplier_1,FashionGo,2022-03-07 01:14:53.535105,1461.46
+3,4890,29,43.3,50.0,37.5,2023-01-17 01:14:53.535105,Men,Dress,High,180.75,Dress in Men category,Out of Stock,29,23,9,Supplier_3,AlphaBroder,2022-11-18 01:14:53.535105,2971.94
+29,2581,136,7.29,29.0,68.5,2024-07-19 01:14:53.535105,Accessories,Bags,Medium,49.25,Bags in Accessories category,Available,136,65,13,Supplier_6,S&S Activewear,2024-06-14 01:14:53.535105,6210.16
+23,5988,98,20.51,136.0,78.25,2023-06-08 01:14:53.535105,Shoes,Shirt,Premium,377.61,Shirt in Shoes category,Out of Stock,99,25,5,Supplier_8,TSC Apparel,2023-04-05 01:14:53.535105,29414.21
+36,7129,75,25.71,98.0,84.5,2022-09-06 01:14:53.535105,Women,Jeans,Premium,252.41,Jeans in Women category,Out of Stock,75,49,3,Supplier_7,Blankstyle,2022-08-21 01:14:53.535105,14063.15
+44,3111,93,27.15,75.0,100.5,2023-11-05 01:14:53.535105,Women,Dress,Premium,456.45,Dress in Women category,Out of Stock,251,6,8,Supplier_8,TSC Apparel,2023-08-30 01:14:53.535105,30926.59
+1,3321,47,9.29,93.0,78.25,2021-01-10 01:14:53.535105,Women,Shorts,High,127.47,Shorts in Women category,Available,200,20,14,Supplier_8,TSC Apparel,2020-12-28 01:14:53.535105,5434.51
+40,7094,74,23.3,47.0,72.25,2021-10-08 01:14:53.535105,Kids,Sneakers,Low,12.55,Sneakers in Kids category,Available,138,74,14,Supplier_4,Bella+Canvas,2021-07-16 01:14:53.535105,712.48
+17,1408,56,38.59,74.0,67.5,2021-04-29 01:14:53.535105,Men,Hat,Premium,326.57,Hat in Men category,Available,117,34,3,Supplier_7,Blankstyle,2021-04-02 01:14:53.535105,11231.06
+3,8795,16,48.33,56.0,48.25,2024-01-20 01:14:53.535105,Kids,Sneakers,Medium,55.17,Sneakers in Kids category,Out of Stock,40,72,13,Supplier_5,Royal Apparel,2023-11-16 01:14:53.535105,456.13
+32,4363,62,42.5,16.0,52.0,2024-08-10 01:14:53.535105,Kids,Dress,Low,8.6,Dress in Kids category,Out of Stock,244,46,3,Supplier_6,S&S Activewear,2024-07-22 01:14:53.535105,306.69
+46,3775,35,12.07,62.0,42.25,2022-11-17 01:14:53.535105,Kids,Hat,High,131.31,Hat in Kids category,Available,201,41,4,Supplier_9,Wholesale Fashion Square,2022-09-16 01:14:53.535105,4041.08
+44,3677,19,14.74,35.0,33.0,2021-11-01 01:14:53.535105,Shoes,Coat,Medium,35.18,Coat in Shoes category,Available,248,75,10,Supplier_1,FashionGo,2021-08-25 01:14:53.535105,569.87
+22,1576,27,43.95,19.0,35.75,2024-05-28 01:14:53.535105,Accessories,Jacket,Premium,333.77,Jacket in Accessories category,Available,27,23,3,Supplier_2,Apparel Distribution Center,2024-03-26 01:14:53.535105,5051.1
+32,8751,95,40.04,27.0,44.0,2024-08-08 01:14:53.535105,Women,Bags,Low,20.98,Bags in Women category,Out of Stock,243,58,12,Supplier_7,Blankstyle,2024-06-15 01:14:53.535105,1195.07
+31,1287,125,44.7,95.0,66.5,2023-08-04 01:14:53.535105,Women,Sweater,High,124.67,Sweater in Women category,Out of Stock,233,13,5,Supplier_9,Wholesale Fashion Square,2023-05-10 01:14:53.535105,8617.28
+28,6653,165,6.22,125.0,103.0,2023-07-16 01:14:53.535105,Kids,Shorts,Low,11.2,Shorts in Kids category,Available,212,49,4,Supplier_9,Wholesale Fashion Square,2023-07-12 01:14:53.535105,1733.14
+33,3276,120,39.8,165.0,126.25,2024-08-13 01:14:53.535105,Kids,Dress,Low,26.15,Dress in Kids category,Available,243,74,9,Supplier_9,Wholesale Fashion Square,2024-05-26 01:14:53.535105,1889.17
+28,8248,171,46.81,120.0,145.25,2021-07-13 01:14:53.535105,Shoes,Dress,High,128.46,Dress in Shoes category,Out of Stock,238,40,9,Supplier_8,TSC Apparel,2021-07-12 01:14:53.535105,11683.38
+4,9763,25,31.87,171.0,120.25,2022-01-26 01:14:53.535105,Women,Sneakers,Low,7.63,Sneakers in Women category,Available,145,34,11,Supplier_2,Apparel Distribution Center,2021-12-05 01:14:53.535105,129.92
+40,1580,57,44.7,25.0,93.25,2024-10-03 01:14:53.535105,Kids,Jeans,Premium,271.46,Jeans in Kids category,Out of Stock,57,26,13,Supplier_6,S&S Activewear,2024-08-18 01:14:53.535105,8557.14
+34,7699,101,45.98,57.0,88.5,2023-08-21 01:14:53.535105,Kids,Dress,Premium,201.53,Dress in Kids category,Out of Stock,224,14,5,Supplier_9,Wholesale Fashion Square,2023-07-02 01:14:53.535105,10994.53
+32,4425,124,16.38,101.0,76.75,2023-08-07 01:14:53.535105,Kids,Jeans,Premium,437.67,Jeans in Kids category,Out of Stock,206,26,7,Supplier_2,Apparel Distribution Center,2023-06-28 01:14:53.535105,45381.35
+51,5953,20,40.08,124.0,75.5,2020-12-19 01:14:53.536106,Shoes,Shirt,Medium,57.09,Shirt in Shoes category,Available,236,75,1,Supplier_10,JiffyShirts,2020-10-26 01:14:53.536106,684.06
+52,2057,113,20.18,20.0,89.5,2022-12-29 01:14:53.536106,Shoes,Sweater,Premium,238.34,Sweater in Shoes category,Available,215,21,10,Supplier_6,S&S Activewear,2022-10-02 01:14:53.536106,21497.34
+33,3066,70,33.35,113.0,81.75,2022-08-20 01:14:53.536106,Accessories,Dress,Low,19.57,Dress in Accessories category,Out of Stock,160,21,14,Supplier_4,Bella+Canvas,2022-06-20 01:14:53.536106,913.1
+50,8922,80,35.69,70.0,70.75,2022-12-14 01:14:53.536106,Accessories,Jeans,Low,11.51,Jeans in Accessories category,Out of Stock,80,43,8,Supplier_9,Wholesale Fashion Square,2022-10-19 01:14:53.536106,592.29
+20,2065,51,36.23,80.0,78.5,2024-05-13 01:14:53.536106,Accessories,Sweater,Low,12.27,Sweater in Accessories category,Out of Stock,170,30,9,Supplier_4,Bella+Canvas,2024-04-14 01:14:53.536106,399.08
+41,8662,69,39.43,51.0,67.5,2022-10-15 01:14:53.536106,Shoes,Sneakers,High,160.56,Sneakers in Shoes category,Available,70,7,1,Supplier_3,AlphaBroder,2022-08-21 01:14:53.536106,6710.87
+42,6876,68,31.42,69.0,67.0,2022-10-19 01:14:53.536106,Kids,Hat,High,179.21,Hat in Kids category,Available,278,45,1,Supplier_2,Apparel Distribution Center,2022-08-01 01:14:53.536106,8357.9
+44,1154,31,47.38,68.0,54.75,2023-11-01 01:14:53.536106,Shoes,Sneakers,Premium,318.42,Sneakers in Shoes category,Out of Stock,145,39,14,Supplier_2,Apparel Distribution Center,2023-09-09 01:14:53.536106,5193.71
+45,5841,116,35.38,31.0,71.0,2023-11-11 01:14:53.536106,Kids,Jeans,High,185.73,Jeans in Kids category,Available,290,44,7,Supplier_7,Blankstyle,2023-08-21 01:14:53.536106,13921.58
+15,9239,32,33.03,116.0,61.75,2021-04-12 01:14:53.536106,Shoes,Sneakers,Premium,256.18,Sneakers in Shoes category,Available,144,65,2,Supplier_10,JiffyShirts,2021-04-08 01:14:53.536106,5490.49
+7,8709,96,31.43,32.0,68.75,2021-02-15 01:14:53.536106,Men,Sweater,Premium,203.79,Sweater in Men category,Available,259,12,3,Supplier_7,Blankstyle,2021-01-20 01:14:53.536106,13415.74
+15,5313,99,41.35,96.0,85.75,2023-04-15 01:14:53.536106,Accessories,Sneakers,Medium,98.27,Sneakers in Accessories category,Out of Stock,190,67,7,Supplier_4,Bella+Canvas,2023-03-12 01:14:53.536106,5706.26
+38,8299,58,12.91,99.0,71.25,2021-09-21 01:14:53.536106,Women,Bags,Medium,41.56,Bags in Women category,Out of Stock,150,73,12,Supplier_1,FashionGo,2021-07-16 01:14:53.536106,2099.44
+24,6829,103,23.91,58.0,89.0,2021-06-16 01:14:53.536106,Accessories,Jacket,Medium,71.45,Jacket in Accessories category,Available,237,7,7,Supplier_3,AlphaBroder,2021-05-29 01:14:53.536106,5599.57
+45,2408,129,8.93,103.0,97.25,2021-11-13 01:14:53.536106,Shoes,Jeans,High,190.51,Jeans in Shoes category,Out of Stock,299,38,1,Supplier_9,Wholesale Fashion Square,2021-09-25 01:14:53.536106,22382.22
+37,8564,71,30.62,129.0,90.25,2022-09-17 01:14:53.536106,Men,Sneakers,High,170.09,Sneakers in Men category,Available,71,64,4,Supplier_1,FashionGo,2022-08-12 01:14:53.536106,8378.79
+16,8333,32,18.11,71.0,83.75,2024-04-21 01:14:53.536106,Men,Shorts,High,147.19,Shorts in Men category,Available,234,29,10,Supplier_5,Royal Apparel,2024-03-15 01:14:53.536106,3857.1
+18,2225,16,15.32,32.0,62.0,2023-05-01 01:14:53.536106,Men,Shorts,Low,11.54,Shorts in Men category,Out of Stock,31,12,15,Supplier_8,TSC Apparel,2023-03-17 01:14:53.536106,156.39
+46,6809,99,13.98,16.0,54.5,2022-11-20 01:14:53.536106,Women,Shirt,Premium,438.68,Shirt in Women category,Out of Stock,172,59,14,Supplier_5,Royal Apparel,2022-11-17 01:14:53.536106,37357.19
+27,7974,101,40.4,99.0,62.0,2021-07-11 01:14:53.536106,Shoes,Bags,Medium,61.81,Bags in Shoes category,Available,256,44,7,Supplier_6,S&S Activewear,2021-05-13 01:14:53.536106,3720.8
+9,1962,4,31.79,101.0,55.0,2021-03-02 01:14:53.536106,Women,Coat,Medium,34.87,Coat in Women category,Out of Stock,43,70,1,Supplier_10,JiffyShirts,2020-12-26 01:14:53.536106,95.12
+43,7280,54,42.5,4.0,64.5,2024-10-26 01:14:53.536106,Women,Sweater,Medium,80.01,Sweater in Women category,Available,79,31,2,Supplier_8,TSC Apparel,2024-09-15 01:14:53.536106,2484.23
+47,2538,104,19.27,54.0,65.75,2023-11-20 01:14:53.536106,Men,Hat,Premium,201.81,Hat in Men category,Out of Stock,183,56,9,Supplier_4,Bella+Canvas,2023-10-26 01:14:53.536106,16945.04
+30,9103,84,17.32,104.0,61.5,2022-07-29 01:14:53.536106,Men,Shirt,Low,26.87,Shirt in Men category,Available,84,66,10,Supplier_6,S&S Activewear,2022-06-03 01:14:53.536106,1866.09
+33,8419,1,16.76,84.0,60.75,2024-08-13 01:14:53.536106,Men,Sweater,Premium,393.82,Sweater in Men category,Out of Stock,61,77,5,Supplier_4,Bella+Canvas,2024-06-09 01:14:53.536106,327.83
+14,6253,2,14.96,1.0,47.75,2021-04-08 01:14:53.536106,Accessories,Hat,Premium,289.21,Hat in Accessories category,Out of Stock,61,76,6,Supplier_3,AlphaBroder,2021-01-19 01:14:53.536106,491.89
+22,1178,23,25.01,2.0,27.5,2021-06-02 01:14:53.536106,Men,Hat,Low,19.05,Hat in Men category,Available,160,8,6,Supplier_4,Bella+Canvas,2021-03-28 01:14:53.536106,328.59
+45,6200,60,33.25,23.0,21.5,2024-11-04 01:14:53.536106,Men,Shirt,Low,28.38,Shirt in Men category,Available,88,72,5,Supplier_6,S&S Activewear,2024-10-27 01:14:53.536106,1136.69
+33,1968,59,17.99,60.0,36.0,2024-08-15 01:14:53.536106,Kids,Jeans,Low,28.07,Jeans in Kids category,Out of Stock,149,31,5,Supplier_1,FashionGo,2024-06-10 01:14:53.536106,1358.22
+51,8789,42,47.81,59.0,46.0,2020-12-19 01:14:53.536106,Accessories,Shirt,Low,13.27,Shirt in Accessories category,Out of Stock,203,53,13,Supplier_3,AlphaBroder,2020-10-05 01:14:53.536106,290.75
+18,2536,110,26.61,42.0,67.75,2024-04-30 01:14:53.536106,Shoes,Shorts,Medium,73.17,Shorts in Shoes category,Out of Stock,131,8,5,Supplier_1,FashionGo,2024-03-22 01:14:53.536106,5907.12
+43,1568,52,47.14,110.0,65.75,2023-10-23 01:14:53.536106,Shoes,Bags,High,146.69,Bags in Shoes category,Available,168,15,13,Supplier_5,Royal Apparel,2023-10-13 01:14:53.536106,4032.42
+17,3275,14,33.68,52.0,54.5,2021-04-26 01:14:53.536106,Kids,Sneakers,Medium,39.7,Sneakers in Kids category,Out of Stock,162,29,6,Supplier_4,Bella+Canvas,2021-03-28 01:14:53.536106,368.55
+33,5455,83,46.08,14.0,64.75,2022-08-15 01:14:53.536106,Shoes,Shirt,Low,16.71,Shirt in Shoes category,Out of Stock,98,46,8,Supplier_9,Wholesale Fashion Square,2022-07-26 01:14:53.536106,747.95
+24,5818,22,11.11,83.0,42.75,2024-06-11 01:14:53.536106,Women,Sneakers,Low,22.36,Sneakers in Women category,Out of Stock,34,41,4,Supplier_3,AlphaBroder,2024-04-13 01:14:53.536106,437.28
+47,4621,66,19.86,22.0,46.25,2022-11-26 01:14:53.536106,Kids,Dress,Premium,431.31,Dress in Kids category,Out of Stock,190,42,13,Supplier_1,FashionGo,2022-10-24 01:14:53.536106,22811.83
+12,6486,53,20.35,66.0,56.0,2022-03-22 01:14:53.536106,Women,Sweater,Low,20.8,Sweater in Women category,Out of Stock,74,66,7,Supplier_1,FashionGo,2022-02-18 01:14:53.536106,878.04
+1,7823,72,10.18,53.0,53.25,2022-01-06 01:14:53.536106,Kids,Shirt,Premium,486.87,Shirt in Kids category,Out of Stock,160,39,9,Supplier_1,FashionGo,2021-12-16 01:14:53.536106,31486.41
+41,3101,100,41.6,72.0,72.75,2024-10-08 01:14:53.536106,Accessories,Sneakers,High,149.97,Sneakers in Accessories category,Available,299,45,11,Supplier_2,Apparel Distribution Center,2024-09-13 01:14:53.536106,8757.88
+31,8614,20,7.38,100.0,61.25,2024-08-03 01:14:53.536106,Shoes,Sweater,High,126.72,Sweater in Shoes category,Out of Stock,67,72,15,Supplier_6,S&S Activewear,2024-06-05 01:14:53.536106,2347.25
+26,2076,25,19.95,20.0,54.25,2024-06-30 01:14:53.536106,Men,Jacket,Medium,92.75,Jacket in Men category,Out of Stock,125,21,10,Supplier_2,Apparel Distribution Center,2024-06-18 01:14:53.536106,1856.06
+14,4910,94,37.48,25.0,59.75,2022-04-10 01:14:53.536106,Men,Hat,Low,28.13,Hat in Men category,Out of Stock,164,26,4,Supplier_6,S&S Activewear,2022-02-03 01:14:53.536106,1653.46
+30,8865,61,39.64,94.0,50.0,2024-07-26 01:14:53.536106,Women,Sweater,Premium,218.41,Sweater in Women category,Available,239,11,10,Supplier_3,AlphaBroder,2024-06-28 01:14:53.536106,8041.93
+48,7459,0,32.99,61.0,45.0,2022-11-29 01:14:53.536106,Kids,Shirt,Medium,70.91,Shirt in Kids category,Available,18,70,12,Supplier_5,Royal Apparel,2022-10-25 01:14:53.536106,0.0
+21,7804,45,38.15,0.0,50.0,2022-05-26 01:14:53.536106,Men,Dress,High,108.25,Dress in Men category,Out of Stock,91,5,3,Supplier_1,FashionGo,2022-05-14 01:14:53.536106,3012.82
+22,3749,53,39.01,45.0,39.75,2022-05-30 01:14:53.536106,Women,Sneakers,Low,27.68,Sneakers in Women category,Available,90,75,1,Supplier_3,AlphaBroder,2022-04-05 01:14:53.536106,894.61
+5,1696,22,32.6,53.0,30.0,2021-02-01 01:14:53.536106,Men,Dress,Premium,243.29,Dress in Men category,Available,226,35,9,Supplier_9,Wholesale Fashion Square,2021-01-13 01:14:53.536106,3607.68
+21,1133,86,10.72,22.0,51.5,2024-05-22 01:14:53.536106,Men,Dress,Premium,222.96,Dress in Men category,Available,86,38,6,Supplier_7,Blankstyle,2024-04-15 01:14:53.536106,17120.16
+19,4476,65,10.24,86.0,56.5,2022-05-13 01:14:53.536106,Men,Shirt,Medium,73.77,Shirt in Men category,Available,65,11,10,Supplier_7,Blankstyle,2022-05-06 01:14:53.536106,4304.01
+40,6801,82,30.83,65.0,63.75,2022-10-06 01:14:53.536106,Shoes,Shorts,Medium,40.74,Shorts in Shoes category,Out of Stock,82,9,1,Supplier_7,Blankstyle,2022-09-18 01:14:53.536106,2310.68
+22,7643,78,33.1,82.0,77.75,2023-05-30 01:14:53.536106,Kids,Shirt,Low,18.16,Shirt in Kids category,Out of Stock,135,38,14,Supplier_5,Royal Apparel,2023-03-12 01:14:53.536106,947.77
+43,2189,38,13.01,78.0,65.75,2024-10-24 01:14:53.536106,Accessories,Bags,Medium,93.61,Bags in Accessories category,Available,100,59,1,Supplier_3,AlphaBroder,2024-08-28 01:14:53.536106,3094.55
+26,1049,31,21.94,38.0,57.25,2022-07-01 01:14:53.536106,Kids,Jeans,Medium,31.91,Jeans in Kids category,Available,62,56,8,Supplier_3,AlphaBroder,2022-06-09 01:14:53.536106,772.06
+39,7113,52,10.46,31.0,49.75,2022-09-30 01:14:53.536106,Men,Hat,Premium,381.62,Hat in Men category,Out of Stock,137,77,2,Supplier_7,Blankstyle,2022-07-18 01:14:53.536106,17767.48
+24,6415,76,42.16,52.0,49.25,2022-06-15 01:14:53.536106,Women,Jacket,High,124.61,Jacket in Women category,Available,172,73,4,Supplier_1,FashionGo,2022-03-20 01:14:53.536106,5477.03
+49,7712,135,14.37,76.0,73.5,2020-12-06 01:14:53.536106,Shoes,Coat,Medium,98.62,Coat in Shoes category,Available,194,35,10,Supplier_2,Apparel Distribution Center,2020-10-09 01:14:53.536106,11400.96
+15,6956,31,48.28,135.0,73.5,2022-04-14 01:14:53.536106,Accessories,Hat,Low,18.99,Hat in Accessories category,Available,251,55,7,Supplier_3,AlphaBroder,2022-01-24 01:14:53.536106,304.54
+18,4886,90,47.64,31.0,83.0,2021-05-08 01:14:53.536106,Kids,Jacket,Premium,253.29,Jacket in Kids category,Out of Stock,233,47,7,Supplier_1,FashionGo,2021-03-31 01:14:53.536106,11935.85
+26,3891,107,20.76,90.0,90.75,2024-06-29 01:14:53.536106,Accessories,Coat,Medium,64.62,Coat in Accessories category,Available,150,24,13,Supplier_9,Wholesale Fashion Square,2024-04-30 01:14:53.536106,5479.16
+27,4079,103,34.67,107.0,82.75,2021-07-07 01:14:53.536106,Women,Shorts,Premium,359.87,Shorts in Women category,Out of Stock,103,51,1,Supplier_3,AlphaBroder,2021-06-25 01:14:53.536106,24215.71
+36,5930,114,14.23,103.0,103.5,2023-09-09 01:14:53.536106,Women,Jacket,Low,20.98,Jacket in Women category,Out of Stock,210,13,6,Supplier_10,JiffyShirts,2023-07-10 01:14:53.536106,2051.79
+16,5764,74,15.39,114.0,99.5,2024-04-20 01:14:53.536106,Kids,Hat,Medium,98.84,Hat in Kids category,Available,249,72,9,Supplier_1,FashionGo,2024-02-05 01:14:53.536106,6188.11
+13,8229,109,21.61,74.0,100.0,2022-03-30 01:14:53.537104,Shoes,Coat,Low,14.1,Coat in Shoes category,Out of Stock,274,23,9,Supplier_8,TSC Apparel,2022-03-21 01:14:53.537104,1204.62
+22,5998,42,46.87,109.0,84.75,2023-06-01 01:14:53.537104,Women,Jeans,Low,8.71,Jeans in Women category,Out of Stock,228,19,11,Supplier_5,Royal Apparel,2023-03-15 01:14:53.537104,194.36
+49,7526,96,13.67,42.0,80.25,2021-12-06 01:14:53.537104,Women,Shorts,Medium,77.92,Shorts in Women category,Available,251,77,8,Supplier_10,JiffyShirts,2021-09-29 01:14:53.537104,6457.32
+14,4461,89,39.85,96.0,84.0,2022-04-08 01:14:53.537104,Men,Jeans,High,170.66,Jeans in Men category,Available,99,58,7,Supplier_1,FashionGo,2022-01-19 01:14:53.537104,9136.18
+53,8261,40,16.36,89.0,66.75,2020-12-28 01:14:53.537104,Shoes,Sneakers,High,197.37,Sneakers in Shoes category,Out of Stock,159,73,7,Supplier_10,JiffyShirts,2020-12-03 01:14:53.537104,6603.42
+39,1051,57,32.88,40.0,70.5,2022-09-28 01:14:53.537104,Shoes,Shorts,Medium,40.92,Shorts in Shoes category,Available,57,37,15,Supplier_4,Bella+Canvas,2022-08-05 01:14:53.537104,1565.55
+52,6758,10,35.95,57.0,49.0,2021-12-30 01:14:53.537104,Men,Jeans,Medium,35.94,Jeans in Men category,Out of Stock,10,39,8,Supplier_9,Wholesale Fashion Square,2021-11-17 01:14:53.537104,230.2
+15,6146,37,24.34,10.0,36.0,2022-04-12 01:14:53.537104,Kids,Dress,Low,18.21,Dress in Kids category,Out of Stock,152,56,14,Supplier_8,TSC Apparel,2022-04-03 01:14:53.537104,509.76
+52,8127,77,24.52,37.0,45.25,2020-12-22 01:14:53.537104,Accessories,Shirt,Premium,293.12,Shirt in Accessories category,Out of Stock,249,68,13,Supplier_10,JiffyShirts,2020-10-08 01:14:53.537104,17035.59
+42,5301,51,20.38,77.0,43.75,2022-10-19 01:14:53.537104,Shoes,Shirt,Low,10.28,Shirt in Shoes category,Available,123,73,5,Supplier_9,Wholesale Fashion Square,2022-10-19 01:14:53.537104,417.46
+52,2050,96,6.99,51.0,65.25,2020-12-23 01:14:53.537104,Men,Jacket,Premium,299.57,Jacket in Men category,Out of Stock,96,49,1,Supplier_10,JiffyShirts,2020-12-16 01:14:53.537104,26747.57
+21,7979,127,9.18,96.0,87.75,2021-05-25 01:14:53.537104,Shoes,Shirt,High,126.73,Shirt in Shoes category,Available,161,9,13,Supplier_6,S&S Activewear,2021-04-17 01:14:53.537104,14617.04
+49,6425,73,48.2,127.0,86.75,2021-12-10 01:14:53.537104,Shoes,Hat,High,135.03,Hat in Shoes category,Out of Stock,172,16,6,Supplier_4,Bella+Canvas,2021-10-04 01:14:53.537104,5105.88
+40,4577,2,5.21,73.0,74.5,2024-10-01 01:14:53.537104,Men,Shirt,High,119.57,Shirt in Men category,Out of Stock,52,53,15,Supplier_1,FashionGo,2024-07-05 01:14:53.537104,226.69
+38,9310,108,17.87,2.0,77.5,2022-09-25 01:14:53.537104,Men,Shirt,Premium,399.01,Shirt in Men category,Available,240,7,15,Supplier_1,FashionGo,2022-07-01 01:14:53.537104,35392.24
+48,4133,30,38.28,108.0,53.25,2020-11-25 01:14:53.537104,Men,Jeans,High,129.86,Jeans in Men category,Available,142,36,1,Supplier_7,Blankstyle,2020-11-11 01:14:53.537104,2404.61
+22,3580,66,11.77,30.0,51.5,2022-05-30 01:14:53.537104,Kids,Dress,Premium,407.19,Dress in Kids category,Out of Stock,216,51,4,Supplier_9,Wholesale Fashion Square,2022-05-29 01:14:53.537104,23712.46
+22,6528,28,5.69,66.0,58.0,2023-05-30 01:14:53.537104,Shoes,Coat,Low,16.57,Coat in Shoes category,Out of Stock,298,67,14,Supplier_6,S&S Activewear,2023-05-28 01:14:53.537104,437.54
+40,6004,30,40.01,28.0,38.5,2021-10-10 01:14:53.537104,Women,Jacket,Medium,92.32,Jacket in Women category,Out of Stock,255,12,5,Supplier_10,JiffyShirts,2021-09-05 01:14:53.537104,1661.42
+48,6787,11,17.4,30.0,33.75,2023-11-28 01:14:53.537104,Women,Jeans,Low,7.29,Jeans in Women category,Available,15,31,7,Supplier_3,AlphaBroder,2023-09-21 01:14:53.537104,66.22
+42,9920,110,6.96,11.0,44.75,2022-10-20 01:14:53.537104,Shoes,Dress,Premium,493.17,Dress in Shoes category,Available,140,65,13,Supplier_8,TSC Apparel,2022-08-31 01:14:53.537104,50470.44
+51,5547,117,29.93,110.0,67.0,2021-12-21 01:14:53.537104,Kids,Bags,Low,16.71,Bags in Kids category,Available,210,43,14,Supplier_9,Wholesale Fashion Square,2021-12-17 01:14:53.537104,1370.32
+36,3171,27,9.14,117.0,66.25,2021-09-08 01:14:53.537104,Shoes,Jeans,Premium,497.42,Jeans in Shoes category,Available,131,44,1,Supplier_1,FashionGo,2021-06-12 01:14:53.537104,12202.11
+3,8693,35,8.34,27.0,72.25,2023-01-22 01:14:53.537104,Kids,Bags,Low,20.91,Bags in Kids category,Available,166,41,15,Supplier_8,TSC Apparel,2022-11-17 01:14:53.537104,670.79
+17,9214,133,20.71,35.0,78.0,2024-04-23 01:14:53.537104,Accessories,Coat,Premium,284.32,Coat in Accessories category,Out of Stock,168,60,13,Supplier_10,JiffyShirts,2024-04-02 01:14:53.537104,29984.91
+42,9645,160,5.05,133.0,88.75,2021-10-22 01:14:53.537104,Men,Sweater,Medium,64.16,Sweater in Men category,Out of Stock,248,48,8,Supplier_7,Blankstyle,2021-09-10 01:14:53.537104,9747.5
+18,9677,132,26.86,160.0,115.0,2022-05-05 01:14:53.537104,Kids,Sweater,Premium,272.28,Sweater in Kids category,Out of Stock,231,65,2,Supplier_4,Bella+Canvas,2022-03-07 01:14:53.537104,26288.86
+33,2626,69,47.1,132.0,123.5,2021-08-17 01:14:53.537104,Kids,Shorts,Medium,78.7,Shorts in Kids category,Available,86,24,13,Supplier_6,S&S Activewear,2021-06-05 01:14:53.537104,2872.66
+34,5163,47,40.48,69.0,102.0,2024-08-25 01:14:53.537104,Accessories,Sneakers,Low,15.14,Sneakers in Accessories category,Out of Stock,88,80,3,Supplier_8,TSC Apparel,2024-06-27 01:14:53.537104,423.58
+22,8019,44,24.92,47.0,73.0,2022-06-01 01:14:53.537104,Women,Shirt,High,104.16,Shirt in Women category,Out of Stock,90,62,10,Supplier_8,TSC Apparel,2022-04-12 01:14:53.537104,3440.87
+51,9375,19,40.03,44.0,44.75,2020-12-19 01:14:53.537104,Kids,Shirt,High,128.51,Shirt in Kids category,Out of Stock,204,33,5,Supplier_7,Blankstyle,2020-12-18 01:14:53.537104,1464.3
+4,9048,95,20.52,19.0,51.25,2022-01-29 01:14:53.537104,Kids,Hat,Premium,297.82,Hat in Kids category,Out of Stock,195,20,10,Supplier_8,TSC Apparel,2021-12-31 01:14:53.537104,22486.58
+44,4229,109,31.45,95.0,66.75,2021-11-01 01:14:53.537104,Shoes,Sneakers,Medium,81.35,Sneakers in Shoes category,Out of Stock,133,10,2,Supplier_6,S&S Activewear,2021-09-14 01:14:53.537104,6078.04
+17,3333,24,36.06,109.0,61.75,2022-04-27 01:14:53.537104,Shoes,Hat,Premium,349.97,Hat in Shoes category,Out of Stock,141,34,14,Supplier_2,Apparel Distribution Center,2022-02-02 01:14:53.537104,5370.25
+10,2012,73,8.19,24.0,75.25,2024-03-06 01:14:53.537104,Women,Hat,Premium,443.68,Hat in Women category,Out of Stock,243,50,14,Supplier_9,Wholesale Fashion Square,2024-01-04 01:14:53.537104,29736.05
+19,4266,111,37.12,73.0,79.25,2024-05-12 01:14:53.537104,Shoes,Jeans,Premium,261.62,Jeans in Shoes category,Available,145,60,2,Supplier_2,Apparel Distribution Center,2024-03-25 01:14:53.537104,18259.63
+1,7672,53,13.22,111.0,65.25,2023-01-08 01:14:53.537104,Accessories,Sneakers,Medium,63.45,Sneakers in Accessories category,Available,256,42,3,Supplier_1,FashionGo,2022-11-20 01:14:53.537104,2918.11
+52,8817,90,17.72,53.0,81.75,2020-12-26 01:14:53.537104,Women,Shirt,Medium,35.03,Shirt in Women category,Available,196,32,5,Supplier_8,TSC Apparel,2020-10-18 01:14:53.537104,2593.84
+5,3115,92,25.41,90.0,86.5,2021-02-02 01:14:53.537104,Shoes,Shirt,Low,22.78,Shirt in Shoes category,Out of Stock,172,32,13,Supplier_8,TSC Apparel,2021-01-24 01:14:53.537104,1563.5
+22,4208,150,16.31,92.0,96.25,2023-06-03 01:14:53.537104,Men,Coat,Medium,96.53,Coat in Men category,Out of Stock,282,51,11,Supplier_1,FashionGo,2023-05-21 01:14:53.537104,12118.36
+12,4344,37,40.76,150.0,92.25,2024-03-19 01:14:53.537104,Shoes,Jacket,Premium,418.84,Jacket in Shoes category,Out of Stock,295,59,14,Supplier_2,Apparel Distribution Center,2024-01-15 01:14:53.537104,9181.21
+7,9228,33,31.0,37.0,78.0,2021-02-21 01:14:53.537104,Shoes,Shorts,High,157.94,Shorts in Shoes category,Available,58,32,13,Supplier_1,FashionGo,2021-01-05 01:14:53.537104,3596.34
+12,6796,65,28.8,33.0,71.25,2024-03-22 01:14:53.537104,Kids,Sneakers,Premium,246.32,Sneakers in Kids category,Available,84,37,6,Supplier_5,Royal Apparel,2024-01-15 01:14:53.537104,11400.05
+50,1147,88,47.42,65.0,55.75,2020-12-07 01:14:53.537104,Women,Jacket,Low,17.42,Jacket in Women category,Out of Stock,123,71,1,Supplier_4,Bella+Canvas,2020-10-19 01:14:53.537104,805.83
+9,3258,131,17.18,88.0,79.25,2021-03-01 01:14:53.537104,Men,Jacket,Premium,243.21,Jacket in Men category,Out of Stock,131,59,3,Supplier_8,TSC Apparel,2021-01-21 01:14:53.537104,26385.23
+15,9412,80,20.2,131.0,91.0,2021-04-17 01:14:53.537104,Shoes,Hat,Medium,85.5,Hat in Shoes category,Out of Stock,114,72,6,Supplier_5,Royal Apparel,2021-04-10 01:14:53.537104,5458.36
+10,5224,99,43.2,80.0,99.5,2024-03-07 01:14:53.537104,Accessories,Shorts,High,149.02,Shorts in Accessories category,Available,253,60,14,Supplier_8,TSC Apparel,2024-02-28 01:14:53.537104,8379.27
+2,9090,52,47.68,99.0,90.5,2023-01-13 01:14:53.537104,Kids,Jacket,High,173.61,Jacket in Kids category,Available,181,35,10,Supplier_10,JiffyShirts,2023-01-09 01:14:53.537104,4723.69
+30,2055,115,33.14,52.0,86.5,2024-07-22 01:14:53.537104,Accessories,Shirt,High,175.77,Shirt in Accessories category,Out of Stock,183,18,6,Supplier_1,FashionGo,2024-06-21 01:14:53.537104,13514.31
+28,8992,4,27.74,115.0,67.5,2023-07-12 01:14:53.537104,Men,Bags,Low,15.11,Bags in Men category,Available,53,78,5,Supplier_7,Blankstyle,2023-06-06 01:14:53.537104,43.68
+45,1186,65,7.93,4.0,59.0,2021-11-10 01:14:53.537104,Shoes,Bags,Premium,304.69,Bags in Shoes category,Out of Stock,207,37,2,Supplier_5,Royal Apparel,2021-09-30 01:14:53.537104,18233.64
+18,9147,44,44.73,65.0,57.0,2022-05-06 01:14:53.537104,Shoes,Shirt,Medium,93.27,Shirt in Shoes category,Available,164,76,11,Supplier_10,JiffyShirts,2022-02-24 01:14:53.537104,2268.38
+15,8956,32,5.08,44.0,36.25,2024-04-10 01:14:53.537104,Shoes,Shirt,Low,27.79,Shirt in Shoes category,Available,32,27,8,Supplier_9,Wholesale Fashion Square,2024-04-01 01:14:53.537104,844.11
+42,2064,27,39.91,32.0,42.0,2021-10-19 01:14:53.537104,Women,Hat,High,187.43,Hat in Women category,Out of Stock,91,27,12,Supplier_3,AlphaBroder,2021-08-08 01:14:53.537104,3040.73
+40,7060,40,33.1,27.0,35.75,2021-10-05 01:14:53.537104,Shoes,Coat,Medium,71.71,Coat in Shoes category,Available,40,22,3,Supplier_10,JiffyShirts,2021-09-21 01:14:53.537104,1918.79
+24,8409,15,27.99,40.0,28.5,2023-06-12 01:14:53.537104,Shoes,Sweater,Premium,407.36,Sweater in Shoes category,Available,223,29,10,Supplier_9,Wholesale Fashion Square,2023-06-08 01:14:53.537104,4400.14
+51,1789,36,40.11,15.0,29.5,2020-12-20 01:14:53.537104,Shoes,Hat,Premium,415.1,Hat in Shoes category,Out of Stock,102,24,13,Supplier_10,JiffyShirts,2020-10-02 01:14:53.537104,8950.46
+35,4068,137,16.44,36.0,57.0,2022-08-31 01:14:53.537104,Accessories,Coat,Medium,72.8,Coat in Accessories category,Out of Stock,267,47,8,Supplier_1,FashionGo,2022-08-08 01:14:53.537104,8333.71
+29,5208,95,8.64,137.0,70.75,2023-07-18 01:14:53.537104,Kids,Coat,High,162.05,Coat in Kids category,Out of Stock,132,22,7,Supplier_8,TSC Apparel,2023-05-19 01:14:53.537104,14064.75
+41,9100,82,35.49,95.0,87.5,2021-10-12 01:14:53.537104,Accessories,Sweater,Medium,93.56,Sweater in Accessories category,Out of Stock,104,72,7,Supplier_2,Apparel Distribution Center,2021-08-16 01:14:53.537104,4948.84
+47,8956,111,24.61,82.0,106.25,2022-11-21 01:14:53.537104,Kids,Hat,Medium,89.08,Hat in Kids category,Available,171,49,9,Supplier_7,Blankstyle,2022-10-11 01:14:53.537104,7454.62
+45,3832,24,45.77,111.0,78.0,2021-11-08 01:14:53.537104,Women,Bags,Low,15.71,Bags in Women category,Out of Stock,260,6,9,Supplier_4,Bella+Canvas,2021-10-02 01:14:53.537104,204.48
+9,5549,50,43.77,24.0,66.75,2022-03-03 01:14:53.537104,Men,Dress,Premium,416.75,Dress in Men category,Available,50,32,12,Supplier_8,TSC Apparel,2022-01-27 01:14:53.537104,11716.31
+31,5060,113,8.94,50.0,74.5,2023-08-03 01:14:53.538107,Shoes,Coat,High,191.1,Coat in Shoes category,Available,292,60,15,Supplier_9,Wholesale Fashion Square,2023-07-14 01:14:53.538107,19663.09
+38,9632,35,49.17,113.0,55.5,2021-09-20 01:14:53.538107,Men,Dress,Premium,331.77,Dress in Men category,Available,35,10,2,Supplier_4,Bella+Canvas,2021-08-10 01:14:53.538107,5902.58
+37,6858,110,14.2,35.0,77.0,2024-09-10 01:14:53.538107,Women,Bags,Premium,289.45,Bags in Women category,Out of Stock,171,18,6,Supplier_10,JiffyShirts,2024-08-08 01:14:53.538107,27318.34
+20,3726,73,12.95,110.0,82.75,2021-05-22 01:14:53.538107,Shoes,Shirt,Premium,308.51,Shirt in Shoes category,Available,89,13,14,Supplier_10,JiffyShirts,2021-04-18 01:14:53.538107,19605.04
+17,6330,23,26.94,73.0,60.25,2021-05-01 01:14:53.538107,Men,Jacket,Premium,485.54,Jacket in Men category,Out of Stock,249,72,6,Supplier_9,Wholesale Fashion Square,2021-04-12 01:14:53.538107,8158.83
+23,4175,54,47.78,23.0,65.0,2023-06-06 01:14:53.538107,Kids,Bags,Low,20.27,Bags in Kids category,Out of Stock,260,69,6,Supplier_4,Bella+Canvas,2023-05-25 01:14:53.538107,571.66
+33,9255,87,24.61,54.0,59.25,2021-08-19 01:14:53.538107,Men,Sneakers,Medium,71.09,Sneakers in Men category,Available,281,63,12,Supplier_9,Wholesale Fashion Square,2021-07-11 01:14:53.538107,4662.9
+34,6613,17,39.49,87.0,45.25,2021-08-26 01:14:53.538107,Men,Hat,Medium,78.82,Hat in Men category,Out of Stock,131,27,1,Supplier_3,AlphaBroder,2021-08-20 01:14:53.538107,810.74
+41,1602,18,18.96,17.0,44.0,2021-10-16 01:14:53.538107,Shoes,Jeans,Premium,341.95,Jeans in Shoes category,Out of Stock,46,54,11,Supplier_2,Apparel Distribution Center,2021-08-11 01:14:53.538107,4987.96
+50,6223,59,23.34,18.0,45.25,2021-12-15 01:14:53.538107,Accessories,Shorts,High,104.87,Shorts in Accessories category,Out of Stock,59,40,5,Supplier_1,FashionGo,2021-11-12 01:14:53.538107,4743.26
+23,1115,109,31.19,59.0,50.75,2024-06-09 01:14:53.538107,Kids,Dress,High,165.67,Dress in Kids category,Out of Stock,254,9,12,Supplier_10,JiffyShirts,2024-03-21 01:14:53.538107,12426.15
+21,8503,16,23.33,109.0,50.5,2024-05-25 01:14:53.538107,Kids,Jeans,Premium,242.96,Jeans in Kids category,Out of Stock,197,69,15,Supplier_6,S&S Activewear,2024-04-25 01:14:53.538107,2980.61
+27,9516,104,22.16,16.0,72.0,2023-07-03 01:14:53.538107,Accessories,Shorts,High,168.32,Shorts in Accessories category,Available,195,13,9,Supplier_7,Blankstyle,2023-05-03 01:14:53.538107,13625.74
+18,2935,85,11.55,104.0,78.5,2021-05-09 01:14:53.538107,Women,Bags,Medium,70.01,Bags in Women category,Out of Stock,85,69,13,Supplier_10,JiffyShirts,2021-02-20 01:14:53.538107,5263.65
+41,9496,45,43.6,85.0,62.5,2021-10-14 01:14:53.538107,Kids,Bags,High,182.71,Bags in Kids category,Available,45,21,14,Supplier_2,Apparel Distribution Center,2021-10-09 01:14:53.538107,4636.84
+34,4359,50,41.6,45.0,71.0,2023-08-21 01:14:53.538107,Men,Jeans,Low,29.68,Jeans in Men category,Out of Stock,257,35,6,Supplier_1,FashionGo,2023-06-03 01:14:53.538107,866.57
+10,8517,34,19.61,50.0,53.5,2021-03-13 01:14:53.538107,Women,Bags,High,183.32,Bags in Women category,Available,268,12,7,Supplier_1,FashionGo,2021-01-08 01:14:53.538107,5010.46
+51,3939,39,11.18,34.0,42.0,2020-12-20 01:14:53.538107,Kids,Jeans,Medium,95.27,Jeans in Kids category,Available,103,54,6,Supplier_4,Bella+Canvas,2020-09-21 01:14:53.538107,3300.05
+29,7275,66,11.42,39.0,47.25,2021-07-19 01:14:53.538107,Women,Sneakers,High,132.39,Sneakers in Women category,Out of Stock,71,39,8,Supplier_2,Apparel Distribution Center,2021-07-06 01:14:53.538107,7740.44
+28,8049,99,33.17,66.0,59.5,2024-07-13 01:14:53.538107,Accessories,Shirt,Low,7.83,Shirt in Accessories category,Out of Stock,99,58,7,Supplier_3,AlphaBroder,2024-05-21 01:14:53.538107,518.0
+32,6516,70,34.13,99.0,68.5,2021-08-15 01:14:53.538107,Shoes,Jacket,Medium,44.82,Jacket in Shoes category,Available,162,76,6,Supplier_3,AlphaBroder,2021-06-03 01:14:53.538107,2066.57
+15,6187,38,14.23,70.0,68.25,2023-04-15 01:14:53.538107,Kids,Bags,High,114.34,Bags in Kids category,Out of Stock,43,19,9,Supplier_1,FashionGo,2023-02-19 01:14:53.538107,3726.44
+13,3403,20,6.0,38.0,56.75,2022-03-30 01:14:53.538107,Shoes,Shorts,Premium,362.68,Shorts in Shoes category,Available,216,42,13,Supplier_4,Bella+Canvas,2022-03-16 01:14:53.538107,6818.61
+25,7510,100,44.61,20.0,57.0,2024-06-21 01:14:53.538107,Shoes,Coat,High,196.06,Coat in Shoes category,Out of Stock,153,78,8,Supplier_1,FashionGo,2024-04-26 01:14:53.538107,10860.63
+41,6511,105,31.08,100.0,65.75,2021-10-17 01:14:53.538107,Men,Sneakers,Premium,250.95,Sneakers in Men category,Available,182,12,6,Supplier_1,FashionGo,2021-07-31 01:14:53.538107,18159.88
+17,2046,56,22.33,105.0,70.25,2023-04-25 01:14:53.538107,Shoes,Coat,Medium,86.95,Coat in Shoes category,Available,83,32,2,Supplier_3,AlphaBroder,2023-04-08 01:14:53.538107,3781.9
+24,8287,102,20.62,56.0,90.75,2022-06-14 01:14:53.538107,Accessories,Jacket,Medium,66.99,Jacket in Accessories category,Out of Stock,110,68,12,Supplier_2,Apparel Distribution Center,2022-03-25 01:14:53.538107,5423.86
+38,3703,18,15.0,102.0,70.25,2022-09-22 01:14:53.538107,Kids,Sweater,High,184.74,Sweater in Kids category,Out of Stock,264,14,10,Supplier_1,FashionGo,2022-07-27 01:14:53.538107,2826.52
+9,3854,31,24.76,18.0,51.75,2022-03-06 01:14:53.538107,Kids,Sneakers,Low,20.06,Sneakers in Kids category,Out of Stock,123,63,14,Supplier_7,Blankstyle,2021-12-07 01:14:53.538107,467.93
+37,3409,10,38.45,31.0,40.25,2023-09-16 01:14:53.538107,Kids,Bags,Medium,71.62,Bags in Kids category,Available,57,73,4,Supplier_9,Wholesale Fashion Square,2023-08-30 01:14:53.538107,440.88
+7,9135,96,32.34,10.0,38.75,2023-02-14 01:14:53.538107,Women,Sneakers,High,173.62,Sneakers in Women category,Available,133,66,11,Supplier_9,Wholesale Fashion Square,2023-02-09 01:14:53.538107,11277.7
+3,1607,7,47.81,96.0,36.0,2024-01-18 01:14:53.538107,Shoes,Shirt,Premium,219.14,Shirt in Shoes category,Out of Stock,34,77,6,Supplier_8,TSC Apparel,2024-01-03 01:14:53.538107,800.59
+40,7537,36,41.77,7.0,37.25,2021-10-06 01:14:53.538107,Men,Jeans,Premium,337.03,Jeans in Men category,Out of Stock,240,25,15,Supplier_3,AlphaBroder,2021-08-23 01:14:53.538107,7065.25
+25,3604,88,32.16,36.0,56.75,2024-06-19 01:14:53.538107,Women,Jacket,High,176.21,Jacket in Women category,Out of Stock,88,59,13,Supplier_6,S&S Activewear,2024-06-09 01:14:53.538107,10519.02
+34,9609,45,36.14,88.0,44.0,2022-08-25 01:14:53.538107,Women,Sneakers,Low,29.21,Sneakers in Women category,Out of Stock,292,13,3,Supplier_5,Royal Apparel,2022-06-02 01:14:53.538107,839.46
+19,1570,3,31.24,45.0,43.0,2022-05-11 01:14:53.538107,Kids,Jeans,Premium,307.96,Jeans in Kids category,Available,18,51,2,Supplier_2,Apparel Distribution Center,2022-05-08 01:14:53.538107,635.23
+1,3412,100,32.63,3.0,59.0,2021-01-09 01:14:53.538107,Kids,Jacket,Medium,59.96,Jacket in Kids category,Out of Stock,143,55,7,Supplier_5,Royal Apparel,2020-12-21 01:14:53.538107,4039.49
+44,7785,97,23.62,100.0,61.25,2021-11-01 01:14:53.538107,Men,Dress,Low,9.7,Dress in Men category,Available,229,66,15,Supplier_2,Apparel Distribution Center,2021-10-26 01:14:53.538107,718.44
+20,2923,46,28.34,97.0,61.5,2024-05-13 01:14:53.538107,Shoes,Shirt,Premium,380.37,Shirt in Shoes category,Available,46,43,15,Supplier_2,Apparel Distribution Center,2024-03-23 01:14:53.538107,12538.09
+16,3389,46,22.08,46.0,72.25,2022-04-18 01:14:53.538107,Kids,Dress,Low,16.64,Dress in Kids category,Available,46,25,8,Supplier_4,Bella+Canvas,2022-01-24 01:14:53.538107,596.51
+38,3650,2,45.36,46.0,47.75,2022-09-20 01:14:53.538107,Women,Jeans,Low,27.62,Jeans in Women category,Out of Stock,11,50,10,Supplier_3,AlphaBroder,2022-09-09 01:14:53.538107,30.18
+9,7995,15,25.73,2.0,27.25,2024-02-28 01:14:53.538107,Kids,Bags,Medium,61.21,Bags in Kids category,Available,15,74,6,Supplier_7,Blankstyle,2024-02-09 01:14:53.538107,681.84
+49,7555,65,34.47,15.0,32.0,2020-12-01 01:14:53.538107,Men,Hat,Low,21.43,Hat in Men category,Out of Stock,184,14,1,Supplier_5,Royal Apparel,2020-11-25 01:14:53.538107,912.91
+31,4319,172,34.62,65.0,63.5,2024-08-02 01:14:53.538107,Men,Dress,Premium,238.93,Dress in Men category,Available,296,76,6,Supplier_10,JiffyShirts,2024-07-08 01:14:53.538107,26868.88
+27,6088,19,18.69,172.0,67.75,2024-07-06 01:14:53.538107,Accessories,Hat,Low,24.46,Hat in Accessories category,Available,164,33,12,Supplier_6,S&S Activewear,2024-06-22 01:14:53.538107,377.88
+43,8648,133,17.82,19.0,97.25,2023-10-26 01:14:53.538107,Women,Jacket,Premium,228.39,Jacket in Women category,Out of Stock,138,50,2,Supplier_3,AlphaBroder,2023-10-12 01:14:53.538107,24962.48
+52,5464,74,25.99,133.0,99.5,2021-12-27 01:14:53.538107,Women,Sneakers,Medium,50.07,Sneakers in Women category,Available,257,29,10,Supplier_2,Apparel Distribution Center,2021-11-24 01:14:53.538107,2741.85
+21,9273,51,35.99,74.0,69.25,2021-05-27 01:14:53.538107,Shoes,Coat,Low,29.62,Coat in Shoes category,Available,98,14,8,Supplier_10,JiffyShirts,2021-05-08 01:14:53.538107,967.11
+9,1647,18,48.29,51.0,69.0,2022-02-28 01:14:53.538107,Kids,Dress,Premium,457.13,Dress in Kids category,Available,34,73,8,Supplier_5,Royal Apparel,2021-12-10 01:14:53.538107,4254.58
+48,2780,31,34.43,18.0,43.5,2023-12-03 01:14:53.538107,Kids,Dress,High,156.9,Dress in Kids category,Available,31,27,12,Supplier_8,TSC Apparel,2023-09-11 01:14:53.538107,3189.03
+6,7842,90,29.42,31.0,47.5,2024-02-07 01:14:53.538107,Women,Jeans,Premium,235.44,Jeans in Women category,Available,176,22,10,Supplier_6,S&S Activewear,2023-12-10 01:14:53.538107,14955.22
+46,1475,29,37.29,90.0,42.0,2022-11-19 01:14:53.538107,Women,Hat,Premium,465.82,Hat in Women category,Out of Stock,218,61,9,Supplier_3,AlphaBroder,2022-09-12 01:14:53.538107,8471.84
+28,8653,47,31.98,29.0,49.25,2021-07-18 01:14:53.538107,Men,Coat,Medium,49.44,Coat in Men category,Available,234,77,8,Supplier_1,FashionGo,2021-05-01 01:14:53.538107,1580.54
+9,3631,61,35.25,47.0,56.75,2023-03-04 01:14:53.538107,Shoes,Coat,Premium,397.97,Coat in Shoes category,Out of Stock,132,41,15,Supplier_1,FashionGo,2023-02-02 01:14:53.538107,15719.96
+5,5425,27,10.93,61.0,41.0,2021-02-04 01:14:53.538107,Accessories,Bags,Medium,90.33,Bags in Accessories category,Out of Stock,247,67,15,Supplier_10,JiffyShirts,2020-12-03 01:14:53.538107,2172.45
+26,9816,37,9.88,27.0,43.0,2023-07-02 01:14:53.538107,Kids,Jeans,Low,23.88,Jeans in Kids category,Available,37,18,5,Supplier_8,TSC Apparel,2023-04-24 01:14:53.538107,796.19
+48,2007,35,49.39,37.0,40.0,2021-12-01 01:14:53.538107,Kids,Coat,Low,20.58,Coat in Kids category,Available,117,13,12,Supplier_8,TSC Apparel,2021-11-02 01:14:53.538107,364.48
+4,6193,43,29.12,35.0,35.5,2022-01-25 01:14:53.538107,Kids,Sneakers,Medium,35.29,Sneakers in Kids category,Available,283,31,15,Supplier_4,Bella+Canvas,2022-01-14 01:14:53.538107,1075.58
+28,1462,57,34.68,43.0,43.0,2022-07-13 01:14:53.539111,Kids,Hat,High,153.63,Hat in Kids category,Out of Stock,63,47,14,Supplier_1,FashionGo,2022-04-22 01:14:53.539111,5720.15
+13,9481,79,28.66,57.0,53.5,2023-03-27 01:14:53.539111,Shoes,Shirt,Low,22.13,Shirt in Shoes category,Out of Stock,123,23,2,Supplier_6,S&S Activewear,2023-03-21 01:14:53.539111,1247.18
+22,6269,8,10.47,79.0,46.75,2023-05-29 01:14:53.539111,Accessories,Coat,High,135.84,Coat in Accessories category,Available,24,36,3,Supplier_4,Bella+Canvas,2023-04-27 01:14:53.539111,972.88
+35,5101,12,45.42,8.0,39.0,2023-08-28 01:14:53.539111,Accessories,Coat,Low,24.64,Coat in Accessories category,Out of Stock,112,76,13,Supplier_6,S&S Activewear,2023-07-19 01:14:53.539111,161.37
+44,1379,40,22.0,12.0,34.75,2023-10-30 01:14:53.539111,Shoes,Jeans,Low,28.76,Jeans in Shoes category,Available,84,40,5,Supplier_3,AlphaBroder,2023-10-21 01:14:53.539111,897.46
+51,4070,35,12.66,40.0,23.75,2021-12-23 01:14:53.539111,Kids,Dress,Premium,413.34,Dress in Kids category,Available,166,56,6,Supplier_10,JiffyShirts,2021-12-18 01:14:53.539111,12635.74
+44,6134,64,17.49,35.0,37.75,2023-11-01 01:14:53.539111,Accessories,Shirt,High,145.1,Shirt in Accessories category,Out of Stock,202,46,5,Supplier_1,FashionGo,2023-11-01 01:14:53.539111,7661.72
+15,1327,20,23.34,64.0,39.75,2021-04-15 01:14:53.539111,Men,Coat,High,110.99,Coat in Men category,Available,209,26,3,Supplier_6,S&S Activewear,2021-03-27 01:14:53.539111,1701.8
+34,2670,111,25.36,20.0,57.5,2023-08-24 01:14:53.539111,Kids,Jeans,Low,7.99,Jeans in Kids category,Out of Stock,256,20,12,Supplier_5,Royal Apparel,2023-08-05 01:14:53.539111,662.3
+10,1195,20,21.45,111.0,53.75,2021-03-10 01:14:53.539111,Kids,Shorts,Low,12.4,Shorts in Kids category,Available,255,80,13,Supplier_6,S&S Activewear,2021-02-14 01:14:53.539111,194.74
+33,3444,112,24.61,20.0,65.75,2023-08-18 01:14:53.539111,Accessories,Jacket,Premium,271.64,Jacket in Accessories category,Out of Stock,130,79,4,Supplier_6,S&S Activewear,2023-07-17 01:14:53.539111,22935.47
+37,3345,50,18.85,112.0,73.25,2021-09-17 01:14:53.539111,Kids,Shorts,Medium,36.86,Shorts in Kids category,Out of Stock,52,48,6,Supplier_7,Blankstyle,2021-08-07 01:14:53.539111,1495.85
+3,9782,92,33.14,50.0,68.5,2024-01-15 01:14:53.539111,Shoes,Hat,High,137.24,Hat in Shoes category,Available,141,32,2,Supplier_7,Blankstyle,2023-12-28 01:14:53.539111,8441.94
+27,8158,124,25.31,92.0,94.5,2024-07-05 01:14:53.539111,Women,Shorts,Medium,37.89,Shorts in Women category,Out of Stock,124,50,5,Supplier_8,TSC Apparel,2024-05-02 01:14:53.539111,3509.18
+49,4722,61,38.42,124.0,81.75,2021-12-08 01:14:53.539111,Kids,Bags,Premium,444.33,Bags in Kids category,Out of Stock,188,12,15,Supplier_5,Royal Apparel,2021-11-16 01:14:53.539111,16690.4
+21,4656,29,45.47,61.0,76.5,2023-05-25 01:14:53.539111,Women,Sweater,Medium,62.78,Sweater in Women category,Out of Stock,209,15,13,Supplier_4,Bella+Canvas,2023-04-29 01:14:53.539111,992.79
+20,7940,15,44.5,29.0,57.25,2022-05-16 01:14:53.539111,Accessories,Dress,Medium,47.72,Dress in Accessories category,Available,34,35,6,Supplier_5,Royal Apparel,2022-04-27 01:14:53.539111,397.31
+52,3961,32,44.4,15.0,34.25,2023-12-31 01:14:53.539111,Men,Jacket,Low,7.96,Jacket in Men category,Out of Stock,89,74,15,Supplier_2,Apparel Distribution Center,2023-12-10 01:14:53.539111,141.55
+27,7714,117,35.47,32.0,48.25,2021-07-10 01:14:53.539111,Shoes,Jeans,Medium,47.69,Jeans in Shoes category,Out of Stock,121,30,12,Supplier_1,FashionGo,2021-06-28 01:14:53.539111,3600.82
+8,8527,91,19.76,117.0,63.75,2022-02-23 01:14:53.539111,Men,Sweater,Premium,396.23,Sweater in Men category,Available,135,77,14,Supplier_3,AlphaBroder,2022-01-11 01:14:53.539111,28930.51
+15,3519,55,22.33,91.0,73.75,2024-04-09 01:14:53.539111,Accessories,Hat,High,161.5,Hat in Accessories category,Available,115,18,11,Supplier_2,Apparel Distribution Center,2024-01-27 01:14:53.539111,6898.82
+36,1556,151,11.18,55.0,103.5,2024-09-06 01:14:53.539111,Kids,Jacket,Low,12.51,Jacket in Kids category,Out of Stock,165,8,8,Supplier_1,FashionGo,2024-08-14 01:14:53.539111,1677.36
+21,7083,35,49.02,151.0,83.0,2023-05-22 01:14:53.539111,Shoes,Sneakers,Premium,322.85,Sneakers in Shoes category,Available,164,33,5,Supplier_1,FashionGo,2023-04-04 01:14:53.539111,5760.29
+25,7256,141,47.61,35.0,95.5,2022-06-26 01:14:53.539111,Shoes,Dress,High,154.95,Dress in Shoes category,Out of Stock,294,64,6,Supplier_9,Wholesale Fashion Square,2022-05-17 01:14:53.539111,11447.11
+15,4895,74,41.27,141.0,100.25,2024-04-08 01:14:53.539111,Accessories,Sneakers,High,157.32,Sneakers in Accessories category,Out of Stock,164,26,9,Supplier_9,Wholesale Fashion Square,2024-03-24 01:14:53.539111,6837.18
+29,7947,45,24.63,74.0,73.75,2022-07-24 01:14:53.539111,Men,Sweater,Low,25.54,Sweater in Men category,Available,114,42,6,Supplier_5,Royal Apparel,2022-05-13 01:14:53.539111,866.23
+4,1240,36,7.54,45.0,74.0,2024-01-23 01:14:53.539111,Kids,Hat,Premium,210.94,Hat in Kids category,Out of Stock,173,25,2,Supplier_1,FashionGo,2023-12-25 01:14:53.539111,7021.53
+13,7259,124,18.23,36.0,69.75,2023-04-02 01:14:53.539111,Accessories,Bags,Premium,269.69,Bags in Accessories category,Out of Stock,156,73,10,Supplier_1,FashionGo,2023-03-01 01:14:53.539111,27344.43
+8,5272,55,11.58,124.0,65.0,2022-02-22 01:14:53.539111,Men,Jeans,High,126.98,Jeans in Men category,Out of Stock,55,41,13,Supplier_4,Bella+Canvas,2022-01-16 01:14:53.539111,6175.02
+16,8478,81,32.72,55.0,74.0,2024-04-15 01:14:53.539111,Women,Dress,Low,14.68,Dress in Women category,Out of Stock,265,33,3,Supplier_5,Royal Apparel,2024-02-20 01:14:53.539111,800.1
+52,3739,80,9.5,81.0,85.0,2021-12-28 01:14:53.539111,Men,Coat,Medium,90.35,Coat in Men category,Available,290,40,13,Supplier_7,Blankstyle,2021-12-28 01:14:53.539111,6541.74
+22,2139,168,18.27,80.0,96.0,2021-06-05 01:14:53.539111,Women,Shorts,Low,7.61,Shorts in Women category,Available,168,22,2,Supplier_1,FashionGo,2021-06-03 01:14:53.539111,1044.23
+9,2305,88,38.18,168.0,104.25,2022-03-05 01:14:53.539111,Kids,Shorts,Low,7.38,Shorts in Kids category,Out of Stock,135,80,3,Supplier_9,Wholesale Fashion Square,2022-01-26 01:14:53.539111,401.7
+35,7144,3,13.68,88.0,84.75,2023-08-31 01:14:53.539111,Accessories,Jeans,Premium,461.36,Jeans in Accessories category,Available,38,48,11,Supplier_2,Apparel Distribution Center,2023-07-21 01:14:53.539111,1194.78
+18,9355,50,15.47,3.0,77.25,2023-05-04 01:14:53.539111,Shoes,Coat,High,113.98,Coat in Shoes category,Available,50,10,7,Supplier_3,AlphaBroder,2023-02-24 01:14:53.539111,4817.21
+40,5057,51,33.59,50.0,48.0,2023-10-03 01:14:53.539111,Shoes,Dress,Low,8.3,Dress in Shoes category,Out of Stock,286,52,3,Supplier_7,Blankstyle,2023-07-18 01:14:53.539111,281.16
+34,2109,40,44.55,51.0,36.0,2023-08-27 01:14:53.539111,Men,Coat,Low,27.88,Coat in Men category,Available,180,58,7,Supplier_7,Blankstyle,2023-08-02 01:14:53.539111,618.43
+21,7002,61,35.71,40.0,50.5,2024-05-24 01:14:53.539111,Accessories,Sweater,High,122.93,Sweater in Accessories category,Available,159,48,11,Supplier_8,TSC Apparel,2024-03-15 01:14:53.539111,4821.01
+6,5989,103,43.34,61.0,63.75,2021-02-11 01:14:53.539111,Shoes,Coat,Low,8.06,Coat in Shoes category,Available,300,75,11,Supplier_9,Wholesale Fashion Square,2020-12-18 01:14:53.539111,470.58
+12,3836,74,33.07,103.0,69.5,2023-03-26 01:14:53.539111,Women,Shirt,Low,6.42,Shirt in Women category,Available,285,57,9,Supplier_10,JiffyShirts,2022-12-29 01:14:53.539111,317.9
+36,8068,19,27.39,74.0,64.25,2024-09-05 01:14:53.539111,Men,Dress,Premium,228.2,Dress in Men category,Available,34,80,3,Supplier_8,TSC Apparel,2024-07-16 01:14:53.539111,3148.39
+13,4638,8,34.22,19.0,51.0,2024-03-28 01:14:53.539111,Accessories,Sneakers,High,199.36,Sneakers in Accessories category,Out of Stock,41,61,5,Supplier_7,Blankstyle,2024-03-02 01:14:53.539111,1049.1
+16,8148,98,12.67,8.0,49.75,2023-04-21 01:14:53.539111,Shoes,Shirt,Medium,68.22,Shirt in Shoes category,Available,290,57,5,Supplier_4,Bella+Canvas,2023-03-20 01:14:53.539111,5838.6
+47,9214,33,47.94,98.0,39.5,2021-11-25 01:14:53.539111,Kids,Bags,Low,17.8,Bags in Kids category,Available,141,8,7,Supplier_1,FashionGo,2021-10-03 01:14:53.539111,305.76
+35,8925,67,45.19,33.0,51.5,2022-09-03 01:14:53.539111,Accessories,Shorts,High,155.72,Shorts in Accessories category,Out of Stock,259,44,3,Supplier_10,JiffyShirts,2022-08-29 01:14:53.539111,5718.42
+27,4998,71,42.26,67.0,67.25,2024-07-01 01:14:53.539111,Accessories,Jacket,High,149.44,Jacket in Accessories category,Out of Stock,71,16,15,Supplier_7,Blankstyle,2024-06-13 01:14:53.539111,6125.97
+19,1930,93,32.56,71.0,66.0,2021-05-14 01:14:53.539111,Shoes,Sweater,Low,13.12,Sweater in Shoes category,Available,143,10,1,Supplier_4,Bella+Canvas,2021-03-16 01:14:53.539111,822.87
+16,2054,85,12.76,93.0,79.0,2024-04-20 01:14:53.539111,Kids,Jeans,Premium,457.62,Jeans in Kids category,Available,85,16,6,Supplier_4,Bella+Canvas,2024-02-03 01:14:53.539111,33936.24
+29,2728,41,39.99,85.0,72.5,2023-07-20 01:14:53.539111,Shoes,Jacket,High,142.57,Jacket in Shoes category,Out of Stock,282,18,15,Supplier_5,Royal Apparel,2023-05-25 01:14:53.539111,3507.72
+43,6867,14,21.39,41.0,58.25,2021-10-26 01:14:53.539894,Shoes,Bags,Low,28.43,Bags in Shoes category,Out of Stock,172,74,12,Supplier_8,TSC Apparel,2021-09-23 01:14:53.539894,312.9
+40,5070,29,33.09,14.0,42.25,2022-10-09 01:14:53.539894,Women,Coat,Medium,42.11,Coat in Women category,Available,291,36,10,Supplier_3,AlphaBroder,2022-09-03 01:14:53.539894,817.21
+25,3225,71,16.15,29.0,38.75,2022-06-24 01:14:53.539894,Kids,Jeans,Premium,429.58,Jeans in Kids category,Out of Stock,71,23,11,Supplier_2,Apparel Distribution Center,2022-06-11 01:14:53.539894,25573.58
+21,1926,0,20.6,71.0,28.5,2022-05-25 01:14:53.539894,Women,Coat,Low,16.69,Coat in Women category,Out of Stock,42,70,5,Supplier_2,Apparel Distribution Center,2022-04-29 01:14:53.539894,0.0
+46,2680,95,10.71,0.0,48.75,2021-11-19 01:14:53.539894,Men,Jeans,Medium,84.1,Jeans in Men category,Available,234,64,2,Supplier_9,Wholesale Fashion Square,2021-10-15 01:14:53.539894,7133.95
+48,8192,151,13.89,95.0,79.25,2023-11-29 01:14:53.539894,Women,Dress,High,197.09,Dress in Women category,Out of Stock,229,45,10,Supplier_3,AlphaBroder,2023-10-02 01:14:53.539894,25626.98
+44,3965,16,16.65,151.0,65.5,2022-11-02 01:14:53.539894,Accessories,Sweater,High,194.9,Sweater in Accessories category,Available,254,69,3,Supplier_8,TSC Apparel,2022-10-13 01:14:53.539894,2599.19
+17,1480,42,14.3,16.0,76.0,2022-04-26 01:14:53.539894,Men,Jacket,High,175.79,Jacket in Men category,Out of Stock,73,21,11,Supplier_2,Apparel Distribution Center,2022-03-30 01:14:53.539894,6327.18
+23,5911,18,33.63,42.0,56.75,2023-06-07 01:14:53.539894,Kids,Sweater,High,193.17,Sweater in Kids category,Available,246,10,10,Supplier_6,S&S Activewear,2023-03-16 01:14:53.539894,2307.71
+1,2459,69,31.43,18.0,36.25,2022-01-08 01:14:53.539894,Shoes,Shirt,High,156.87,Shirt in Shoes category,Available,220,44,11,Supplier_10,JiffyShirts,2021-12-04 01:14:53.539894,7421.3
+34,8731,54,7.87,69.0,45.75,2021-08-28 01:14:53.539894,Kids,Sweater,High,100.58,Sweater in Kids category,Available,226,65,12,Supplier_7,Blankstyle,2021-06-09 01:14:53.539894,5003.88
+25,9832,64,13.39,54.0,51.25,2023-06-21 01:14:53.539894,Women,Jacket,Low,25.6,Jacket in Women category,Out of Stock,114,50,15,Supplier_10,JiffyShirts,2023-04-26 01:14:53.539894,1419.27
+43,2549,141,36.59,64.0,82.0,2021-10-28 01:14:53.539894,Shoes,Jacket,Low,26.04,Jacket in Shoes category,Available,238,54,4,Supplier_1,FashionGo,2021-10-16 01:14:53.539894,2327.95
+4,6816,40,21.07,141.0,74.75,2022-01-24 01:14:53.539894,Accessories,Dress,Medium,98.13,Dress in Accessories category,Out of Stock,198,75,9,Supplier_2,Apparel Distribution Center,2021-12-15 01:14:53.539894,3098.24
+17,9348,20,13.67,40.0,66.25,2022-04-27 01:14:53.539894,Accessories,Dress,Medium,70.89,Dress in Accessories category,Out of Stock,159,21,2,Supplier_4,Bella+Canvas,2022-03-19 01:14:53.539894,1223.97
+33,3908,144,8.12,20.0,86.25,2022-08-17 01:14:53.539894,Kids,Shorts,Premium,406.4,Shorts in Kids category,Available,144,39,10,Supplier_10,JiffyShirts,2022-07-26 01:14:53.539894,53772.0
+21,9339,122,41.08,144.0,81.5,2022-05-24 01:14:53.539894,Women,Jacket,Medium,42.98,Jacket in Women category,Out of Stock,199,79,4,Supplier_5,Royal Apparel,2022-04-22 01:14:53.539894,3089.24
+10,6869,73,42.03,122.0,89.75,2024-03-05 01:14:53.539894,Shoes,Sweater,Medium,34.18,Sweater in Shoes category,Available,277,15,11,Supplier_7,Blankstyle,2024-01-15 01:14:53.539894,1446.19
+15,8831,71,8.43,73.0,102.5,2023-04-11 01:14:53.539894,Kids,Sneakers,High,122.4,Sneakers in Kids category,Out of Stock,71,36,11,Supplier_1,FashionGo,2023-02-09 01:14:53.539894,7957.35
+32,7093,46,10.96,71.0,78.0,2024-08-06 01:14:53.539894,Shoes,Dress,Low,6.35,Dress in Shoes category,Out of Stock,229,57,6,Supplier_5,Royal Apparel,2024-06-24 01:14:53.539894,260.1
+5,5762,65,29.94,46.0,63.75,2021-02-03 01:14:53.539894,Shoes,Hat,Medium,35.35,Hat in Shoes category,Available,121,68,6,Supplier_2,Apparel Distribution Center,2020-11-30 01:14:53.539894,1609.9
+39,2031,50,40.68,65.0,58.0,2022-10-01 01:14:53.539894,Men,Sweater,Medium,63.67,Sweater in Men category,Available,171,35,14,Supplier_4,Bella+Canvas,2022-09-09 01:14:53.539894,1888.47
+28,1830,94,33.44,50.0,63.75,2022-07-14 01:14:53.539894,Shoes,Shirt,Premium,270.96,Shirt in Shoes category,Out of Stock,270,37,2,Supplier_3,AlphaBroder,2022-06-13 01:14:53.539894,16952.15
+42,5546,29,34.39,94.0,59.5,2023-10-19 01:14:53.539894,Kids,Shirt,Low,29.8,Shirt in Kids category,Out of Stock,29,11,13,Supplier_7,Blankstyle,2023-10-08 01:14:53.539894,566.93
+47,3516,159,9.46,29.0,83.0,2022-11-24 01:14:53.539894,Women,Jacket,Medium,67.35,Jacket in Women category,Available,255,14,14,Supplier_4,Bella+Canvas,2022-10-08 01:14:53.539894,9695.4
+17,3743,19,32.16,159.0,75.25,2021-04-30 01:14:53.539894,Kids,Jacket,Low,11.12,Jacket in Kids category,Out of Stock,41,72,12,Supplier_2,Apparel Distribution Center,2021-04-15 01:14:53.539894,143.37
+11,1996,15,19.76,19.0,55.5,2021-03-20 01:14:53.539894,Shoes,Shorts,Premium,481.89,Shorts in Shoes category,Out of Stock,265,20,3,Supplier_8,TSC Apparel,2020-12-25 01:14:53.539894,5799.96
+4,5454,77,46.33,15.0,67.5,2021-01-25 01:14:53.539894,Accessories,Jacket,High,177.53,Jacket in Accessories category,Out of Stock,77,44,3,Supplier_8,TSC Apparel,2021-01-16 01:14:53.539894,7337.13
+51,2463,80,33.28,77.0,47.75,2023-12-19 01:14:53.539894,Women,Coat,Medium,37.43,Coat in Women category,Available,122,31,14,Supplier_1,FashionGo,2023-12-19 01:14:53.539894,1998.13
+51,7183,17,28.77,80.0,47.25,2023-12-24 01:14:53.539894,Women,Coat,High,175.47,Coat in Women category,Out of Stock,17,32,1,Supplier_10,JiffyShirts,2023-11-14 01:14:53.539894,2124.86
+1,8965,11,37.12,17.0,46.25,2023-01-08 01:14:53.539894,Women,Sneakers,Medium,33.89,Sneakers in Women category,Out of Stock,11,10,1,Supplier_7,Blankstyle,2023-01-03 01:14:53.539894,234.39
+34,9222,25,29.78,11.0,33.25,2024-08-25 01:14:53.540402,Kids,Hat,Medium,33.38,Hat in Kids category,Available,25,21,6,Supplier_10,JiffyShirts,2024-08-13 01:14:53.540402,586.06
+4,6282,14,43.21,25.0,16.75,2021-01-26 01:14:53.540402,Shoes,Jacket,Premium,285.81,Jacket in Shoes category,Out of Stock,21,14,12,Supplier_10,JiffyShirts,2020-11-25 01:14:53.540402,2272.44
+37,2572,74,28.66,14.0,31.0,2024-09-13 01:14:53.540402,Shoes,Jeans,Low,10.03,Jeans in Shoes category,Out of Stock,74,67,2,Supplier_3,AlphaBroder,2024-06-22 01:14:53.540402,529.75
+12,8719,7,11.16,74.0,30.0,2024-03-23 01:14:53.540402,Kids,Shirt,Premium,290.02,Shirt in Kids category,Available,19,64,4,Supplier_4,Bella+Canvas,2024-01-11 01:14:53.540402,1803.58
+18,2271,39,48.17,7.0,33.5,2023-05-01 01:14:53.540402,Women,Bags,Medium,37.21,Bags in Women category,Available,85,59,2,Supplier_4,Bella+Canvas,2023-04-11 01:14:53.540402,752.05
+37,9462,19,40.85,39.0,34.75,2024-09-13 01:14:53.540402,Women,Coat,Medium,34.16,Coat in Women category,Available,60,72,8,Supplier_7,Blankstyle,2024-07-31 01:14:53.540402,383.98
+47,5628,27,41.25,19.0,23.0,2022-11-24 01:14:53.540402,Women,Jacket,Low,26.97,Jacket in Women category,Available,141,64,2,Supplier_9,Wholesale Fashion Square,2022-10-21 01:14:53.540402,427.88
+6,9164,13,35.59,27.0,24.5,2023-02-07 01:14:53.540402,Kids,Jacket,Medium,98.3,Jacket in Kids category,Out of Stock,250,17,1,Supplier_1,FashionGo,2022-12-23 01:14:53.540402,823.11
+41,9267,29,8.53,13.0,22.0,2021-10-17 01:14:53.540402,Men,Jeans,High,139.5,Jeans in Men category,Out of Stock,295,15,4,Supplier_8,TSC Apparel,2021-09-26 01:14:53.540402,3700.51
+21,5574,130,9.72,29.0,49.75,2023-05-25 01:14:53.540402,Kids,Dress,High,136.28,Dress in Kids category,Available,181,21,4,Supplier_5,Royal Apparel,2023-04-12 01:14:53.540402,15993.34
+14,5267,74,19.83,130.0,61.5,2022-04-05 01:14:53.540402,Women,Jeans,Medium,41.81,Jeans in Women category,Out of Stock,296,79,5,Supplier_7,Blankstyle,2022-03-19 01:14:53.540402,2480.15
+2,4618,29,26.5,74.0,65.5,2024-01-10 01:14:53.540402,Women,Shirt,Low,22.16,Shirt in Women category,Out of Stock,195,19,10,Supplier_9,Wholesale Fashion Square,2024-01-08 01:14:53.540402,472.38
+25,6656,7,43.51,29.0,60.0,2024-06-17 01:14:53.540402,Accessories,Bags,Low,19.61,Bags in Accessories category,Out of Stock,32,59,7,Supplier_4,Bella+Canvas,2024-04-18 01:14:53.540402,77.55
+22,9349,35,25.9,7.0,36.25,2022-06-02 01:14:53.540402,Kids,Shorts,Medium,78.31,Shorts in Kids category,Out of Stock,121,43,9,Supplier_7,Blankstyle,2022-03-14 01:14:53.540402,2030.9
+44,3907,18,13.94,35.0,22.25,2023-11-01 01:14:53.540402,Kids,Sweater,High,174.41,Sweater in Kids category,Out of Stock,224,51,9,Supplier_1,FashionGo,2023-10-25 01:14:53.540402,2701.59
+30,3142,176,20.46,18.0,59.0,2021-07-30 01:14:53.540402,Shoes,Shirt,Premium,278.24,Shirt in Shoes category,Available,199,35,3,Supplier_7,Blankstyle,2021-05-11 01:14:53.540402,38950.11
+52,5039,28,33.32,176.0,64.25,2022-01-02 01:14:53.540402,Shoes,Jacket,Premium,272.92,Jacket in Shoes category,Out of Stock,115,21,5,Supplier_2,Apparel Distribution Center,2021-12-28 01:14:53.540402,5095.57
+3,9067,43,21.82,28.0,66.25,2024-01-17 01:14:53.540402,Kids,Shorts,High,139.79,Shorts in Kids category,Available,174,38,14,Supplier_2,Apparel Distribution Center,2023-12-08 01:14:53.540402,4699.4
+14,2947,67,24.26,43.0,78.5,2021-04-05 01:14:53.540402,Accessories,Shorts,High,133.84,Shorts in Accessories category,Available,212,52,5,Supplier_9,Wholesale Fashion Square,2021-01-23 01:14:53.540402,6792.44
+29,2443,51,44.66,67.0,47.25,2023-07-19 01:14:53.540402,Women,Sneakers,Medium,59.32,Sneakers in Women category,Available,111,47,6,Supplier_1,FashionGo,2023-07-11 01:14:53.540402,1674.27
+12,2191,52,40.96,51.0,53.25,2023-03-20 01:14:53.540402,Men,Dress,Medium,72.06,Dress in Men category,Available,52,42,5,Supplier_2,Apparel Distribution Center,2023-03-13 01:14:53.540402,2212.48
+26,8980,19,17.14,52.0,47.25,2024-06-29 01:14:53.540402,Men,Bags,High,137.13,Bags in Men category,Available,166,18,4,Supplier_10,JiffyShirts,2024-05-12 01:14:53.540402,2158.94
+19,9295,82,18.5,19.0,51.0,2023-05-13 01:14:53.540402,Kids,Shorts,High,149.66,Shorts in Kids category,Out of Stock,82,68,8,Supplier_8,TSC Apparel,2023-03-05 01:14:53.540402,10001.98
+31,6544,20,22.77,82.0,43.25,2021-08-06 01:14:53.540402,Shoes,Sneakers,Medium,52.93,Sneakers in Shoes category,Out of Stock,282,28,7,Supplier_6,S&S Activewear,2021-05-21 01:14:53.540402,817.57
+24,9614,82,31.66,20.0,50.75,2023-06-14 01:14:53.540402,Kids,Shorts,High,191.56,Shorts in Kids category,Available,82,40,7,Supplier_6,S&S Activewear,2023-03-19 01:14:53.540402,10733.97
+30,2780,122,15.98,82.0,76.5,2023-07-24 01:14:53.540402,Women,Bags,Medium,78.5,Bags in Women category,Available,220,34,9,Supplier_8,TSC Apparel,2023-06-29 01:14:53.540402,8046.58
+47,7102,130,27.38,122.0,88.5,2022-11-23 01:14:53.540402,Kids,Shirt,High,140.16,Shirt in Kids category,Out of Stock,284,64,6,Supplier_10,JiffyShirts,2022-11-01 01:14:53.540402,13232.88
+51,7475,76,39.48,130.0,102.5,2020-12-15 01:14:53.540402,Shoes,Sweater,High,179.13,Sweater in Shoes category,Available,76,60,13,Supplier_10,JiffyShirts,2020-10-04 01:14:53.540402,8238.43
+51,5324,0,46.95,76.0,82.0,2020-12-17 01:14:53.540402,Women,Hat,Low,26.85,Hat in Women category,Out of Stock,14,55,12,Supplier_10,JiffyShirts,2020-11-16 01:14:53.540402,0.0
+48,8834,82,30.76,0.0,72.0,2020-11-24 01:14:53.540402,Kids,Dress,Premium,364.37,Dress in Kids category,Available,275,37,2,Supplier_4,Bella+Canvas,2020-09-22 01:14:53.540402,20686.52
+27,1795,78,45.2,82.0,59.0,2022-07-09 01:14:53.540895,Kids,Jeans,High,170.14,Jeans in Kids category,Out of Stock,255,71,12,Supplier_10,JiffyShirts,2022-07-08 01:14:53.540895,7272.19
+39,9768,39,17.15,78.0,49.75,2023-10-01 01:14:53.540895,Men,Shorts,Low,6.32,Shorts in Men category,Out of Stock,149,15,11,Supplier_10,JiffyShirts,2023-09-27 01:14:53.540895,204.1
+13,3542,22,27.04,39.0,55.25,2023-04-02 01:14:53.540895,Kids,Hat,Medium,98.72,Hat in Kids category,Available,22,54,12,Supplier_3,AlphaBroder,2023-02-21 01:14:53.540895,1584.58
+33,3689,47,39.07,22.0,46.5,2024-08-12 01:14:53.540895,Shoes,Sneakers,Premium,212.76,Sneakers in Shoes category,Available,47,44,15,Supplier_2,Apparel Distribution Center,2024-07-17 01:14:53.540895,6092.53
+9,6156,10,42.85,47.0,29.5,2024-02-28 01:14:53.540895,Accessories,Bags,Medium,45.74,Bags in Accessories category,Available,36,43,15,Supplier_8,TSC Apparel,2024-01-19 01:14:53.540895,261.37
+25,4408,156,45.9,10.0,58.75,2022-06-21 01:14:53.540895,Kids,Shirt,Premium,390.81,Shirt in Kids category,Out of Stock,273,38,9,Supplier_8,TSC Apparel,2022-05-22 01:14:53.540895,32982.78
+49,9026,94,42.12,156.0,76.75,2022-12-10 01:14:53.540895,Women,Jacket,Low,17.31,Jacket in Women category,Out of Stock,215,45,6,Supplier_1,FashionGo,2022-09-17 01:14:53.540895,941.53
+16,4416,69,10.47,94.0,82.25,2023-04-20 01:14:53.540895,Kids,Jacket,Medium,45.35,Jacket in Kids category,Out of Stock,83,23,12,Supplier_7,Blankstyle,2023-03-09 01:14:53.540895,2801.7
+51,5099,127,10.07,69.0,111.5,2022-12-21 01:14:53.540895,Women,Bags,Low,11.0,Bags in Women category,Available,253,60,5,Supplier_9,Wholesale Fashion Square,2022-11-05 01:14:53.540895,1256.94
+31,1241,56,35.01,127.0,86.5,2024-08-04 01:14:53.540895,Women,Sneakers,Medium,73.8,Sneakers in Women category,Out of Stock,283,15,11,Supplier_6,S&S Activewear,2024-06-19 01:14:53.540895,2685.64
+47,5534,41,45.67,56.0,73.25,2021-11-24 01:14:53.540895,Accessories,Sneakers,Premium,378.6,Sneakers in Accessories category,Out of Stock,190,11,1,Supplier_5,Royal Apparel,2021-09-27 01:14:53.540895,8433.0
+33,1034,80,20.29,41.0,76.0,2021-08-19 01:14:53.540895,Men,Sneakers,Low,21.78,Sneakers in Men category,Out of Stock,266,31,6,Supplier_6,S&S Activewear,2021-07-31 01:14:53.540895,1389.06
+1,1439,16,13.44,80.0,48.25,2022-01-04 01:14:53.540895,Shoes,Dress,Low,5.36,Dress in Shoes category,Out of Stock,33,68,2,Supplier_5,Royal Apparel,2021-10-09 01:14:53.540895,74.27
+45,1168,87,12.52,16.0,56.0,2022-11-09 01:14:53.540895,Kids,Sneakers,Low,19.34,Sneakers in Kids category,Available,218,12,9,Supplier_6,S&S Activewear,2022-08-12 01:14:53.540895,1472.26
+50,4761,66,40.32,87.0,62.25,2020-12-13 01:14:53.541202,Accessories,Dress,Medium,50.28,Dress in Accessories category,Out of Stock,219,53,7,Supplier_10,JiffyShirts,2020-11-17 01:14:53.541202,1980.56
+1,1008,7,21.95,66.0,44.0,2023-01-04 01:14:53.541202,Women,Jacket,Low,8.82,Jacket in Women category,Out of Stock,16,48,1,Supplier_3,AlphaBroder,2022-12-20 01:14:53.541202,48.21
+1,4363,57,5.42,7.0,54.25,2021-01-05 01:14:53.541202,Kids,Sweater,Medium,44.06,Sweater in Kids category,Available,66,51,15,Supplier_2,Apparel Distribution Center,2020-10-26 01:14:53.541202,2375.66
+13,8677,55,20.81,57.0,46.25,2022-03-31 01:14:53.541202,Shoes,Shirt,Medium,98.4,Shirt in Shoes category,Out of Stock,206,41,13,Supplier_9,Wholesale Fashion Square,2022-03-08 01:14:53.541202,4285.73
+1,1234,75,7.31,55.0,48.5,2024-01-03 01:14:53.541202,Accessories,Shorts,High,165.44,Shorts in Accessories category,Available,143,43,11,Supplier_9,Wholesale Fashion Square,2023-10-09 01:14:53.541202,11500.88
+20,3766,20,17.53,75.0,51.75,2023-05-18 01:14:53.541202,Accessories,Hat,Premium,316.6,Hat in Accessories category,Available,20,5,2,Supplier_9,Wholesale Fashion Square,2023-04-10 01:14:53.541202,5222.11
+14,6928,116,11.85,20.0,66.5,2021-04-11 01:14:53.541202,Accessories,Sneakers,Low,14.23,Sneakers in Accessories category,Out of Stock,224,36,2,Supplier_2,Apparel Distribution Center,2021-01-30 01:14:53.541202,1455.32
+3,9538,43,5.92,116.0,63.5,2023-01-16 01:14:53.541202,Accessories,Shorts,Premium,358.4,Shorts in Accessories category,Out of Stock,289,51,6,Supplier_4,Bella+Canvas,2023-01-01 01:14:53.541202,14498.9
+14,5179,0,45.46,43.0,44.75,2024-04-04 01:14:53.541202,Shoes,Coat,Premium,310.42,Coat in Shoes category,Out of Stock,35,43,7,Supplier_3,AlphaBroder,2024-02-26 01:14:53.541202,0.0
+39,7609,72,29.79,0.0,57.75,2024-09-26 01:14:53.541202,Women,Bags,High,140.91,Bags in Women category,Out of Stock,72,55,12,Supplier_1,FashionGo,2024-07-19 01:14:53.541202,7122.97
+21,2068,16,46.82,72.0,32.75,2022-05-25 01:14:53.541202,Accessories,Jeans,High,184.52,Jeans in Accessories category,Available,286,62,13,Supplier_1,FashionGo,2022-05-16 01:14:53.541202,1569.99
+19,3393,155,16.39,16.0,60.75,2021-05-15 01:14:53.541202,Shoes,Dress,Medium,65.98,Dress in Shoes category,Out of Stock,192,66,15,Supplier_4,Bella+Canvas,2021-02-18 01:14:53.541202,8550.57
+14,1636,44,10.26,155.0,71.75,2024-04-01 01:14:53.541202,Kids,Shirt,Premium,317.6,Shirt in Kids category,Out of Stock,299,62,12,Supplier_8,TSC Apparel,2024-02-21 01:14:53.541202,12540.07
+9,3993,45,42.46,44.0,65.0,2021-03-03 01:14:53.541202,Men,Dress,Premium,212.85,Dress in Men category,Out of Stock,115,74,14,Supplier_9,Wholesale Fashion Square,2020-12-14 01:14:53.541202,5511.55
+52,6152,17,36.78,45.0,65.25,2020-12-23 01:14:53.541202,Men,Shorts,Low,10.12,Shorts in Men category,Out of Stock,63,63,10,Supplier_4,Bella+Canvas,2020-10-30 01:14:53.541202,108.76
+23,6072,90,45.45,17.0,49.0,2024-06-09 01:14:53.541202,Shoes,Sneakers,Medium,85.12,Sneakers in Shoes category,Available,229,32,10,Supplier_8,TSC Apparel,2024-04-23 01:14:53.541202,4178.65
+43,1507,23,24.99,90.0,43.75,2023-10-27 01:14:53.541202,Women,Shirt,Medium,90.95,Shirt in Women category,Out of Stock,55,75,14,Supplier_6,S&S Activewear,2023-10-17 01:14:53.541202,1569.07
+41,8342,67,35.18,23.0,49.25,2022-10-11 01:14:53.541202,Shoes,Coat,Premium,497.16,Coat in Shoes category,Available,254,13,8,Supplier_9,Wholesale Fashion Square,2022-10-06 01:14:53.541202,21592.67
+29,3899,55,18.25,67.0,58.75,2023-07-23 01:14:53.541202,Shoes,Bags,Low,7.98,Bags in Shoes category,Available,197,43,14,Supplier_6,S&S Activewear,2023-06-25 01:14:53.541202,358.74
+10,6849,21,24.11,55.0,41.5,2021-03-14 01:14:53.541202,Shoes,Coat,Low,14.23,Coat in Shoes category,Available,65,70,14,Supplier_4,Bella+Canvas,2020-12-20 01:14:53.541202,226.85
+46,5646,59,47.38,21.0,50.5,2021-11-21 01:14:53.541202,Accessories,Shirt,Medium,35.94,Shirt in Accessories category,Available,59,35,7,Supplier_5,Royal Apparel,2021-11-09 01:14:53.541202,1115.89
+8,5443,4,46.24,59.0,34.75,2024-02-21 01:14:53.541202,Kids,Shorts,High,169.65,Shorts in Kids category,Available,12,78,8,Supplier_5,Royal Apparel,2024-01-08 01:14:53.541202,364.83
+31,3289,93,6.32,4.0,44.25,2021-08-06 01:14:53.541202,Men,Coat,Premium,410.21,Coat in Men category,Out of Stock,93,53,12,Supplier_2,Apparel Distribution Center,2021-05-19 01:14:53.541202,35738.99
+52,6539,70,37.67,93.0,56.5,2022-12-27 01:14:53.541202,Women,Coat,Premium,454.15,Coat in Women category,Out of Stock,276,24,11,Supplier_10,JiffyShirts,2022-11-08 01:14:53.541202,19814.03
+40,5352,12,33.2,70.0,44.75,2023-10-05 01:14:53.541202,Men,Bags,Medium,76.35,Bags in Men category,Out of Stock,68,50,4,Supplier_6,S&S Activewear,2023-09-27 01:14:53.541202,612.04
+18,2135,28,39.62,12.0,50.75,2021-05-08 01:14:53.541202,Accessories,Sneakers,High,135.31,Sneakers in Accessories category,Available,206,47,14,Supplier_6,S&S Activewear,2021-04-02 01:14:53.541202,2287.48
+30,7537,62,16.38,28.0,43.0,2024-07-26 01:14:53.541202,Women,Coat,Premium,428.05,Coat in Women category,Available,156,44,7,Supplier_6,S&S Activewear,2024-05-28 01:14:53.541202,22193.13
+31,5089,83,29.88,62.0,46.25,2021-08-07 01:14:53.541202,Women,Jeans,Premium,484.57,Jeans in Women category,Available,119,27,5,Supplier_1,FashionGo,2021-08-06 01:14:53.541202,28201.45
+3,6403,56,37.64,83.0,57.25,2021-01-23 01:14:53.541202,Kids,Jacket,Medium,74.63,Jacket in Kids category,Out of Stock,97,39,4,Supplier_3,AlphaBroder,2020-11-10 01:14:53.541202,2606.16
+11,8321,95,36.65,56.0,74.0,2024-03-16 01:14:53.541202,Women,Jacket,Low,12.32,Jacket in Women category,Available,201,13,3,Supplier_4,Bella+Canvas,2023-12-18 01:14:53.541202,741.26
+17,5056,124,11.7,95.0,89.5,2021-05-01 01:14:53.541202,Kids,Hat,High,166.67,Hat in Kids category,Available,144,23,1,Supplier_1,FashionGo,2021-02-04 01:14:53.541202,18247.75

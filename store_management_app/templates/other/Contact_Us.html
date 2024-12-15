@@ -1,0 +1,226 @@
+{% extends "layout/layout.html" %}
+{% block body %}
+<title>Contact Us</title>
+
+<style>
+  .text-black {
+    color: #000; /* Set black color */
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .contact-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .contact-header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #000;
+  }
+
+  .contact-content {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #000;
+  }
+
+  .contact-content address {
+    font-style: normal;
+    margin: 20px 0;
+  }
+
+  .map-container {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .map-container iframe {
+    width: 100%;
+    height: 400px;
+    border: 0;
+  }
+
+  .map-edit-container {
+    display: none;
+  }
+
+  .map-edit-container input {
+    width: calc(100% - 100px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .map-edit-container button {
+    width: 80px;
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+
+  .contact-btn {
+    display: block;
+    width: 200px;
+    margin: 30px auto;
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    background-color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .contact-btn:hover {
+    background-color: #444;
+  }
+
+  [contenteditable] {
+    border: 1px dashed #ccc;
+    padding: 5px;
+    min-height: 20px;
+  }
+
+  .remove-btn {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: none;
+  }
+
+  .remove-btn:hover {
+    background-color: #c0392b;
+  }
+</style>
+
+<div class="container">
+  <div class="contact-header">
+    <h1 {% if user %}contenteditable="true"{% endif %}>Contact Us</h1>
+  </div>
+  <div class="contact-content">
+    <p {% if user %}contenteditable="true"{% endif %}>
+      Visit our showroom located at 1404 Oak Tree Rd, Iselin, NJ 07728 to browse our selection of lehengas, kurtas, pure silk sarees, and dupattas for women. We also provide custom tailoring services for both men and women, including blouse stitching, saree pre-stitching, and small to major alterations.
+    </p>
+    <address {% if user %}contenteditable="true"{% endif %}>
+      Binnyfashion<br />
+      1404 Oak Tree Rd,<br />
+      Iselin, NJ 07728<br />
+      Contact: 732-688-8085
+    </address>
+    {% if user %}
+    <button id="add-address" class="contact-btn">Add Address</button>
+    {% endif %}
+    <div class="map-container">
+      <!-- Google Maps Embed -->
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!3m2!1sen!2sin!4v1723233553558!5m2!1sen!2sin!6m8!1m7!1sejQuOIB35hDsWBDvAEYVRg!2m2!1d40.57389612906566!2d-74.32657506188524!3f219.2553433198319!4f1.6898825802191624!5f0.4000000000000002"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+      {% if user %}
+      <div class="map-edit-container">
+        <input type="text" id="map-url" placeholder="Enter new Google Map URL">
+        <button id="update-map">Update Map</button>
+      </div>
+      <button id="add-map" class="contact-btn" {% if map_url %}style="display:none;"{% endif %}>Add Map</button>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% if user %}
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const addAddressBtn = document.getElementById('add-address');
+    const contactContent = document.querySelector('.contact-content');
+    const mapContainer = document.querySelector('.map-container');
+    const mapIframe = document.getElementById('google-map');
+    const mapEditContainer = document.querySelector('.map-edit-container');
+    const mapUrlInput = document.getElementById('map-url');
+    const updateMapBtn = document.getElementById('update-map');
+    const removeMapBtn = document.getElementById('remove-map');
+    const addMapBtn = document.getElementById('add-map');
+
+    addAddressBtn.addEventListener('click', () => {
+      const newAddress = document.createElement('address');
+      newAddress.contentEditable = 'true';
+      newAddress.innerHTML = 'New Address<br />Street<br />City, State, ZIP<br />Contact: Phone';
+      contactContent.appendChild(newAddress);
+    });
+
+    if (mapIframe) {
+      mapIframe.addEventListener('dblclick', () => {
+        mapEditContainer.style.display = 'block';
+      });
+    }
+
+    updateMapBtn.addEventListener('click', () => {
+      const newUrl = mapUrlInput.value.trim();
+      if (newUrl) {
+        if (!mapIframe) {
+          const newMapIframe = document.createElement('iframe');
+          newMapIframe.id = 'google-map';
+          newMapIframe.src = newUrl;
+          newMapIframe.width = '600';
+          newMapIframe.height = '450';
+          newMapIframe.style.border = '0';
+          newMapIframe.allowFullscreen = true;
+          newMapIframe.loading = 'lazy';
+          newMapIframe.referrerpolicy = 'no-referrer-when-downgrade';
+          mapContainer.appendChild(newMapIframe);
+          const removeBtn = document.createElement('button');
+          removeBtn.id = 'remove-map';
+          removeBtn.className = 'remove-btn';
+          removeBtn.innerText = 'Remove Map';
+          mapContainer.appendChild(removeBtn);
+          removeBtn.addEventListener('click', () => {
+            mapContainer.removeChild(newMapIframe);
+            mapContainer.removeChild(removeBtn);
+            mapEditContainer.style.display = 'none';
+            addMapBtn.style.display = 'block';
+          });
+        } else {
+          mapIframe.src = newUrl;
+        }
+        mapEditContainer.style.display = 'none';
+        addMapBtn.style.display = 'none';
+      }
+    });
+
+    if (removeMapBtn) {
+      removeMapBtn.addEventListener('click', () => {
+        mapContainer.removeChild(mapIframe);
+        mapContainer.removeChild(removeMapBtn);
+        mapEditContainer.style.display = 'none';
+        addMapBtn.style.display = 'block';
+      });
+    }
+
+    addMapBtn.addEventListener('click', () => {
+      mapEditContainer.style.display = 'block';
+    });
+  });
+</script>
+{% endif %}
+
+{% endblock %}

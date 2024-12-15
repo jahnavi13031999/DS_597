@@ -1,0 +1,101 @@
+{% extends "layout/layout.html" %}
+{% block body %}
+
+<div class="sitemanager">
+    <!-- <h1 class="website_management_title">Website Management</h1> -->
+
+    <div class="icons">
+        <a href="/socialmediamanager" class="icon">
+            <img src={{ url_for('static', filename="assets/icons/Social-Media-globe-624x624.jpg" ) }}
+                alt="Social Media Links">
+            <p>Social Media</p>
+        </a>
+        <a href="/sales_data" class="icon">
+            <img src={{ url_for('static', filename="assets/icons/products_category_manager.png" ) }} >
+            <p>Inventory Managenet</p>
+        </a>
+        <a href="/sales_data" class="icon">
+          <img src={{ url_for('static', filename="assets/icons/supply.png" ) }}>
+          <p>Supply Managenet</p>
+      </a>
+        <a href="/productsmanagement" class="icon">
+            <img src={{ url_for('static', filename="assets/icons/Product_management_icon.png" ) }}
+                alt="Product Management">
+            <p>Product Management</p>
+        </a>
+
+        <a href="/aboutus" class="icon">
+            <img src={{ url_for('static', filename="assets/icons/aboutus.png" ) }} alt="About Us">
+            <p>About Us</p>
+        </a>
+    </div>
+    <div>
+
+    </div>
+</div>
+
+<style>
+
+.sitemanager {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 200px;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.icon {
+  background-color: #d4e72c;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s;
+  text-decoration: none;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+.icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+}
+
+.icon p {
+  margin: 0;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 5px;
+  border-radius: 0 0 50% 50%;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+.website_management_title {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+</style>
+{% endblock %}

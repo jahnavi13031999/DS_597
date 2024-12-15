@@ -1,0 +1,131 @@
+{% extends "layout/layout.html" %}
+{% block body %}
+
+<title>About Us</title>
+
+<style>
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+
+  .about-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .about-header h1 {
+    font-size: 3rem;
+    color: #333;
+    text-shadow: 2px 2px 4px #aaa;
+  }
+
+  .about-content {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+  }
+
+  .about-content h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-top: 30px;
+  }
+
+  .about-content ul {
+    margin: 20px 0;
+    padding-left: 20px;
+  }
+
+  .about-content ul li {
+    margin: 10px 0;
+  }
+
+  .about-content ul li strong {
+    color: #000;
+  }
+
+  .about-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 20px 0;
+  }
+
+  .contact-btn {
+    display: block;
+    width: 200px;
+    margin: 30px auto;
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    background-color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .contact-btn:hover {
+    background-color: #444;
+  }
+
+  [contenteditable] {
+    border: 1px dashed #ccc;
+    padding: 5px;
+    min-height: 20px;
+  }
+</style>
+
+<body>
+  <div class="container">
+    <!-- About Header Section -->
+    <div class="about-header">
+      <h1 {% if user %}contenteditable="true"{% endif %}>ABOUT US</h1>
+    </div>
+
+    <!-- About Content Section -->
+    <div class="about-content">
+      <p {% if user %}contenteditable="true"{% endif %}>Welcome to Binnyfashion, your ultimate destination for exquisite Indian clothing online. Our store is dedicated to bringing you the finest selection of traditional and contemporary Indian attire for men, women, and kids.</p>
+
+      <!-- <img src="{{ url_for('static', filename='images/about_us_image.jpg') }}" alt="About Us Image"> -->
+
+      <h2 {% if user %}contenteditable="true"{% endif %}>Our Collection</h2>
+      <p {% if user %}contenteditable="true"{% endif %}>At Elegant Indian Ethnic Wear, we pride ourselves on offering a diverse range of Indian outfits that cater to every occasion and preference. Our collection includes:</p>
+      <ul id="collection-list" {% if user %}contenteditable="true"{% endif %}>
+        <li><strong>Sarees:</strong> From classic silk sarees to trendy pre-stitched sarees, we have something for every taste.</li>
+        <li><strong>Lehenga Choli:</strong> Explore stunning lehenga choli sets, perfect for weddings, festivals, and special occasions.</li>
+        <li><strong>Salwar Kameez:</strong> Comfortable and stylish outfits ideal for wedding wear and festive celebrations.</li>
+        <li><strong>Kurta Pajama:</strong> Elegant men’s kurta pajama sets available in various fabrics and designs.</li>
+        <li><strong>Kids Ethnic Wear:</strong> Adorable traditional outfits for little ones, including lehenga cholis, Anarkali suits, and kurta pajamas.</li>
+      </ul>
+      {% if user %}
+      <button id="add-item" class="contact-btn">Add Item</button>
+      {% endif %}
+
+      <h2 {% if user %}contenteditable="true"{% endif %}>Our Mission</h2>
+      <p {% if user %}contenteditable="true"{% endif %}>Our mission is to celebrate and promote the rich heritage of Indian fashion by providing high-quality, beautifully crafted clothing that reflects the vibrant culture of India. We aim to make traditional Indian attire accessible to everyone, no matter where they are in the world.</p>
+    </div>
+
+  </div>
+
+  {% if user %}
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const addItemBtn = document.getElementById('add-item');
+      const collectionList = document.getElementById('collection-list');
+
+      addItemBtn.addEventListener('click', () => {
+        const newItem = document.createElement('li');
+        newItem.contentEditable = 'true';
+        newItem.innerHTML = '<strong>New Item:</strong> Description';
+        collectionList.appendChild(newItem);
+      });
+    });
+  </script>
+  {% endif %}
+</body>
+{% endblock %}

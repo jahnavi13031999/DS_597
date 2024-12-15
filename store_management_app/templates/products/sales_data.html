@@ -1,0 +1,413 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Data Overview for the Next 30 days</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Custom tooltip styling */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* Button styles */
+        .btn-order {
+            background-color: #ff4b4b;
+            /* Bright red */
+            color: white;
+        }
+
+        .btn-order:hover {
+            background-color: #d32f2f;
+            /* Darker red */
+        }
+
+        .btn-monitor {
+            background-color: #addde5;
+            /* Yellow-orange */
+            color: white;
+        }
+
+        .btn-monitor:hover {
+            background-color: #ff9900;
+            /* Darker yellow-orange */
+        }
+
+        .btn-reorder {
+            background-color: #ee6c21;
+            /* Yellow */
+            color: white;
+        }
+
+        .btn-reorder:hover {
+            background-color: #ffb300;
+            /* Darker yellow */
+        }
+
+        /* tabs */
+        .btn-suppliers {
+            background-color: #ff4b4b;
+            /* Bright red */
+            color: rgb(11, 3, 80);
+            transition: background-color 0.3s;
+        }
+
+        .btn-ml-demand {
+            background-color: #a4ac84;
+            /* Yellow-orange */
+            color: rgb(11, 3, 80);
+            transition: background-color 0.3s;
+        }
+
+        .btn-sales {
+            background-color: #ee6c21;
+            /* Yellow */
+            color: rgb(11, 3, 80);
+            transition: background-color 0.3s;
+        }
+
+        /* Success Modal Styles */
+        #successModalContent {
+            transform: scale(0.9);
+            opacity: 0;
+        }
+
+        #successModalContent.scale-100 {
+            transform: scale(1);
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<div id="Demand_Inventory_Monitor">
+    <div class="container mx-auto px-4 py-8">
+        {% if error %}
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4" role="alert">
+            <p>{{ error }}</p>
+        </div>
+        {% endif %}
+
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-3xl font-bold text-gray-800"> Demand and Inventory Monitor for the Next 30 days</h1>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead>
+                        <tr class="bg-gray-50">
+                        <tr class="bg-gray-50">
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100"
+                                data-sort="Category" onclick="sortTable('Category')">Category</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100"
+                                data-sort="Product" onclick="sortTable('Product')">Product</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100"
+                                data-sort="Price_Range" onclick="sortTable('Price_Range')">Price Range</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100"
+                                data-sort="Inventory_Level" onclick="sortTable('Inventory_Level')">Inventory</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100"
+                                data-sort="Demand" onclick="sortTable('Demand')">Demand</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100"
+                                data-sort="Reorder_Point" onclick="sortTable('Reorder_Point')">Reorder Point</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100"
+                                data-sort="Lead_Time" onclick="sortTable('Lead_Time')">Lead Time</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100"
+                                data-sort="Supplier_Name" onclick="sortTable('Supplier_Name')">Supplier</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="inventoryTableBody" class="bg-white divide-y divide-gray-200">
+                        {% for record in sales_records %}
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 whitespace-nowrap"><span class="text-sm text-gray-900">{{
+                                    record.Category
+                                    }}</span></td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ record.Product }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ record.Price_Range }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+                                    <span class="h-2 w-2 rounded-full mr-2 
+                                        {% if record.Inventory_Level <= 0 %} bg-red-500
+                                        {% elif record.Inventory_Level < record.Reorder_Point %} bg-yellow-500
+                                        {% else %} bg-green-500
+                                        {% endif %}"></span>
+                                    <span class="text-sm text-gray-900">{{ record.Inventory_Level | round(0) }}</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ record.Demand | round(0) }}
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ record.Reorder_Point |
+                                round(0) }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ record.Lead_Time | round(0)
+                                }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ record.Supplier_Name }}
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="tooltip">
+                                    {% if record.Demand > record.Reorder_Point and record.Inventory_Level <
+                                        record.Reorder_Point %} <button
+                                        onclick="placeOrder('{{ record.Product }}', '{{ record.Supplier_Name }}', '{{ record.Lead_Time }}')"
+                                        class="btn-order font-bold py-1 px-3 rounded text-sm">Order</button>
+                                        <span class="tooltiptext">Order immediately due to high demand and low
+                                            inventory.</span>
+                                        {% elif record.Demand > record.Reorder_Point and record.Inventory_Level >=
+                                        record.Reorder_Point %}
+                                        <button
+                                            onclick="placeOrder('{{ record.Product }}', '{{ record.Supplier_Name }}', '{{ record.Lead_Time }}')"
+                                            class="btn-monitor font-bold py-1 px-3 rounded text-sm">Monitor</button>
+                                        <span class="tooltiptext">Monitor closely due to promotions.</span>
+                                        {% elif record.Inventory_Level < record.Reorder_Point %} <button
+                                            onclick="placeOrder('{{ record.Product }}', '{{ record.Supplier_Name }}', '{{ record.Lead_Time }}')"
+                                            class="btn-reorder font-bold py-1 px-3 rounded text-sm">Reorder</button>
+                                            <span class="tooltiptext">Consider reordering soon due to low stock.</span>
+                                            {% else %}
+                                            <span class="text-gray-500">No action</span>
+                                            {% endif %}
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Modal -->
+    <div id="orderModal" class="hidden fixed inset-0 bg-black bg-opacity-50 overflow-y-auto h-full w-full">
+        <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+            <div class="mt-3">
+                <h3 class="text-lg font-medium text-gray-900 mb-4">Place Order</h3>
+                <div class="mt-2">
+                    <p class="text-sm text-gray-500 mb-4">Product: <span id="modalProductName"></span></p>
+                    <p class="text-sm text-gray-500 mb-4">Supplier: <span id="modalSupplierName"></span></p>
+                    <p class="text-sm text-gray-500 mb-4">Lead Time: <span id="modalLeadTime"></span> days</p>
+                    <!-- Added Lead Time Field -->
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="quantity">Quantity</label>
+                        <input type="number" id="orderQuantity" min="1"
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                </div>
+                <div class="flex justify-end">
+                    <button onclick="closeModal()"
+                        class="mr-2 px-4 py-2 bg-gray-300 text-gray-700 rounded hover:bg-gray-400">
+                        Cancel
+                    </button>
+                    <button onclick="submitOrder()" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700">
+                        Submit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Success Message Modal -->
+    <div id="successModal" class="fixed inset-0 flex items-center justify-center hidden">
+        <div class="bg-white shadow-lg rounded-lg p-6 w-1/3 transform transition-transform duration-300 ease-in-out scale-90 opacity-0"
+            id="successModalContent">
+            <div class="flex items-center justify-between">
+                <h2 class="text-lg font-semibold text-green-700">Order Confirmed!</h2>
+                <button onclick="closeSuccessModal()" class="text-gray-500 hover:text-gray-700">&times;</button>
+            </div>
+            <p class="text-gray-700 mt-4">Your order has been successfully placed. Thank you!</p>
+            <button onclick="closeSuccessModal()"
+                class="mt-6 bg-green-600 text-white font-semibold py-2 px-4 rounded hover:bg-green-700">
+                OK
+            </button>
+        </div>
+    </div>
+
+
+</div>
+
+<div id="Product_Sales" class="hidden">
+    <!-- Content for Product Sales goes here -->
+    <h2 class="text-3xl font-bold text-gray-800">Product Sales Content</h2>
+    <div class="data-container">
+        <!-- Inventory Table -->
+    </div>
+
+
+</div>
+
+
+
+
+<script>
+    let currentSortColumn = "";
+    let currentSortOrder = "asc"; // Default sort order
+
+    function sortTable(column) {
+        const tableBody = document.getElementById('inventoryTableBody');
+        const rows = Array.from(tableBody.rows);
+
+        // Determine the sort order
+        if (currentSortColumn === column) {
+            currentSortOrder = currentSortOrder === "asc" ? "desc" : "asc"; // Toggle sort order
+        } else {
+            currentSortColumn = column;
+            currentSortOrder = "asc"; // Reset to ascending order for new column
+        }
+
+        // Sort rows
+        rows.sort((a, b) => {
+            const cellA = a.cells[getColumnIndex(column)].textContent.trim();
+            const cellB = b.cells[getColumnIndex(column)].textContent.trim();
+
+            if (!isNaN(cellA) && !isNaN(cellB)) {
+                return currentSortOrder === "asc" ? cellA - cellB : cellB - cellA;
+            } else {
+                return currentSortOrder === "asc" ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
+            }
+        });
+
+        // Re-attach sorted rows to the table body
+        rows.forEach(row => tableBody.appendChild(row));
+    }
+
+    function getColumnIndex(columnName) {
+        const headers = {
+            'Category': 0,
+            'Product': 1,
+            'Price_Range': 2,
+            'Inventory_Level': 3,
+            'Demand': 4,
+            'Reorder_Point': 5,
+            'Lead_Time': 6,
+            'Supplier_Name': 7
+        };
+        return headers[columnName];
+    }
+
+
+    // Event listeners for filtering and sorting
+    document.getElementById('searchInput').addEventListener('input', filterTable);
+    document.getElementById('categoryFilter').addEventListener('change', filterTable);
+
+    function filterTable() {
+        const searchValue = document.getElementById('searchInput').value.toLowerCase();
+        const categoryValue = document.getElementById('categoryFilter').value;
+        const tableRows = document.querySelectorAll('#inventoryTableBody tr');
+
+        tableRows.forEach(row => {
+            const product = row.cells[1].innerText.toLowerCase();
+            const category = row.cells[0].innerText.toLowerCase();
+            const showRow = (product.includes(searchValue) || searchValue === '') &&
+                (categoryValue === '' || category === categoryValue);
+            row.style.display = showRow ? '' : 'none';
+        });
+    }
+
+    function placeOrder(product, supplier, leadTime) {
+        document.getElementById('modalProductName').innerText = product;
+        document.getElementById('modalSupplierName').innerText = supplier;
+        document.getElementById('modalLeadTime').innerText = leadTime;
+        document.getElementById('orderModal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+        document.getElementById('orderModal').classList.add('hidden');
+    }
+
+    function submitOrder() {
+        const productName = document.getElementById('modalProductName').innerText;
+        const quantity = document.getElementById('orderQuantity').value;
+        const supplierName = document.getElementById('modalSupplierName').innerText;
+        const leadTime = document.getElementById('modalLeadTime').innerText;
+
+        // Prepare data to send to the API
+        const orderData = {
+            product_name: productName,
+            quantity: quantity,
+            supplier: supplierName,
+            lead_time: leadTime
+        };
+
+        // Send data to the Flask API
+        fetch('/submit_order', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(orderData)
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    console.error('Order submission error:', data.error);
+                    alert(data.error);  // Display error if any
+                } else {
+                    // If successful, close order modal, show success modal, and reset fields
+                    closeModal();
+                    showSuccessModal();
+                    resetOrderForm();  // Reset form fields
+                }
+            })
+            .catch(error => {
+                console.error('Error submitting order:', error);
+                alert('An error occurred while submitting your order. Please try again.');
+            });
+    }
+
+    function resetOrderForm() {
+        // Reset the input field values in the modal
+        document.getElementById('orderQuantity').value = '';
+        document.getElementById('modalProductName').innerText = '';
+        document.getElementById('modalSupplierName').innerText = '';
+        document.getElementById('modalLeadTime').innerText = '';
+    }
+
+    function showSuccessModal() {
+        const successModal = document.getElementById('successModal');
+        const successContent = document.getElementById('successModalContent');
+        successModal.classList.remove('hidden');
+
+        // Animate the modal to scale up and fade in
+        setTimeout(() => {
+            successContent.classList.add('scale-100', 'opacity-100');
+        }, 50);
+
+        // Automatically hide the modal after 3 seconds
+        setTimeout(closeSuccessModal, 3000);
+    }
+
+    function closeSuccessModal() {
+        const successModal = document.getElementById('successModal');
+        const successContent = document.getElementById('successModalContent');
+
+        // Animate the modal to scale down and fade out
+        successContent.classList.remove('scale-100', 'opacity-100');
+        setTimeout(() => {
+            successModal.classList.add('hidden');
+        }, 300); // Match this duration with CSS transition duration
+    }
+</script>
+{% endblock %}
